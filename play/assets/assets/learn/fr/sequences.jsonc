@@ -1,0 +1,83 @@
+// Leçon d'Apprendre (français). Les exemples sont vérifiés par les tests :
+// chaque ligne "math" doit être juste, et la dernière doit donner la réponse.
+{
+  "category": "sequences",
+  "title": "Suites",
+  "summary": "Trouve la règle, puis le terme suivant.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Regarde les écarts",
+      "text": "Soustrais chaque terme du suivant. Si l'écart est toujours le même, ajoute-le une fois de plus.",
+      "example": {
+        "problem": "3 ; 7 ; 11 ; 15 ; …",
+        "steps": [
+          {
+            "math": "7 − 3 = 4",
+            "note": "L'écart vaut toujours 4"
+          },
+          {
+            "math": "15 + 4 = 19"
+          }
+        ],
+        "answer": "19"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Ou le rapport",
+      "text": "Si les écarts grandissent vite, essaie de diviser : 5 ; 10 ; 20 ; 40 double à chaque fois.",
+      "example": {
+        "problem": "5 ; 10 ; 20 ; 40 ; …",
+        "steps": [
+          {
+            "math": "10 ÷ 5 = 2",
+            "note": "Chaque terme vaut le précédent × 2"
+          },
+          {
+            "math": "40 × 2 = 80"
+          }
+        ],
+        "answer": "80"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Carrés et sommes",
+      "text": "1 ; 4 ; 9 ; 16 sont les carrés 1², 2², 3², 4². Dans 2 ; 3 ; 5 ; 8 ; 13, chaque terme est la somme des deux précédents.",
+      "example": {
+        "problem": "1 ; 4 ; 9 ; 16 ; …",
+        "steps": [
+          {
+            "math": "16 = 4²",
+            "note": "Le suivant est 5²"
+          },
+          {
+            "math": "5² = 25"
+          }
+        ],
+        "answer": "25"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Vérifie chaque étape",
+      "text": "Une règle doit marcher du premier terme au dernier, pas seulement pour les deux derniers : teste-la sur tous.",
+      "example": {
+        "problem": "4 ; 8 ; 16 ; 32 ; …",
+        "steps": [
+          {
+            "math": "32 − 16 = 16",
+            "note": "Ajouter 16 ne marche que pour la dernière étape"
+          },
+          {
+            "math": "32 × 2 = 64",
+            "note": "× 2 marche à chaque étape"
+          }
+        ],
+        "answer": "64"
+      }
+    }
+  ],
+  "tip": "Les écarts d'abord, puis les rapports, puis les carrés ou les sommes : la règle doit marcher pour tous les termes."
+}

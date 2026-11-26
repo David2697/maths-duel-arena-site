@@ -1,0 +1,85 @@
+// Learn lesson (English). The examples are checked by tests: every "math"
+// line must be right, and the last one must give the answer.
+{
+  "category": "quadratics",
+  "title": "Quadratic equations",
+  "summary": "x² in the equation: usually two solutions.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "x² = a number",
+      "text": "x² = 49 has two solutions: 7 and −7, since both squared give 49. The positive one is the square root.",
+      "example": {
+        "problem": "x² = 49",
+        "steps": [
+          {
+            "math": "x = √49 = 7",
+            "note": "The positive solution; −7 works too"
+          }
+        ],
+        "answer": "x = 7"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "A product equal to 0",
+      "text": "If (x − 3)(x + 5) = 0, one of the brackets is 0: x − 3 = 0 or x + 5 = 0. So x = 3 or x = −5.",
+      "example": {
+        "problem": "(x − 3)(x + 5) = 0",
+        "steps": [
+          {
+            "math": "x − 3 = 0",
+            "note": "Or x + 5 = 0, which gives −5"
+          },
+          {
+            "math": "x = 3"
+          }
+        ],
+        "answer": "x = 3"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Find two numbers",
+      "text": "For x² − 5x + 6 = 0, look for two numbers that add up to 5 (the opposite of −5) and multiply to 6: 2 and 3. Then x² − 5x + 6 = (x − 2)(x − 3). For x² + 5x + 6, they add up to −5: −2 and −3.",
+      "example": {
+        "problem": "x² − 5x + 6 = 0",
+        "steps": [
+          {
+            "math": "(x − 2)(x − 3) = 0",
+            "note": "2 + 3 = 5 and 2 × 3 = 6"
+          },
+          {
+            "math": "x − 3 = 0",
+            "note": "Or x − 2 = 0: the solutions are 2 and 3"
+          },
+          {
+            "math": "x = 3",
+            "note": "The larger one"
+          }
+        ],
+        "answer": "x = 3"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Watch the signs",
+      "text": "In (x − 3), the solution is +3, not −3: x − 3 = 0 gives x = 3. And in (x + 5) it is −5.",
+      "example": {
+        "problem": "(x + 4)(x − 1) = 0",
+        "steps": [
+          {
+            "math": "x + 4 = 0",
+            "note": "Or x − 1 = 0, which gives 1"
+          },
+          {
+            "math": "x = −4",
+            "note": "The smaller solution"
+          }
+        ],
+        "answer": "x = −4"
+      }
+    }
+  ],
+  "tip": "A product is 0 when one of its factors is 0. Check by putting the solution back in."
+}

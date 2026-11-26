@@ -1,0 +1,90 @@
+// Learn lesson (English). Worked examples are checked by the tests:
+// every "math" line must be true, and the last one must give the answer.
+{
+  "category": "multiplication",
+  "title": "Multiplication",
+  "summary": "Times tables, splitting numbers, and tricks for 9 and 5.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Split one number",
+      "text": "Break a number into parts that are easy to multiply, then add the results. This works for any size of number.",
+      "example": {
+        "problem": "12 × 3",
+        "steps": [
+          {
+            "math": "10 × 3 = 30",
+            "note": "Times the tens"
+          },
+          {
+            "math": "2 × 3 = 6",
+            "note": "Times the units"
+          },
+          {
+            "math": "30 + 6 = 36",
+            "note": "Add the two parts"
+          }
+        ],
+        "answer": "36"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Times 9: times 10, take one away",
+      "text": "Multiplying by 9 is multiplying by 10 and taking the number away once. The same idea works for 99.",
+      "example": {
+        "problem": "7 × 9",
+        "steps": [
+          {
+            "math": "7 × 10 = 70",
+            "note": "Times 10"
+          },
+          {
+            "math": "70 − 7 = 63",
+            "note": "Take one 7 away"
+          }
+        ],
+        "answer": "63"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Times 5: half of times 10",
+      "text": "Times 5 is half of times 10. For even numbers, halve first: 5 × 48 is 10 × 24.",
+      "example": {
+        "problem": "48 × 5",
+        "steps": [
+          {
+            "math": "48 ÷ 2 = 24",
+            "note": "Halve the number"
+          },
+          {
+            "math": "24 × 10 = 240",
+            "note": "Then times 10"
+          }
+        ],
+        "answer": "240"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Times-table neighbours",
+      "text": "A very common slip is landing on the neighbouring answer in the table: 7 × 8 = 56, not 48 (that is 6 × 8) or 63 (that is 7 × 9). If unsure, work from a fact you know.",
+      "example": {
+        "problem": "7 × 8",
+        "steps": [
+          {
+            "math": "7 × 7 = 49",
+            "note": "A fact you know"
+          },
+          {
+            "math": "49 + 7 = 56",
+            "note": "One more 7"
+          }
+        ],
+        "answer": "56"
+      }
+    }
+  ],
+  "tip": "Split a number into easy parts, then add them up."
+}

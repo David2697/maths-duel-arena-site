@@ -1,0 +1,84 @@
+// Learn lesson (English). Worked examples are checked by the tests:
+// every "math" line must be true, and the last one must give the answer.
+{
+  "category": "equations",
+  "title": "Equations",
+  "summary": "Undo each step with the opposite operation, on both sides.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Keep both sides balanced",
+      "text": "An equation is a balance: whatever you do to one side, do to the other. Undo what was done to x with the opposite operation: + is undone by −, × by ÷.",
+      "example": {
+        "problem": "x + 7 = 12",
+        "steps": [
+          {
+            "math": "x = 12 − 7",
+            "note": "Undo + 7 with − 7"
+          },
+          {
+            "math": "x = 5"
+          }
+        ],
+        "answer": "x = 5"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Two steps: undo the last one first",
+      "text": "In 3x + 5 = 26, x was multiplied by 3, then 5 was added. Undo the + 5 first, then the × 3.",
+      "example": {
+        "problem": "3x + 5 = 26",
+        "steps": [
+          {
+            "math": "3x = 26 − 5 = 21",
+            "note": "Undo + 5"
+          },
+          {
+            "math": "x = 21 ÷ 3 = 7",
+            "note": "Undo × 3"
+          }
+        ],
+        "answer": "x = 7"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Check by putting it back",
+      "text": "Put your answer back into the equation: if both sides agree, it is right.",
+      "example": {
+        "problem": "2x − 4 = 10",
+        "steps": [
+          {
+            "math": "2x = 10 + 4 = 14",
+            "note": "Undo − 4"
+          },
+          {
+            "math": "x = 14 ÷ 2 = 7",
+            "note": "Undo × 2"
+          },
+          {
+            "note": "Check: 2 × 7 − 4 = 10, the same as the right side"
+          }
+        ],
+        "answer": "x = 7"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "The opposite operation",
+      "text": "A common slip is undoing with the same operation: from x − 4 = 9, adding 4 gives 13; subtracting 4 again would give 5, which is wrong.",
+      "example": {
+        "problem": "x − 4 = 9",
+        "steps": [
+          {
+            "math": "x = 9 + 4 = 13",
+            "note": "Undo − 4 with + 4"
+          }
+        ],
+        "answer": "x = 13"
+      }
+    }
+  ],
+  "tip": "Undo each step with the opposite operation, last step first."
+}

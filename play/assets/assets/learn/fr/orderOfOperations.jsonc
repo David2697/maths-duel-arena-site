@@ -1,0 +1,86 @@
+// Leçon d'Apprendre (français). Les exemples sont vérifiés par les tests :
+// chaque ligne "math" doit être juste, et la dernière doit donner la réponse.
+{
+  "category": "orderOfOperations",
+  "title": "Priorités opératoires",
+  "summary": "Parenthèses, puissances, × et ÷, puis + et −.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "L'ordre des calculs",
+      "text": "Sans parenthèses, l'ordre est : d'abord les parenthèses, puis les puissances et racines, puis les multiplications et divisions, puis les additions et soustractions.\n\n× et ÷ passent avant + et −, même quand ils sont plus à droite.",
+      "example": {
+        "problem": "3 + 4 × 2",
+        "steps": [
+          {
+            "math": "4 × 2 = 8",
+            "note": "La multiplication avant l'addition"
+          },
+          {
+            "math": "3 + 8 = 11"
+          }
+        ],
+        "answer": "11"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "À égalité, de gauche à droite",
+      "text": "× et ÷ sont à égalité, tout comme + et − : quand il ne reste que des opérations à égalité, calcule de gauche à droite.",
+      "example": {
+        "problem": "20 − 6 + 4",
+        "steps": [
+          {
+            "math": "20 − 6 = 14",
+            "note": "De gauche à droite"
+          },
+          {
+            "math": "14 + 4 = 18"
+          }
+        ],
+        "answer": "18"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Souligne les parties prioritaires",
+      "text": "Repère les puissances et les parties avec × ou ÷, et calcule-les d'abord ; ce qui reste est une simple addition.",
+      "example": {
+        "problem": "2 + 3² × 2",
+        "steps": [
+          {
+            "math": "3² = 9",
+            "note": "Les puissances d'abord"
+          },
+          {
+            "math": "9 × 2 = 18",
+            "note": "Puis ×"
+          },
+          {
+            "math": "2 + 18 = 20",
+            "note": "Puis +"
+          }
+        ],
+        "answer": "20"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Pas simplement de gauche à droite",
+      "text": "Lire 3 + 4 × 2 de gauche à droite donne 14, ce qui est faux : le × passe en premier, donc le résultat est 11.",
+      "example": {
+        "problem": "10 − 2 × 3",
+        "steps": [
+          {
+            "math": "2 × 3 = 6"
+          },
+          {
+            "math": "10 − 6 = 4"
+          }
+        ],
+        "answer": "4"
+      }
+    }
+  ],
+  "tip": "Parenthèses, puissances, × et ÷, puis + et −."
+}

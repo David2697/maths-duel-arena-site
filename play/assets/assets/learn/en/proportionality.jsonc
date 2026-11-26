@@ -1,0 +1,82 @@
+// Learn lesson (English). Worked examples are checked by the tests:
+// every "math" line must be true, and the last one must give the answer.
+{
+  "category": "proportionality",
+  "title": "Proportionality",
+  "summary": "Twice as many, twice the price.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Find one first",
+      "text": "4 pens cost 6 €: one costs 6 ÷ 4. Then multiply for as many as you need.",
+      "example": {
+        "problem": "2 pens cost 4 €: 5 pens?",
+        "steps": [
+          {
+            "math": "4 ÷ 2 = 2",
+            "note": "One pen"
+          },
+          {
+            "math": "2 × 5 = 10",
+            "note": "Five pens"
+          }
+        ],
+        "answer": "10"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Multiply, don't add",
+      "text": "From 4 to 6 people a recipe is not 2 g more: it is 1.5 times as much.",
+      "example": {
+        "problem": "4 people, 200 g: 6 people?",
+        "steps": [
+          {
+            "math": "200 ÷ 4 = 50",
+            "note": "For one person"
+          },
+          {
+            "math": "50 × 6 = 300",
+            "note": "For six"
+          }
+        ],
+        "answer": "300"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Map scales",
+      "text": "At 1 : 25 000, 1 cm on the map is 25 000 cm for real, that is 250 m.",
+      "example": {
+        "problem": "1 : 25 000, 4 cm: how many m?",
+        "steps": [
+          {
+            "math": "4 × 25000 = 100000",
+            "note": "In cm"
+          },
+          {
+            "math": "100000 ÷ 100 = 1000",
+            "note": "In m"
+          }
+        ],
+        "answer": "1000"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Speed",
+      "text": "At 60 km/h you go 60 km in 60 minutes, so 1 km a minute. 45 minutes is 45/60 of an hour.",
+      "example": {
+        "problem": "80 km/h for 45 min?",
+        "steps": [
+          {
+            "math": "80 × 45 ÷ 60 = 60",
+            "note": "45 min is 3/4 of an hour"
+          }
+        ],
+        "answer": "60"
+      }
+    }
+  ],
+  "tip": "Go through one: one item, one person, one minute."
+}

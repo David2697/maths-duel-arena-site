@@ -1,0 +1,106 @@
+// Learn lesson (English). Worked examples are checked by the tests:
+// every "math" line must be true, and the last one must give the answer.
+{
+  "category": "arithmetic",
+  "title": "Divisors and primes",
+  "summary": "Break numbers into primes to find common divisors and multiples.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Breaking into primes",
+      "text": "Every whole number greater than 1 is a product of primes, numbers divisible only by 1 and themselves (2, 3, 5, 7, 11…). The greatest common divisor (GCD) keeps the primes both numbers share.",
+      "example": {
+        "problem": "The greatest common divisor of 12 and 18",
+        "steps": [
+          {
+            "math": "12 = 2 × 2 × 3"
+          },
+          {
+            "math": "18 = 2 × 3 × 3"
+          },
+          {
+            "math": "2 × 3 = 6",
+            "note": "Keep the primes they share"
+          }
+        ],
+        "answer": "6"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "The least common multiple",
+      "text": "Multiply the two numbers, then divide by their GCD: 4 × 6 = 24 and 24 ÷ 2 = 12. The product alone is a common multiple, but not always the smallest.",
+      "example": {
+        "problem": "The least common multiple of 4 and 6",
+        "steps": [
+          {
+            "math": "4 × 6 = 24",
+            "note": "The product"
+          },
+          {
+            "math": "24 ÷ 2 = 12",
+            "note": "Divided by their GCD, 2"
+          }
+        ],
+        "answer": "12"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Divisibility rules",
+      "text": "By 2: the last digit is even. By 3 (or 9): the sum of the digits is divisible by 3 (or 9). By 4: the number made by the last two digits is divisible by 4. By 5: it ends in 0 or 5. By 6: it is even and divisible by 3.",
+      "example": {
+        "problem": "Is 456 divisible by 3? If so, what is 456 ÷ 3?",
+        "steps": [
+          {
+            "math": "4 + 5 + 6 = 15",
+            "note": "Add the digits: 15 is divisible by 3, so 456 is too"
+          },
+          {
+            "math": "456 ÷ 3 = 152"
+          }
+        ],
+        "answer": "152"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Is it prime?",
+      "text": "To check a number, try dividing it by the primes 2, 3, 5, 7, 11, 13… up to its square root. If none goes in, it is prime. 91 looks prime but is 7 × 13.",
+      "example": {
+        "problem": "91 looks prime: what is 91 ÷ 7?",
+        "steps": [
+          {
+            "math": "7 × 13 = 91",
+            "note": "7 goes into 91"
+          },
+          {
+            "math": "91 ÷ 7 = 13",
+            "note": "So 91 = 7 × 13 is not prime"
+          }
+        ],
+        "answer": "13"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "The remainder, not the quotient",
+      "text": "In 47 ÷ 5, 5 fits 9 times (45) and 2 are left over: the quotient is 9, the remainder 2. The remainder is always smaller than the divisor.",
+      "example": {
+        "problem": "The remainder of 47 ÷ 5",
+        "steps": [
+          {
+            "math": "5 × 9 = 45",
+            "note": "5 fits 9 times"
+          },
+          {
+            "math": "47 − 45 = 2",
+            "note": "What is left over"
+          }
+        ],
+        "answer": "2"
+      }
+    }
+  ],
+  "tip": "GCD: the primes they share. LCM: their product divided by their GCD."
+}

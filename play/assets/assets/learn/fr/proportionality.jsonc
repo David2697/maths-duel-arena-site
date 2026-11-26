@@ -1,0 +1,82 @@
+// Leçon d'Apprendre (français). Les exemples sont vérifiés par les tests :
+// chaque ligne "math" doit être juste, et la dernière doit donner la réponse.
+{
+  "category": "proportionality",
+  "title": "Proportionnalité",
+  "summary": "Deux fois plus, deux fois plus cher.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Passe par un",
+      "text": "4 stylos coûtent 6 € : un coûte 6 ÷ 4. Puis multiplie pour le nombre voulu.",
+      "example": {
+        "problem": "2 stylos coûtent 4 € : 5 stylos ?",
+        "steps": [
+          {
+            "math": "4 ÷ 2 = 2",
+            "note": "Un stylo"
+          },
+          {
+            "math": "2 × 5 = 10",
+            "note": "Cinq stylos"
+          }
+        ],
+        "answer": "10"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Multiplie, n'ajoute pas",
+      "text": "De 4 à 6 personnes, une recette ne prend pas 2 g de plus : il en faut 1,5 fois plus.",
+      "example": {
+        "problem": "4 personnes, 200 g : 6 personnes ?",
+        "steps": [
+          {
+            "math": "200 ÷ 4 = 50",
+            "note": "Pour une personne"
+          },
+          {
+            "math": "50 × 6 = 300",
+            "note": "Pour six"
+          }
+        ],
+        "answer": "300"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Les échelles",
+      "text": "À l'échelle 1 : 25 000, 1 cm sur la carte vaut 25 000 cm en vrai, soit 250 m.",
+      "example": {
+        "problem": "1 : 25 000, 4 cm : combien de m ?",
+        "steps": [
+          {
+            "math": "4 × 25000 = 100000",
+            "note": "En cm"
+          },
+          {
+            "math": "100000 ÷ 100 = 1000",
+            "note": "En m"
+          }
+        ],
+        "answer": "1000"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "La vitesse",
+      "text": "À 60 km/h on fait 60 km en 60 minutes, donc 1 km par minute. 45 minutes, c'est 45/60 d'heure.",
+      "example": {
+        "problem": "80 km/h pendant 45 min ?",
+        "steps": [
+          {
+            "math": "80 × 45 ÷ 60 = 60",
+            "note": "45 min, c'est 3/4 d'heure"
+          }
+        ],
+        "answer": "60"
+      }
+    }
+  ],
+  "tip": "Passe par l'unité : un objet, une personne, une minute."
+}

@@ -1,0 +1,74 @@
+// Learn lesson (English). The examples are checked by tests: every "math"
+// line must be right, and the last one must give the answer.
+{
+  "category": "functions",
+  "title": "Functions",
+  "summary": "A machine: a number goes in, another comes out.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Work out f(4)",
+      "text": "f(x) = 3x − 2 means: take x, multiply by 3, take 2 away. For f(4), put 4 in place of x.",
+      "example": {
+        "problem": "f(x) = 3x − 2: f(4)?",
+        "steps": [
+          {
+            "math": "3 × 4 − 2 = 10"
+          }
+        ],
+        "answer": "10"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Squares first",
+      "text": "In f(x) = 2x² + 1, square x first, then multiply by 2. With a negative x, (−3)² = 9 is positive.",
+      "example": {
+        "problem": "f(x) = 2x² + 1: f(−3)?",
+        "steps": [
+          {
+            "math": "(−3)² = 9",
+            "note": "Squared first, and positive"
+          },
+          {
+            "math": "2 × 9 + 1 = 19"
+          }
+        ],
+        "answer": "19"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Which x gives this value?",
+      "text": "To find the x with f(x) = 13 for f(x) = 3x − 2, solve the equation 3x − 2 = 13.",
+      "example": {
+        "problem": "f(x) = 3x − 2: which x gives 13?",
+        "steps": [
+          {
+            "math": "3x = 13 + 2 = 15"
+          },
+          {
+            "math": "x = 15 ÷ 3 = 5"
+          }
+        ],
+        "answer": "5"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "3x is 3 × x",
+      "text": "3x means 3 times x, not 3 + x: with x = 4, 3x is 12, not 7.",
+      "example": {
+        "problem": "f(x) = 5x + 1: f(2)?",
+        "steps": [
+          {
+            "math": "5 × 2 + 1 = 11",
+            "note": "Not 5 + 2 + 1"
+          }
+        ],
+        "answer": "11"
+      }
+    }
+  ],
+  "tip": "Replace x by the number, then follow the order: powers, ×, then + and −."
+}

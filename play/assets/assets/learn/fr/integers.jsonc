@@ -1,0 +1,85 @@
+// Leçon d'Apprendre (français). Les exemples sont vérifiés par les tests :
+// chaque ligne "math" doit être juste, et la dernière doit donner la réponse.
+{
+  "category": "integers",
+  "title": "Nombres relatifs",
+  "summary": "Calcule d'abord avec les distances à zéro, puis trouve le signe.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Même signe, signes contraires",
+      "text": "Pour multiplier ou diviser, deux nombres de même signe donnent un résultat positif, deux nombres de signes contraires un résultat négatif. Calcule d'abord avec les distances à zéro, puis ajoute le signe.",
+      "example": {
+        "problem": "(−6) × (−4)",
+        "steps": [
+          {
+            "math": "6 × 4 = 24",
+            "note": "Les distances à zéro d'abord"
+          },
+          {
+            "math": "(−6) × (−4) = 24",
+            "note": "Deux signes moins : positif"
+          }
+        ],
+        "answer": "24"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Additionner et soustraire",
+      "text": "Soustraire un nombre négatif revient à ajouter son opposé : 5 − (−3) = 5 + 3. Pour additionner deux nombres de signes contraires, soustrais la plus petite distance à zéro de la plus grande et garde le signe du nombre le plus éloigné de zéro.",
+      "example": {
+        "problem": "−9 + 4",
+        "steps": [
+          {
+            "math": "9 − 4 = 5",
+            "note": "Distances à zéro : la plus petite ôtée de la plus grande"
+          },
+          {
+            "math": "−9 + 4 = −5",
+            "note": "−9 est plus loin de zéro : le résultat est négatif"
+          }
+        ],
+        "answer": "−5"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Compte les signes moins",
+      "text": "Dans un long produit, compte les signes moins : un nombre pair donne +, un nombre impair donne −.",
+      "example": {
+        "problem": "(−2) × 3 × (−5)",
+        "steps": [
+          {
+            "math": "2 × 3 × 5 = 30",
+            "note": "Les distances à zéro"
+          },
+          {
+            "math": "(−2) × 3 × (−5) = 30",
+            "note": "Deux signes moins, un nombre pair : positif"
+          }
+        ],
+        "answer": "30"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Puissances d'un nombre négatif",
+      "text": "(−3)² multiplie −3 par lui-même : 9. Une puissance impaire d'un nombre négatif reste négative : (−2)³ = −8.",
+      "example": {
+        "problem": "(−2)³",
+        "steps": [
+          {
+            "math": "(−2)³ = (−2) × (−2) × (−2)"
+          },
+          {
+            "math": "(−2) × (−2) × (−2) = −8",
+            "note": "Trois signes moins : négatif"
+          }
+        ],
+        "answer": "−8"
+      }
+    }
+  ],
+  "tip": "Les distances à zéro d'abord, puis le signe : même signe donne +, signes contraires donnent −."
+}

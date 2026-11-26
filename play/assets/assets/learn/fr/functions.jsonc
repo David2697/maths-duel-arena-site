@@ -1,0 +1,74 @@
+// Leçon d'Apprendre (français). Les exemples sont vérifiés par les tests :
+// chaque ligne "math" doit être juste, et la dernière doit donner la réponse.
+{
+  "category": "functions",
+  "title": "Fonctions",
+  "summary": "Une machine : un nombre entre, un autre sort.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Calculer f(4)",
+      "text": "f(x) = 3x − 2 veut dire : prends x, multiplie par 3, enlève 2. Pour f(4), remplace x par 4.",
+      "example": {
+        "problem": "f(x) = 3x − 2 : f(4) ?",
+        "steps": [
+          {
+            "math": "3 × 4 − 2 = 10"
+          }
+        ],
+        "answer": "10"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Le carré d'abord",
+      "text": "Dans f(x) = 2x² + 1, mets x au carré d'abord, puis multiplie par 2. Avec un x négatif, (−3)² = 9 est positif.",
+      "example": {
+        "problem": "f(x) = 2x² + 1 : f(−3) ?",
+        "steps": [
+          {
+            "math": "(−3)² = 9",
+            "note": "Au carré d'abord, et positif"
+          },
+          {
+            "math": "2 × 9 + 1 = 19"
+          }
+        ],
+        "answer": "19"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Quel x donne cette valeur ?",
+      "text": "Pour trouver le x tel que f(x) = 13 avec f(x) = 3x − 2, résous l'équation 3x − 2 = 13. On l'appelle l'antécédent de 13.",
+      "example": {
+        "problem": "f(x) = 3x − 2 : quel x donne 13 ?",
+        "steps": [
+          {
+            "math": "3x = 13 + 2 = 15"
+          },
+          {
+            "math": "x = 15 ÷ 3 = 5"
+          }
+        ],
+        "answer": "5"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "3x, c'est 3 × x",
+      "text": "3x veut dire 3 fois x, pas 3 + x : avec x = 4, 3x vaut 12, pas 7.",
+      "example": {
+        "problem": "f(x) = 5x + 1 : f(2) ?",
+        "steps": [
+          {
+            "math": "5 × 2 + 1 = 11",
+            "note": "Pas 5 + 2 + 1"
+          }
+        ],
+        "answer": "11"
+      }
+    }
+  ],
+  "tip": "Remplace x par le nombre, puis respecte l'ordre : puissances, ×, puis + et −."
+}

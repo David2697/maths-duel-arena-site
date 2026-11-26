@@ -1,0 +1,75 @@
+// Achievements (spec §5.4). Each family is one badge: a symbol ("icon")
+// in the metal of the best tier reached (bronze, silver, gold, platinum).
+// Its "difficulty" (1–10) orders the list, easiest first, and frames the
+// badge: up to 7 a plain metal, 8 and 9 epic (a purple rim that shines),
+// 10 legendary (a rainbow rim that shines). Any badge won can be shown on
+// the profile banner (economy.titlesShown at once).
+// Gems per tier are in balance.achievements.tierGems.
+//
+// "targets": one per tier (bronze first, or from "firstTier"); "all" is
+// the whole of it (every Journey star, every lesson, every notion, every
+// other achievement). "bots": for botRank, the bot each tier asks to beat.
+//
+// metric: gamesPlayed, daysActive, hoursPlayed, level, dailyStreak (best),
+//   questsCompleted, correctAnswers, perfectGames (full games all right),
+//   bestGameAverage (best average ms over one full game of 10+ right,
+//   lower is better), bestCombo, battlesWon, battleWinStreak, botRank,
+//   rightRun (right answers in a row across full games), challengeStages
+//   (best Survival run), challengeStagesTotal, endlessBestRun,
+//   endlessCorrect, speedLevel (Normal, all four operations), ghostWins,
+//   journeyStars, journeyLevels, journeyLevelReached, miniBosses,
+//   ultimateBosses, learnLessons, notionsMastered (notions with minSample
+//   right answers), bestNotion (right answers in one notion), gemsEarned,
+//   chestsOpened, practiceGames, achievementsUnlocked.
+{
+  "families": [
+    // 4/10
+    {"id": "combo", "metric": "bestCombo", "targets": [10, 20, 50, 500], "icon": "link", "difficulty": 4},
+    {"id": "learn", "metric": "learnLessons", "targets": [1, 10, "all"], "icon": "book", "difficulty": 4},
+    {"id": "practice", "metric": "practiceGames", "targets": [5, 25, 100, 500], "icon": "dumbbell", "difficulty": 4},
+
+    // 5/10
+    {"id": "games", "metric": "gamesPlayed", "targets": [10, 50, 250, 1000], "icon": "calendar", "difficulty": 5},
+    {"id": "streak", "metric": "dailyStreak", "targets": [3, 7, 30, 100], "icon": "fire", "difficulty": 5},
+    {"id": "quests", "metric": "questsCompleted", "targets": [5, 30, 150, 500], "icon": "flag", "difficulty": 5},
+    {"id": "days", "metric": "daysActive", "targets": [3, 14, 60, 200], "icon": "sun", "difficulty": 5},
+    {"id": "hours", "metric": "hoursPlayed", "targets": [1, 5, 25, 100], "icon": "hourglass", "difficulty": 5},
+    {"id": "correct", "metric": "correctAnswers", "targets": [100, 1000, 5000, 25000], "icon": "doneAll", "difficulty": 5},
+    {"id": "gems", "metric": "gemsEarned", "targets": [100, 500, 2000, 10000], "icon": "diamond", "difficulty": 5},
+    {"id": "chests", "metric": "chestsOpened", "targets": [1, 4, 12, 52], "icon": "chest", "difficulty": 5},
+
+    // 6/10
+    {"id": "survivalTotal", "metric": "challengeStagesTotal", "targets": [25, 100, 300, 1000], "icon": "stairs", "difficulty": 6},
+    {"id": "endlessCorrect", "metric": "endlessCorrect", "targets": [100, 1000, 5000, 20000], "icon": "waves", "difficulty": 6},
+    {"id": "levels", "metric": "journeyLevels", "targets": [10, 50, 200, 600], "icon": "map", "difficulty": 6},
+    {"id": "specialist", "metric": "bestNotion", "targets": [100, 500, 1500, 5000], "icon": "brain", "difficulty": 6},
+
+    // 7/10
+    {"id": "perfect", "metric": "perfectGames", "targets": [5, 25, 100, 500], "icon": "check", "difficulty": 7},
+    {"id": "battles", "metric": "battlesWon", "targets": [5, 25, 100, 500], "icon": "swords", "difficulty": 7},
+    {"id": "botTamer", "metric": "botRank", "bots": ["novice", "adept", "champion", "genius"], "icon": "robot", "difficulty": 7},
+    {"id": "stars", "metric": "journeyStars", "targets": [30, 150, 600, "all"], "icon": "star", "difficulty": 7},
+    {"id": "winStreak", "metric": "battleWinStreak", "targets": [3, 5, 10, 50], "icon": "trend", "difficulty": 7},
+    {"id": "endlessRun", "metric": "endlessBestRun", "targets": [25, 100, 250, 500], "icon": "infinity", "difficulty": 7},
+
+    // 8/10: epic
+    {"id": "miniBosses", "metric": "miniBosses", "targets": [1, 10, 40, 100], "icon": "shield", "difficulty": 8},
+    // Speed: levels in one run, Normal with all four operations only.
+    {"id": "speed", "metric": "speedLevel", "targets": [10, 25, 50, 100], "icon": "stopwatch", "difficulty": 8, "note": "speedNormal"},
+    {"id": "ghosts", "metric": "ghostWins", "targets": [1, 10, 50, 200], "icon": "ghost", "difficulty": 8},
+    {"id": "level", "metric": "level", "targets": [5, 30, 70, 100], "icon": "medal", "difficulty": 8},
+    {"id": "sharpshooter", "metric": "rightRun", "targets": [10, 40, 100, 200], "icon": "target", "difficulty": 8},
+    {"id": "collector", "metric": "achievementsUnlocked", "targets": [5, 50, 120, "all"], "icon": "trophy", "difficulty": 8},
+    {"id": "fastest", "metric": "bestGameAverage", "targets": [4000, 3000, 1500, 1000], "icon": "rocket", "difficulty": 8},
+    {"id": "challenge", "metric": "challengeStages", "targets": [3, 7, 11, 15], "icon": "heart", "difficulty": 8},
+    {"id": "polymath", "metric": "notionsMastered", "minSample": 100, "targets": [3, 8, 15, "all"], "icon": "puzzle", "difficulty": 8},
+
+    // 9/10: epic
+    {"id": "part2", "metric": "journeyLevelReached", "targets": [120, 140, 160, 200], "icon": "mountain", "difficulty": 9},
+
+    // 10/10: legendary
+    {"id": "grandmaster", "metric": "botRank", "bots": ["grandmaster", "prodigy", "oracle", "omniscient"], "icon": "crown", "difficulty": 10},
+    // One step only: every ultimate boss of the Journey.
+    {"id": "ultimateBosses", "metric": "ultimateBosses", "targets": ["all"], "firstTier": "platinum", "icon": "globe", "difficulty": 10}
+  ]
+}

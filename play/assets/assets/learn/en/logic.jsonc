@@ -1,0 +1,74 @@
+// Learn lesson (English). The examples are checked by tests: every "math"
+// line must be right, and the last one must give the answer.
+{
+  "category": "logic",
+  "title": "Logic",
+  "summary": "Reason step by step with numbers.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Work backwards",
+      "text": "I think of a number, double it and add 3: I get 17. Undo each step in reverse order: take 3 away, then halve.",
+      "example": {
+        "problem": "× 2, then + 3, gives 17",
+        "steps": [
+          {
+            "math": "17 − 3 = 14",
+            "note": "Undo + 3 first"
+          },
+          {
+            "math": "14 ÷ 2 = 7",
+            "note": "Then undo × 2"
+          }
+        ],
+        "answer": "7"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Sum and difference",
+      "text": "Two numbers add up to 20 and differ by 6. The larger is (20 + 6) ÷ 2, the smaller (20 − 6) ÷ 2.",
+      "example": {
+        "problem": "Sum 20, difference 6",
+        "steps": [
+          {
+            "math": "(20 + 6) ÷ 2 = 13",
+            "note": "The larger; the smaller is 7"
+          }
+        ],
+        "answer": "13"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Count the fence posts",
+      "text": "From 5 to 12 there are 12 − 5 + 1 = 8 whole numbers: both ends count.",
+      "example": {
+        "problem": "Whole numbers from 5 to 12",
+        "steps": [
+          {
+            "math": "12 − 5 + 1 = 8",
+            "note": "Don't forget the + 1"
+          }
+        ],
+        "answer": "8"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Even numbers only",
+      "text": "From 3 to 12, the even numbers are 4, 6, 8, 10, 12: from the first to the last even one, count in steps of 2.",
+      "example": {
+        "problem": "Even numbers from 3 to 12",
+        "steps": [
+          {
+            "math": "(12 − 4) ÷ 2 + 1 = 5",
+            "note": "From 4 to 12 in steps of 2"
+          }
+        ],
+        "answer": "5"
+      }
+    }
+  ],
+  "tip": "Write down what you know, undo steps backwards, and check your answer in the story."
+}

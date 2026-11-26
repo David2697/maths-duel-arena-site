@@ -1,0 +1,86 @@
+// Learn lesson (English). Worked examples are checked by the tests:
+// every "math" line must be true, and the last one must give the answer.
+{
+  "category": "orderOfOperations",
+  "title": "Order of operations",
+  "summary": "Brackets, powers, × and ÷, then + and − (BODMAS).",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "BODMAS",
+      "text": "Without brackets, the order is: Brackets, then Orders (powers and roots), then Division and Multiplication, then Addition and Subtraction.\n\n× and ÷ come before + and −, even when they are further to the right.",
+      "example": {
+        "problem": "3 + 4 × 2",
+        "steps": [
+          {
+            "math": "4 × 2 = 8",
+            "note": "Multiplication before addition"
+          },
+          {
+            "math": "3 + 8 = 11"
+          }
+        ],
+        "answer": "11"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Equal partners go left to right",
+      "text": "× and ÷ are equal partners, and so are + and −: when only partners are left, work from left to right.",
+      "example": {
+        "problem": "20 − 6 + 4",
+        "steps": [
+          {
+            "math": "20 − 6 = 14",
+            "note": "Left to right"
+          },
+          {
+            "math": "14 + 4 = 18"
+          }
+        ],
+        "answer": "18"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Underline the strong parts",
+      "text": "Find the powers and the × or ÷ parts first and work them out; what is left is a simple addition.",
+      "example": {
+        "problem": "2 + 3² × 2",
+        "steps": [
+          {
+            "math": "3² = 9",
+            "note": "Powers first"
+          },
+          {
+            "math": "9 × 2 = 18",
+            "note": "Then ×"
+          },
+          {
+            "math": "2 + 18 = 20",
+            "note": "Then +"
+          }
+        ],
+        "answer": "20"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Not simply left to right",
+      "text": "Reading 3 + 4 × 2 left to right gives 14, which is wrong: the × goes first, so the answer is 11.",
+      "example": {
+        "problem": "10 − 2 × 3",
+        "steps": [
+          {
+            "math": "2 × 3 = 6"
+          },
+          {
+            "math": "10 − 6 = 4"
+          }
+        ],
+        "answer": "4"
+      }
+    }
+  ],
+  "tip": "Brackets, powers, × and ÷, then + and −."
+}

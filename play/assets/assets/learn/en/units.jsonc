@@ -1,0 +1,70 @@
+// Learn lesson (English). Worked examples are checked by the tests:
+// every "math" line must be true, and the last one must give the answer.
+{
+  "category": "units",
+  "title": "Units",
+  "summary": "Converting lengths, masses, capacities and durations.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Big to small: multiply",
+      "text": "1 m = 100 cm, 1 km = 1000 m, 1 kg = 1000 g, 1 L = 1000 mL. Towards a smaller unit you get a bigger number.",
+      "example": {
+        "problem": "3 m in cm?",
+        "steps": [
+          {
+            "math": "3 × 100 = 300",
+            "note": "1 m = 100 cm"
+          }
+        ],
+        "answer": "300"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Small to big: divide",
+      "text": "Towards a bigger unit you get a smaller number: divide.",
+      "example": {
+        "problem": "4500 g in kg?",
+        "steps": [
+          {
+            "math": "4500 ÷ 1000 = 4.5",
+            "note": "1 kg = 1000 g"
+          }
+        ],
+        "answer": "4.5"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "The right power of ten",
+      "text": "km to m is × 1000, not × 100: count the steps in km, hm, dam, m.",
+      "example": {
+        "problem": "2.5 km in m?",
+        "steps": [
+          {
+            "math": "2.5 × 1000 = 2500",
+            "note": "Three steps: × 10 three times"
+          }
+        ],
+        "answer": "2500"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Hours are not hundreds",
+      "text": "An hour is 60 minutes: 2 h 15 min is 135 min, not 215.",
+      "example": {
+        "problem": "2 h 15 min in min?",
+        "steps": [
+          {
+            "math": "2 × 60 + 15 = 135",
+            "note": "60 minutes an hour"
+          }
+        ],
+        "answer": "135"
+      }
+    }
+  ],
+  "tip": "Ask yourself: is the new unit bigger or smaller? Then divide or multiply."
+}

@@ -1,0 +1,74 @@
+// Leçon d'Apprendre (français). Les exemples sont vérifiés par les tests :
+// chaque ligne "math" doit être juste, et la dernière doit donner la réponse.
+{
+  "category": "subtraction",
+  "title": "Soustraction",
+  "summary": "Compte à partir du plus petit nombre, ou arrondis puis corrige.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Compter l'écart",
+      "text": "Une soustraction, c'est la distance entre deux nombres. Pars du plus petit et avance jusqu'au plus grand par sauts faciles.",
+      "example": {
+        "problem": "45 − 28",
+        "steps": [
+          {
+            "math": "28 + 2 = 30",
+            "note": "Saute à la dizaine suivante"
+          },
+          {
+            "math": "30 + 15 = 45",
+            "note": "Puis jusqu'à 45"
+          },
+          {
+            "math": "2 + 15 = 17",
+            "note": "Les sauts additionnés donnent l'écart"
+          }
+        ],
+        "answer": "17"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Enlever un nombre rond, rendre le reste",
+      "text": "Enlever 29, c'est enlever 30 et rendre 1. C'est plus rapide que de poser l'emprunt.",
+      "example": {
+        "problem": "74 − 29",
+        "steps": [
+          {
+            "math": "74 − 30 = 44",
+            "note": "Enlève 30"
+          },
+          {
+            "math": "44 + 1 = 45",
+            "note": "Tu as enlevé 1 de trop : rends-le"
+          }
+        ],
+        "answer": "45"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Emprunter, pas inverser",
+      "text": "Dans 52 − 17, les unités font 2 − 7. Calculer 7 − 2 à la place est une erreur classique : cela donne 45 au lieu de 35. Emprunte une dizaine : 12 − 7 = 5, et les dizaines deviennent 4 − 1.",
+      "example": {
+        "problem": "52 − 17",
+        "steps": [
+          {
+            "math": "12 − 7 = 5",
+            "note": "Emprunte une dizaine : 12 − 7"
+          },
+          {
+            "math": "40 − 10 = 30",
+            "note": "Les dizaines ont perdu la dizaine empruntée : 4 − 1"
+          },
+          {
+            "math": "30 + 5 = 35"
+          }
+        ],
+        "answer": "35"
+      }
+    }
+  ],
+  "tip": "Compte à partir du plus petit nombre, par sauts faciles."
+}

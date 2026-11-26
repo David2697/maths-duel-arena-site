@@ -1,0 +1,256 @@
+// Leçon d'Apprendre (français). Les exemples sont vérifiés par les tests :
+// chaque ligne "math" doit être juste, et la dernière doit donner la réponse.
+{
+  "category": "geometry",
+  "title": "Géométrie",
+  "summary": "Aires, périmètres, angles, Pythagore, quadrilatères et volumes, avec des dessins.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Aire et périmètre",
+      "text": "Le périmètre fait le tour : additionne les côtés. L'aire couvre l'intérieur : longueur × largeur pour un rectangle, en cm².",
+      "example": {
+        "problem": "Un rectangle de 7 cm sur 4 cm : son aire ?",
+        "steps": [
+          {
+            "math": "2 × (7 + 4) = 22",
+            "note": "Son périmètre, pour comparer"
+          },
+          {
+            "math": "7 × 4 = 28",
+            "note": "Son aire : longueur × largeur"
+          }
+        ],
+        "answer": "28"
+      },
+      "figure": {
+        "kind": "rectangleArea",
+        "numbers": [
+          7,
+          4
+        ]
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Les angles",
+      "text": "Les trois angles d'un triangle font 180° en tout, comme une ligne droite. Les quatre angles d'un quadrilatère font 360°.",
+      "example": {
+        "problem": "Un triangle avec des angles de 50° et 60° : le troisième ?",
+        "steps": [
+          {
+            "math": "180 − 50 − 60 = 70",
+            "note": "180° en tout"
+          }
+        ],
+        "answer": "70"
+      },
+      "figure": {
+        "kind": "triangleAngle",
+        "numbers": [
+          50,
+          60
+        ]
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Un triangle, c'est un demi-rectangle",
+      "text": "Un triangle de base b et de hauteur h est la moitié d'un rectangle b × h : son aire est b × h ÷ 2.",
+      "example": {
+        "problem": "Base 10 cm, hauteur 6 cm : son aire ?",
+        "steps": [
+          {
+            "math": "10 × 6 = 60",
+            "note": "Le rectangle"
+          },
+          {
+            "math": "60 ÷ 2 = 30",
+            "note": "Sa moitié"
+          }
+        ],
+        "answer": "30"
+      },
+      "figure": {
+        "kind": "triangleArea",
+        "numbers": [
+          10,
+          6
+        ]
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Pythagore",
+      "text": "Dans un triangle rectangle, le carré du plus grand côté est égal à la somme des carrés des deux autres : a² + b² = c². Retiens 3-4-5 et 5-12-13 : leurs multiples reviennent souvent.",
+      "example": {
+        "problem": "Des côtés de 6 cm et 8 cm autour de l'angle droit : le plus grand côté ?",
+        "steps": [
+          {
+            "math": "6² + 8² = 100",
+            "note": "Additionne les carrés"
+          },
+          {
+            "math": "√100 = 10",
+            "note": "Puis la racine carrée"
+          }
+        ],
+        "answer": "10"
+      },
+      "figure": {
+        "kind": "hypotenuse",
+        "numbers": [
+          6,
+          8
+        ]
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Les quadrilatères : quatre côtés",
+      "text": "Un quadrilatère a quatre côtés et quatre angles. Carré, rectangle, losange, parallélogramme, trapèze et cerf-volant sont tous des quadrilatères : ce qui les distingue, ce sont leurs côtés égaux, leurs côtés parallèles et leurs angles droits.",
+      "figure": {
+        "kind": "rectangle",
+        "numbers": [
+          8,
+          5
+        ]
+      },
+      "example": {
+        "problem": "Un rectangle de 8 cm sur 5 cm : son périmètre ?",
+        "steps": [
+          {
+            "math": "2 × (8 + 5) = 26",
+            "note": "Deux longueurs et deux largeurs"
+          }
+        ],
+        "answer": "26"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Carré et losange : quatre côtés égaux",
+      "text": "Un losange a quatre côtés égaux ; ses diagonales se coupent à angle droit. Un carré est un losange qui a quatre angles droits.",
+      "figure": {
+        "kind": "rhombus",
+        "numbers": [
+          6
+        ]
+      },
+      "example": {
+        "problem": "Un losange de 6 cm de côté : son périmètre ?",
+        "steps": [
+          {
+            "math": "4 × 6 = 24",
+            "note": "Quatre côtés égaux"
+          }
+        ],
+        "answer": "24"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Le parallélogramme",
+      "text": "Ses côtés opposés sont parallèles et égaux. Son aire est base × hauteur, la hauteur étant tracée tout droit depuis la base (pas le côté penché).",
+      "figure": {
+        "kind": "parallelogram",
+        "numbers": [
+          9,
+          4
+        ]
+      },
+      "example": {
+        "problem": "Base 9 cm, hauteur 4 cm : son aire ?",
+        "steps": [
+          {
+            "math": "9 × 4 = 36",
+            "note": "Base × hauteur"
+          }
+        ],
+        "answer": "36"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Le trapèze",
+      "text": "Seuls deux côtés sont parallèles. Son aire : additionne les deux côtés parallèles, multiplie par la hauteur, puis divise par deux.",
+      "figure": {
+        "kind": "trapezium",
+        "numbers": [
+          10,
+          6,
+          4
+        ]
+      },
+      "example": {
+        "problem": "Côtés parallèles de 10 cm et 6 cm, hauteur 4 cm : son aire ?",
+        "steps": [
+          {
+            "math": "(10 + 6) × 4 ÷ 2 = 32",
+            "note": "La moyenne des côtés parallèles × la hauteur"
+          }
+        ],
+        "answer": "32"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Le cerf-volant",
+      "text": "Deux paires de côtés égaux, côte à côte (pas en face, contrairement au parallélogramme). Ses diagonales se coupent à angle droit.",
+      "figure": {
+        "kind": "kite"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Les angles d'un quadrilatère : 360°",
+      "text": "Coupe un quadrilatère le long d'une diagonale : deux triangles de 180° chacun. Ses quatre angles font donc 360°.",
+      "figure": {
+        "kind": "quadrilateralAngle",
+        "numbers": [
+          90,
+          80,
+          100
+        ]
+      },
+      "example": {
+        "problem": "Des angles de 90°, 80° et 100° : le quatrième ?",
+        "steps": [
+          {
+            "math": "360 − 90 − 80 − 100 = 90",
+            "note": "360° en tout"
+          }
+        ],
+        "answer": "90"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Un volume a trois dimensions",
+      "text": "Le volume d'une boîte, c'est longueur × largeur × hauteur, en cm³. S'arrêter après deux ne donne que l'aire du fond.",
+      "example": {
+        "problem": "Une boîte de 5 × 3 × 2 cm : son volume ?",
+        "steps": [
+          {
+            "math": "5 × 3 = 15",
+            "note": "Le fond"
+          },
+          {
+            "math": "15 × 2 = 30",
+            "note": "Fois la hauteur"
+          }
+        ],
+        "answer": "30"
+      },
+      "figure": {
+        "kind": "cuboidVolume",
+        "numbers": [
+          5,
+          3,
+          2
+        ]
+      }
+    }
+  ],
+  "tip": "Périmètre : le tour. Aire : l'intérieur. Les angles d'un triangle font 180°, ceux d'un quadrilatère 360°."
+}

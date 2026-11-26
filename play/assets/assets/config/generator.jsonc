@@ -1,0 +1,438 @@
+// =============================================================================
+// Maths Duel Arena — question generator config
+//
+// How difficulty (a continuous number, 1.0 = easiest, 10.0 = end of a world,
+// bosses go above 10 by multiplying) shapes each category.
+//
+// Every parameter is a curve: a list of [difficulty, value] points, sorted by
+// difficulty. Values between points are interpolated linearly; outside the
+// range the nearest end value is used. Integer parameters (counts, maxima)
+// are rounded randomly in proportion (2.3 → 3 thirty percent of the time),
+// so difficulty stays continuous.
+//
+// Keys starting with "op" / "kind" are relative weights for picking an
+// operation / question kind; a weight of 0 disables it at that difficulty.
+// "...Chance" values are probabilities (0.0–1.0).
+// =============================================================================
+{
+  "version": 1,
+
+  // Attempts at generating a valid question before falling back to a simple
+  // one (generation is retried when a draft breaks a rule, e.g. a negative
+  // intermediate result).
+  "maxAttempts": 60,
+  // Re-rolls allowed when a series would repeat a question it already has.
+  "seriesMaxRerolls": 12,
+
+  "distractors": {
+    // A wrong answer must be within this share of the answer's size...
+    "maxRelativeDistance": 0.6,
+    // ...or within this many units of the answer's last digit, whichever is
+    // larger (so small answers still get spread-out choices).
+    "minAbsoluteDistanceUnits": 5,
+    // ...and never under 1/ratio or over ratio times the answer's size
+    // (whole numbers under 10 excepted: 2 vs 9 is still plausible).
+    "maxMagnitudeRatio": 3,
+    // Mistakes that may break the distance rule (a shifted decimal point is
+    // a classic error even though 0.6 is 10× 0.06; so are ignoring BODMAS,
+    // dropping a minus sign, undoing an equation the wrong way and working
+    // out the rest of a percentage).
+    // At most one such far-off choice is shown per question.
+    "bandExemptMistakes": ["decimalShift", "orderOfOperations", "ignoredBrackets", "signError",
+                           "inverseOperation", "percentComplement",
+                           "wrongUnitFactor", "conversionDirection", "hoursAsDecimal", "ratioInverted", "wrongRoundingPlace",
+                           "probabilityComplement", "probabilityRatio", "probabilityEqualOutcomes",
+                           "fractionAddedAcross", "fractionCommonDenominator", "fractionForgotInvert",
+                           "fractionNumeratorOnly", "sinCosSwapped", "wrongAngleSum",
+                           "perimeterForArea", "areaForPerimeter", "forgotHalf", "surfaceForVolume",
+                           "sumOfSides", "forgotStep"],
+    // Offsets (in units of the answer's last digit) used for "near miss"
+    // wrong answers when typical mistakes don't give enough choices.
+    "nearMissOffsets": [1, 2, 3, 4, 9, 10, 11, 12, 19, 20, 21, 30],
+    // From this size of answer (whole numbers or decimals) every wrong
+    // answer ends with the answer's last digit, so working out only the
+    // last digit doesn't give the answer away. Near misses then step by
+    // tens (60020 → 60030, 59920...). 0 = never.
+    "sameLastDigitFrom": 100,
+    // Feedback calls a wrong answer "close" only within this many units of
+    // the answer's last digit (24 for 5 × 3 is not close).
+    "closeMissUnits": 2,
+    "maxDecimalPlaces": 3,
+    "maxFractionDenominator": 60,
+    // Choice sets tried per question so the answer never stands out as the
+    // "hub" (the value most other choices are ±1, ±10 or a digit swap of).
+    "selectionAttempts": 40,
+    // Trade-off between "wrong answers come from typical mistakes" and "no
+    // shortcut beats chance": each typical-mistake choice in a set may cost
+    // up to this much shortcut advantage (0 = shortcuts only, ~0.5 = mostly
+    // mistakes). Check with `dart run tool/distractor_report.dart`.
+    "mistakeBonus": 0.35,
+    // The same for a slip (one off, ten off, two digits swapped).
+    "slipBonus": 0.15,
+    // Far-off wrong answers (the exempt mistakes above) allowed per question.
+    "maxOutliers": 1,
+    // Symmetric choice sets tried per question: "answer vs a typical
+    // mistake" pairs, two pairs like {7, 8, 11, 12}, and grids like
+    // {b, b+1, b+10, b+11}.
+    "mistakeTemplates": 6,
+    "pairTemplates": 2,
+    "gridTemplates": 2,
+    // Fractions: a wrong answer must be within this share of the answer's
+    // value (1.0 = between 0 and twice the answer).
+    "fractionMaxRelativeDistance": 0.8,
+    // Numerator offsets used for fraction near misses (3/8 → 4/8, 5/8...).
+    "fractionNearMissOffsets": [1, 2, 3]
+  },
+
+  "categories": {
+    "addition": {
+      "terms":        [[1, 2], [5, 2], [6.5, 3], [11, 3], [14, 4]],
+      "maxOperand":   [[0.5, 6], [1, 9], [2, 20], [3, 50], [4.5, 99], [6, 300], [8, 999], [10, 4999], [13, 9999], [15, 49999]],
+      // Level 1 (below difficulty 1): now and then a 0 (7 + 0).
+      "zeroChance":   [[0.5, 0.2], [0.99, 0], [1, 0]],
+      // Probability that the question must have no carries (easy early on).
+      "noCarryChance": [[1, 0.85], [2.5, 0.5], [4, 0.15], [6, 0]],
+      // Probability that one term is negative (−27 + 45), from the late levels.
+      "negativeChance": [[1, 0], [7, 0], [9, 0.2], [13, 0.35]]
+    },
+
+    "subtraction": {
+      "terms":          [[1, 2], [7, 2], [9, 3], [14, 3], [15, 4]],
+      "maxOperand":     [[0.5, 6], [1, 10], [2, 20], [3, 50], [4.5, 99], [6, 300], [8, 999], [10, 4999], [13, 9999], [15, 49999]],
+      // Level 1: now and then 6 − 0 or 6 − 6.
+      "zeroChance":     [[0.5, 0.2], [0.99, 0], [1, 0]],
+      "noBorrowChance": [[1, 0.85], [2.5, 0.5], [4, 0.15], [6, 0]],
+      // Probability of a negative result.
+      "negativeChance": [[1, 0], [6, 0], [8, 0.2], [12, 0.35]],
+      // In chains of 3+ numbers, probability that each further step is − (else +).
+      "chainMinusChance": [[1, 0.6]]
+    },
+
+    "multiplication": {
+      "factors":        [[1, 2], [8.5, 2], [10, 3], [15, 3]],
+      "maxA":           [[0.5, 3], [1, 5], [2, 9], [3, 12], [5, 20], [7, 50], [9, 99], [12, 300], [15, 999]],
+      "maxB":           [[0.5, 3], [1, 5], [2, 9], [4, 12], [7, 15], [9, 30], [12, 99], [15, 200]],
+      // Level 1: now and then × 1.
+      "oneChance":      [[0.5, 0.2], [0.99, 0], [1, 0]],
+      "maxThirdFactor": [[1, 3], [10, 5], [15, 9]],
+      // Probability that one factor is negative (−6 × 4).
+      "negativeChance": [[1, 0], [8, 0], [10, 0.25], [14, 0.4]]
+    },
+
+    "division": {
+      "maxDivisor":  [[0.5, 3], [1, 5], [2, 9], [4, 12], [7, 15], [9, 25], [12, 50], [15, 99]],
+      "maxQuotient": [[0.5, 3], [1, 5], [2, 10], [4, 12], [6, 30], [8, 99], [11, 300], [15, 999]],
+      // Level 1: now and then ÷ 1.
+      "oneChance":   [[0.5, 0.2], [0.99, 0], [1, 0]],
+      // Probability that the dividend or the divisor is negative.
+      "negativeChance": [[1, 0], [8, 0], [10, 0.25], [14, 0.4]]
+    },
+
+    "decimals": {
+      // Every point half a level later than the other notions: decimals
+      // feel harder than their numbers say.
+      "places":                    [[1.5, 1], [5.5, 1], [7.5, 2], [12.5, 2], [15.5, 3]],
+      "maxWhole":                  [[1.5, 5], [3.5, 10], [6.5, 30], [9.5, 99], [15.5, 999]],
+      "maxIntFactor":              [[1.5, 5], [4.5, 9], [8.5, 12], [15.5, 25]],
+      "decimalTimesDecimalChance": [[1.5, 0], [5.5, 0], [7.5, 0.4], [12.5, 0.7]],
+      "opAdd":      [[1.5, 3], [10.5, 2]],
+      "opSubtract": [[1.5, 2], [10.5, 2]],
+      "opMultiply": [[1.5, 0], [3.5, 1], [10.5, 3]],
+      "opDivide":   [[1.5, 0], [4.5, 0], [6.5, 1], [10.5, 2]],
+      // Additions and subtractions without carrying or borrowing in any
+      // column (2.3 + 1.4, not 2.6 + 3.5), for beginners.
+      "noCarryChance": [[1.5, 1], [2.5, 0.6], [3.5, 0.3], [5, 0]]
+    },
+
+    "fractions": {
+      // Level 1 (difficulty 0.5) stays gentle: halves, thirds and quarters,
+      // ½ of 6 rather than ⅗ of 15, sums under 1.
+      "maxDenominator":        [[0.5, 4], [1, 5], [3, 8], [6, 12], [10, 15], [15, 24]],
+      "unitFractionChance":    [[0.5, 1], [1, 0.5], [2, 0]],
+      "properSumChance":       [[0.5, 1], [1, 0.6], [2, 0]],
+      "sameDenominatorChance": [[1, 1], [2.5, 0.7], [5, 0.3], [8, 0.1], [12, 0]],
+      "improperChance":        [[1, 0], [5, 0.1], [10, 0.3]],
+      "maxWholeMultiple":      [[0.5, 2], [1, 3], [5, 6], [10, 12]],
+      "opAdd":      [[1, 3], [10, 2]],
+      "opSubtract": [[1, 1], [3, 2], [10, 2]],
+      "opMultiply": [[1, 0], [3, 1], [10, 2]],
+      "opDivide":   [[1, 0], [5, 0], [6, 1], [10, 2]],
+      "opOfWhole":  [[1, 2], [6, 1], [10, 0.5]]
+    },
+
+    "powers": {
+      "maxSquareBase": [[1, 6], [3, 10], [5, 12], [8, 20], [12, 30], [15, 50]],
+      "maxCubeBase":   [[1, 3], [4, 5], [8, 10], [15, 15]],
+      "maxPowerBase":  [[1, 2], [5, 3], [8, 5], [15, 10]],
+      "maxExponent":   [[1, 3], [5, 5], [10, 8], [15, 10]],
+      "maxPowerValue": [[1, 64], [8, 1024], [15, 100000]],
+      "kindSquare":       [[1, 4], [10, 2]],
+      "kindCube":         [[1, 0], [3, 1], [10, 2]],
+      "kindPower":        [[1, 1], [10, 2]],
+      "kindSquareRoot":   [[1, 2], [10, 2]],
+      "kindCubeRoot":     [[1, 0], [5, 0], [6, 1], [10, 1.5]],
+      "kindSumOfSquares": [[1, 0], [3, 0], [4, 0.5], [6, 2], [10, 3]],
+      // Largest base in a² ± b² questions.
+      "maxSumOfSquaresBase": [[1, 3], [3, 6], [5, 7], [8, 12], [12, 18], [15, 30]]
+    },
+
+    "brackets": {
+      // Depth 1 = one pair of brackets, 2 = nested or two pairs, ...
+      "depth":      [[1, 1], [6, 1], [7, 2], [12, 2], [14, 3]],
+      "maxOperand": [[1, 10], [4, 20], [8, 50], [12, 99], [15, 200]],
+      // Largest number multiplied or divided by (keeps it mental maths).
+      "maxFactor":  [[1, 5], [3, 9], [8, 12], [15, 20]],
+      "maxValue":   [[1, 100], [6, 500], [10, 2000], [15, 10000]],
+      // Probability that the innermost bracket is a product, e.g. (3 × 4).
+      "innerMultiplyChance": [[1, 0.3]],
+      "opAdd":      [[1, 3], [10, 2]],
+      "opSubtract": [[1, 2], [10, 2]],
+      "opMultiply": [[1, 3], [10, 3]],
+      "opDivide":   [[1, 0], [3, 1], [10, 2]]
+    },
+
+    "orderOfOperations": {
+      "terms":         [[1, 3], [5, 3], [6, 4], [10, 4], [12, 5], [15, 6]],
+      "maxOperand":    [[1, 10], [4, 20], [8, 50], [12, 99], [15, 200]],
+      "maxFactor":     [[1, 5], [3, 9], [8, 12], [15, 20]],
+      "maxValue":      [[1, 100], [6, 500], [10, 2000], [15, 10000]],
+      "powerChance":   [[1, 0], [4, 0], [6, 0.25], [12, 0.4]],
+      "bracketChance": [[1, 0], [5, 0], [7, 0.3], [12, 0.5]],
+      // Largest base squared inside an expression, e.g. 7².
+      "maxSquaredOperand": [[1, 5], [3, 9]],
+      "opAdd":      [[1, 3], [10, 2]],
+      "opSubtract": [[1, 2], [10, 2]],
+      "opMultiply": [[1, 3], [10, 3]],
+      "opDivide":   [[1, 0], [3, 1], [10, 2]]
+    },
+
+    // "15% of 80". Kinds pick the percentage: nice ones (10, 20, 25, 50, 75),
+    // multiples of 5, any whole percentage, or above 100 (110–300).
+    "percentages": {
+      "maxBase":             [[1, 40], [3, 100], [6, 200], [10, 500], [15, 2000]],
+      // Probability of any base (a decimal answer) instead of a whole result.
+      "decimalResultChance": [[1, 0], [6, 0], [9, 0.25], [13, 0.4]],
+      "kindNice":    [[1, 1], [6, 0.5], [12, 0.2]],
+      "kindFives":   [[1, 0], [3, 0.6], [8, 1]],
+      "kindAny":     [[1, 0], [6, 0], [8, 0.6], [12, 1]],
+      "kindOver100": [[1, 0], [8, 0], [10, 0.3], [14, 0.5]]
+    },
+
+    // Find x: "x + 7 = 12", "x − 4 = 9", "3x = 21", "x ÷ 4 = 6", "2x + 5 = 19".
+    "equations": {
+      "maxSolution":     [[1, 9], [3, 12], [6, 25], [9, 50], [13, 99]],
+      "maxCoefficient":  [[1, 5], [4, 9], [8, 12], [12, 20]],
+      // Probability of a negative solution.
+      "negativeChance":  [[1, 0], [7, 0], [9, 0.2], [13, 0.35]],
+      // Probability of writing it the other way round: 12 = x + 7.
+      "swapSidesChance": [[1, 0], [4, 0.2], [10, 0.35]],
+      "kindAdd":      [[1, 3], [6, 1], [12, 0.5]],
+      "kindSubtract": [[1, 2], [6, 1], [12, 0.5]],
+      "kindMultiply": [[1, 0], [2.5, 1], [8, 1]],
+      "kindDivide":   [[1, 0], [4, 0.6], [8, 1]],
+      "kindTwoStep":  [[1, 0], [5, 0], [7, 1], [12, 3]]
+    },
+
+    // Short stories around one sum (texts are in the app's translations).
+    "wordProblems": {
+      "maxOperand": [[1, 20], [3, 50], [6, 100], [9, 500], [13, 2000]],
+      "maxFactor":  [[1, 5], [4, 9], [8, 12], [12, 20]],
+      "kindBoxes":         [[1, 1]],
+      "kindShare":         [[1, 0], [2, 1]],
+      "kindAddMore":       [[1, 2], [8, 0.5]],
+      "kindGetOff":        [[1, 2], [8, 0.5]],
+      "kindPerimeter":     [[1, 0], [4, 1]],
+      "kindSpeed":         [[1, 0], [5, 1]],
+      "kindPacksGiveAway": [[1, 0], [5, 0.5], [9, 1.5]],
+      "kindDiscount":      [[1, 0], [7, 0], [9, 1]]
+    },
+
+    // Relative numbers: signs in +, −, ×, ÷ and powers of negatives.
+    "integers": {
+      "maxOperand": [[1, 10], [5, 20], [9, 50], [13, 100]],
+      "maxFactor":  [[1, 6], [5, 9], [9, 12], [13, 15]],
+      "kindAddSubtract": [[1, 3], [6, 1]],
+      "kindMultiply":    [[1, 1], [4, 2]],
+      "kindDivide":      [[1, 0], [3, 1], [6, 2]],
+      // Three factors: (−2) × 3 × (−4).
+      "kindProduct3":    [[1, 0], [5, 0], [7, 1]],
+      // (−a)² and (−a)³.
+      "kindSquare":      [[1, 0], [4, 0.5], [8, 1]]
+    },
+
+    // Divisors and primes, in words (texts are in the app's translations).
+    // gcd/lcm: two numbers up to maxNumber sharing a factor up to
+    // maxCommonFactor. Prime and divisible: pick the one among look-alikes.
+    "arithmetic": {
+      "maxNumber":       [[1, 30], [5, 60], [9, 120], [13, 250]],
+      "maxCommonFactor": [[1, 5], [5, 9], [9, 15], [13, 25]],
+      // Remainders: the divisor goes up to this.
+      "maxDivisor":      [[1, 9], [6, 12], [10, 20]],
+      // "Which is prime / divisible": the numbers go up to this.
+      "maxPrime":        [[1, 50], [5, 120], [9, 250], [13, 400]],
+      "kindGcd":       [[1, 1]],
+      "kindLcm":       [[1, 0], [3, 1]],
+      "kindRemainder": [[1, 2], [6, 1]],
+      "kindPrime":     [[1, 1]],
+      "kindDivisible": [[1, 2], [6, 1]]
+    },
+
+    // Equations a step further: x on both sides, brackets, x ÷ a, −ax.
+    "linearEquations": {
+      "maxSolution":    [[1, 9], [5, 15], [9, 30], [13, 50]],
+      "maxCoefficient": [[1, 4], [5, 7], [9, 10], [13, 12]],
+      "negativeChance": [[1, 0], [5, 0.2], [10, 0.4]],
+      "kindBothSides":           [[1, 2], [8, 1]],
+      "kindBrackets":            [[1, 1], [6, 2]],
+      "kindDivided":             [[1, 0], [3, 1]],
+      "kindNegativeCoefficient": [[1, 0], [5, 1]]
+    },
+
+    // Geometry in words (no figures): lengths in cm up to maxSide; a box's
+    // edges up to maxEdge (its volume multiplies three of them); Pythagoras
+    // uses the first pythagoreanTriples of 3-4-5, 5-12-13, 8-15-17,
+    // 7-24-25, 20-21-29.
+    "geometry": {
+      "maxSide": [[1, 10], [5, 20], [9, 40], [13, 60]],
+      "maxEdge": [[1, 6], [5, 10], [9, 15], [13, 20]],
+      "pythagoreanTriples": [[1, 2], [6, 3], [10, 5]],
+      "kindRectangleArea":      [[1, 2], [8, 1]],
+      "kindSquarePerimeter":    [[1, 2], [6, 0.5]],
+      "kindTriangleAngle":      [[1, 1]],
+      "kindStraightAngle":      [[1, 1], [6, 0.5]],
+      "kindTriangleArea":       [[1, 0], [3, 1]],
+      "kindHypotenuse":         [[1, 0], [5, 1]],
+      "kindCuboidVolume":       [[1, 0], [4, 1]],
+      "kindQuadrilateralAngle": [[1, 0], [6, 1]]
+    },
+
+    // Third wave. Second-degree equations with whole solutions up to
+    // maxRoot (negative ones higher up); one solution is asked: the
+    // positive one of x² = n, the larger or the smaller of the others.
+    "quadratics": {
+      "maxRoot":            [[1, 6], [5, 9], [9, 12], [13, 15]],
+      "negativeRootChance": [[1, 0], [4, 0.3], [8, 0.5]],
+      "kindSquare":   [[1, 3], [6, 1]],
+      "kindFactored": [[1, 2], [6, 1]],
+      "kindLarger":   [[1, 0], [3, 1], [8, 2]],
+      "kindSmaller":  [[1, 0], [5, 1]]
+    },
+
+    // The next term of a sequence: `terms` shown (4: with 3, some fit two
+    // rules), starting up to maxStart,
+    // steps up to maxStep, ratios up to maxRatio; the answer stays up to
+    // maxValue.
+    "sequences": {
+      "terms":    [[1, 4]],
+      "maxStart": [[1, 10], [5, 30], [9, 50]],
+      "maxStep":  [[1, 5], [5, 15], [9, 25]],
+      "maxRatio": [[1, 2], [6, 3], [10, 4]],
+      "maxValue": [[1, 60], [5, 200], [9, 1000], [13, 3000]],
+      "kindArithmetic": [[1, 3], [8, 1]],
+      "kindDecreasing": [[1, 1], [6, 1]],
+      "kindGeometric":  [[1, 0], [3, 1]],
+      "kindSquares":    [[1, 0], [4, 1]],
+      "kindFibonacci":  [[1, 0], [6, 1]]
+    },
+
+    // f(x) = ax + b or ax² + c: an image, or which x gives a value.
+    "functions": {
+      "maxCoefficient": [[1, 4], [5, 7], [9, 10]],
+      "maxInput":       [[1, 6], [5, 10], [9, 15]],
+      "negativeChance": [[1, 0], [4, 0.3], [8, 0.5]],
+      "kindValue":    [[1, 3], [8, 1]],
+      "kindSquare":   [[1, 0], [3, 1], [8, 2]],
+      "kindPreimage": [[1, 0], [4, 1], [8, 2]]
+    },
+
+    // Reasoning with numbers up to maxNumber: undoing "I think of a
+    // number…" (multiplied by up to maxMultiplier), two numbers from their
+    // sum and difference, counting whole and even numbers.
+    "logic": {
+      "maxNumber":     [[1, 20], [5, 50], [9, 100], [13, 200]],
+      "maxMultiplier": [[1, 3], [5, 6], [9, 9]],
+      "kindThinkAdd":      [[1, 2], [8, 1]],
+      "kindThinkSubtract": [[1, 0], [3, 1]],
+      "kindSumDifference": [[1, 0], [4, 1]],
+      "kindCount":         [[1, 2], [8, 1]],
+      "kindCountEven":     [[1, 0], [3, 1]]
+    },
+
+    // A die, a bag of marbles (up to maxMarbles of each colour), a number
+    // up to maxNumber, two dice, the chance something doesn't happen.
+    "probability": {
+      "maxMarbles":     [[1, 5], [5, 20], [12, 28]],
+      "maxNumber":      [[1, 12], [5, 40], [12, 60]],
+      "kindDie":        [[1, 3], [5, 0.5]],
+      "kindBag":        [[1, 3], [8, 3]],
+      "kindComplement": [[1, 2], [5, 0.5]],
+      "kindMultiple":   [[1, 0], [4, 2], [9, 3]],
+      "kindDiceSum":    [[1, 0], [8, 0.5], [12, 1]]
+    },
+
+    // Right triangles: the other acute angle; sin, cos, tan of 30°, 45°,
+    // 60°; a ratio from whole sides (the first `triples` right triangles);
+    // a side from a ratio (triangles up to maxScale times bigger).
+    "trigonometry": {
+      "triples":        [[1, 1], [6, 3], [11, 5]],
+      "maxScale":       [[1, 2], [5, 8], [11, 12]],
+      "kindOtherAngle": [[1, 3], [6, 1], [10, 0]],
+      "kindValue":      [[1, 1], [6, 2], [12, 1]],
+      "kindRatio":      [[1, 1], [6, 3]],
+      "kindSide":       [[1, 0], [4, 2], [10, 3]]
+    },
+
+    // Prices and recipes (up to maxCount items, maxUnit each), map scales,
+    // distance at a speed over some minutes.
+    "proportionality": {
+      "maxCount":   [[1, 5], [6, 10], [12, 20]],
+      "maxUnit":    [[1, 5], [6, 12], [12, 30]],
+      "kindPrice":  [[1, 3], [8, 2]],
+      "kindRecipe": [[1, 2], [8, 2]],
+      "kindScale":  [[1, 0], [4, 1], [9, 2]],
+      "kindSpeed":  [[1, 0], [5, 1], [9, 2]]
+    },
+
+    // Converting lengths, masses, capacities and durations (values up to
+    // maxValue, decimal ones from decimalChance), hours and minutes.
+    "units": {
+      "maxValue":         [[1, 9], [6, 50], [12, 500]],
+      "decimalChance":    [[1, 0], [4, 0.3], [10, 0.6]],
+      "kindLength":       [[1, 3], [8, 2]],
+      "kindMass":         [[1, 2], [8, 2]],
+      "kindCapacity":     [[1, 1], [8, 2]],
+      "kindTime":         [[1, 1], [8, 2]],
+      "kindHoursMinutes": [[1, 2], [8, 1]],
+      // How many steps apart the units may be (km → m one, km → mm three;
+      // h → min one, h → s two): neighbours first.
+      "maxSteps":         [[1, 1], [5, 2], [9, 3]],
+      "maxTimeSteps":     [[1, 1], [13, 2]]
+    },
+
+    // Estimation and rounding: numbers to round up to maxValue; products of
+    // two numbers up to maxFactor, sums of two up to maxValue; each kind's
+    // weight (rounding first, estimates later).
+    "estimation": {
+      "maxValue":    [[1, 99], [4, 999], [8, 9999], [12, 99999]],
+      "maxFactor":   [[1, 30], [5, 99], [10, 999]],
+      "kindRound":   [[1, 4], [8, 1]],
+      "kindProduct": [[1, 0], [3, 1], [8, 2]],
+      "kindSum":     [[1, 1], [6, 2]]
+    },
+
+    // Mixed picks one of the other categories (weights may change with
+    // difficulty). The Journey-only ones (percentages...) are left out on
+    // purpose.
+    "mixed": {
+      "addition":          [[1, 3], [10, 1]],
+      "subtraction":       [[1, 3], [10, 1]],
+      "multiplication":    [[1, 2], [10, 2]],
+      "division":          [[1, 1], [10, 2]],
+      "decimals":          [[1, 0], [3, 1], [10, 2]],
+      "fractions":         [[1, 0], [3, 1], [10, 2]],
+      "powers":            [[1, 0], [3, 1], [10, 2]],
+      "brackets":          [[1, 1], [10, 2]],
+      "orderOfOperations": [[1, 0], [3, 1], [10, 2]]
+    }
+  }
+}

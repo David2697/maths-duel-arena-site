@@ -1,0 +1,93 @@
+// Learn lesson (English). Worked examples are checked by the tests:
+// every "math" line must be true, and the last one must give the answer.
+{
+  "category": "addition",
+  "title": "Addition",
+  "summary": "Add tens first, then units, and keep track of carries.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Tens first, then units",
+      "text": "Split each number into tens and units. Add the tens together, then the units, then put the two results together.\n\nWorking from the left is often quicker in your head than the column method, because the big part of the answer comes first.",
+      "example": {
+        "problem": "34 + 25",
+        "steps": [
+          {
+            "math": "30 + 20 = 50",
+            "note": "Add the tens"
+          },
+          {
+            "math": "4 + 5 = 9",
+            "note": "Add the units"
+          },
+          {
+            "math": "50 + 9 = 59",
+            "note": "Put them together"
+          }
+        ],
+        "answer": "59"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Round, then adjust",
+      "text": "When a number is close to a round one, add the round number and correct afterwards. Adding 9 is adding 10 and taking 1 away.",
+      "example": {
+        "problem": "56 + 29",
+        "steps": [
+          {
+            "math": "56 + 30 = 86",
+            "note": "29 is 30 minus 1: add 30"
+          },
+          {
+            "math": "86 − 1 = 85",
+            "note": "Then take the extra 1 back"
+          }
+        ],
+        "answer": "85"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Don't lose the carry",
+      "text": "When the units add up to 10 or more, the extra ten goes into the tens. Forgetting it makes the answer exactly 10 too small: 47 + 38 is 85, not 75.",
+      "example": {
+        "problem": "68 + 57",
+        "steps": [
+          {
+            "math": "8 + 7 = 15",
+            "note": "Units: 15 is one ten and 5"
+          },
+          {
+            "math": "60 + 50 + 10 = 120",
+            "note": "Tens, plus the carried ten"
+          },
+          {
+            "math": "120 + 5 = 125"
+          }
+        ],
+        "answer": "125"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Adding a negative number",
+      "text": "Adding a negative number is the same as taking it away. Keep an eye on the sign: when the negative number is the bigger one, the total is below zero.",
+      "example": {
+        "problem": "8 + (−13)",
+        "steps": [
+          {
+            "math": "8 + (−13) = 8 − 13",
+            "note": "Adding −13 means taking 13 away"
+          },
+          {
+            "math": "8 − 13 = −5",
+            "note": "13 is 5 more than 8, so the result is 5 below zero"
+          }
+        ],
+        "answer": "−5"
+      }
+    }
+  ],
+  "tip": "Tens first, then units. Did anything carry?"
+}

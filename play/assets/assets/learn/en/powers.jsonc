@@ -1,0 +1,97 @@
+// Learn lesson (English). Worked examples are checked by the tests:
+// every "math" line must be true, and the last one must give the answer.
+{
+  "category": "powers",
+  "title": "Powers and roots",
+  "summary": "A power is repeated multiplication; a root undoes it.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "A power multiplies a number by itself",
+      "text": "The small number says how many times the number appears in the multiplication. 2⁵ is five 2s multiplied together, not 2 × 5.",
+      "example": {
+        "problem": "2⁵",
+        "steps": [
+          {
+            "math": "2⁵ = 2 × 2 × 2 × 2 × 2",
+            "note": "Five 2s"
+          },
+          {
+            "math": "2 × 2 × 2 × 2 × 2 = 32"
+          }
+        ],
+        "answer": "32"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "A root goes back",
+      "text": "The square root of 49 is the number that, times itself, gives 49. Knowing the squares up to 15² makes roots quick.",
+      "example": {
+        "problem": "√49",
+        "steps": [
+          {
+            "math": "7 × 7 = 49",
+            "note": "Which number times itself is 49?"
+          },
+          {
+            "math": "√49 = 7"
+          }
+        ],
+        "answer": "7"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Build on the power before",
+      "text": "Each power is the one before times the number again: 3³ = 27, so 3⁴ = 27 × 3.",
+      "example": {
+        "problem": "3⁴",
+        "steps": [
+          {
+            "math": "3³ = 27",
+            "note": "A power you know"
+          },
+          {
+            "math": "27 × 3 = 81",
+            "note": "One more 3"
+          }
+        ],
+        "answer": "81"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "A cube root goes back three times",
+      "text": "∛27 asks which number, times itself three times, gives 27. Know the first cubes: 2³ = 8, 3³ = 27, 4³ = 64, 5³ = 125.",
+      "example": {
+        "problem": "∛27",
+        "steps": [
+          {
+            "math": "3 × 3 × 3 = 27",
+            "note": "Which number, three times, gives 27?"
+          },
+          {
+            "math": "∛27 = 3"
+          }
+        ],
+        "answer": "3"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Not times, and not half",
+      "text": "Two classic slips: 6² is 36, not 6 × 2 = 12; and √64 is 8, not 64 ÷ 2 = 32.",
+      "example": {
+        "problem": "6²",
+        "steps": [
+          {
+            "math": "6² = 6 × 6 = 36"
+          }
+        ],
+        "answer": "36"
+      }
+    }
+  ],
+  "tip": "A power repeats the multiplication; a root finds the number that was repeated."
+}

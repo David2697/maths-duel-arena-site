@@ -1,0 +1,147 @@
+// =============================================================================
+// Maths Duel Arena — Journey world graph (spec §4.3)
+//
+// One world per operation. A world opens when ALL its `requires` entries are
+// met: "level N passed (1 star or more) in world W".
+// Worlds open early, to draw players in: each one needs only 10 levels
+// of the world just before it, strictly in the map's order, left to right
+// (the order the mixes below put them in; Battle and Practice list the
+// notions in the same order).
+// Rearrange freely: the app checks at startup that every world exists, levels are in range, at
+// least one world is open from the start, and nothing depends on itself.
+//
+// Beating a world's ultimate boss (its last level) grants its `perk` for
+// good. Perk kinds:
+//   "gems"               — `amount` gems, once.
+//   "tournamentAttempts" — `amount` extra free attempts in every tournament
+//                          (Phase 3; kept until tournaments open).
+//   "cosmetic"           — the cosmetic `cosmetic`, an "avatar" or a "banner"
+//                          (`look`); shown in the shop/profile from Phase 2.
+// Every ultimate boss also grants its world's trophies: an avatar and a
+// banner with the world's sign on a rainbow (shop.jsonc, "trophy").
+// A world with "journeyOnly": true keeps its question type out of Battle
+// until the world opens (every world: Battle follows the Journey; Learn and
+// Practice have every notion from the start).
+// A world with "negatives": false has no negative numbers in its levels
+// (they come with the Relative numbers world, just after Division).
+// A world with a level passed stays open whatever its requirements, so a
+// change of order never closes a world already played.
+// A path's name is in the app's texts (pathName), by its id.
+// After its level-100 boss a world goes on. A path ("mix") mixes the
+// worlds or paths listed before it: they end the level before its `at`,
+// and passing that level in all of them opens the path, whose first level
+// is a mix boss. Its questions come from every notion it mixes. Paths are
+// mixed again the same way; whatever nothing mixes goes on to the
+// Journey's last level (balance.jsonc → journey.lastLevel). The map shows
+// the worlds and paths in this order.
+// Level counts, difficulty and boss rules are in balance.jsonc → journey.
+// =============================================================================
+{
+  "version": 1,
+  "worlds": [
+    { "id": "addition", "category": "addition", "journeyOnly": true, "negatives": false, "perk": "addition_gems",
+      "requires": [] },
+    { "id": "subtraction", "category": "subtraction", "journeyOnly": true, "negatives": false, "perk": "subtraction_banner",
+      "requires": [{ "world": "addition", "level": 10 }] },
+    { "id": "multiplication", "category": "multiplication", "journeyOnly": true, "negatives": false, "perk": "multiplication_attempt",
+      "requires": [{ "world": "subtraction", "level": 10 }] },
+    { "id": "division", "category": "division", "journeyOnly": true, "negatives": false, "perk": "division_gems",
+      "requires": [{ "world": "multiplication", "level": 10 }] },
+    { "id": "integers", "category": "integers", "journeyOnly": true, "perk": "integers_gems",
+      "requires": [{ "world": "division", "level": 10 }] },
+    { "id": "decimals", "category": "decimals", "journeyOnly": true, "perk": "decimals_gems",
+      "requires": [{ "world": "integers", "level": 10 }] },
+    { "id": "fractions", "category": "fractions", "journeyOnly": true, "perk": "fractions_gems",
+      "requires": [{ "world": "decimals", "level": 10 }] },
+    { "id": "arithmetic", "category": "arithmetic", "journeyOnly": true, "perk": "arithmetic_attempt",
+      "requires": [{ "world": "fractions", "level": 10 }] },
+    { "id": "sequences", "category": "sequences", "journeyOnly": true, "perk": "sequences_gems",
+      "requires": [{ "world": "linearEquations", "level": 10 }] },
+    { "id": "percentages", "category": "percentages", "journeyOnly": true, "perk": "percentages_gems",
+      "requires": [{ "world": "functions", "level": 10 }] },
+    { "id": "powers", "category": "powers", "journeyOnly": true, "perk": "powers_banner",
+      "requires": [{ "world": "arithmetic", "level": 10 }] },
+    { "id": "brackets", "category": "brackets", "journeyOnly": true, "perk": "brackets_gems",
+      "requires": [{ "world": "powers", "level": 10 }] },
+    { "id": "orderOfOperations", "category": "orderOfOperations", "journeyOnly": true, "perk": "bodmas_attempt",
+      "requires": [{ "world": "brackets", "level": 10 }] },
+    { "id": "equations", "category": "equations", "journeyOnly": true, "perk": "equations_attempt",
+      "requires": [{ "world": "estimation", "level": 10 }] },
+    { "id": "logic", "category": "logic", "journeyOnly": true, "perk": "logic_gems",
+      "requires": [{ "world": "trigonometry", "level": 10 }] },
+    { "id": "linearEquations", "category": "linearEquations", "journeyOnly": true, "perk": "linear_gems",
+      "requires": [{ "world": "equations", "level": 10 }] },
+    { "id": "functions", "category": "functions", "journeyOnly": true, "perk": "functions_gems",
+      "requires": [{ "world": "sequences", "level": 10 }] },
+    // Estimation and rounding (in place of quadratic equations, too slow to
+    // solve in the head: they stay in Learn and Practice).
+    { "id": "estimation", "category": "estimation", "journeyOnly": true, "perk": "estimation_attempt",
+      "requires": [{ "world": "orderOfOperations", "level": 10 }] },
+    { "id": "geometry", "category": "geometry", "journeyOnly": true, "perk": "geometry_gems",
+      "requires": [{ "world": "units", "level": 10 }] },
+    { "id": "wordProblems", "category": "wordProblems", "journeyOnly": true, "perk": "stories_banner",
+      "requires": [{ "world": "proportionality", "level": 10 }] },
+    { "id": "units", "category": "units", "journeyOnly": true, "perk": "units_gems",
+      "requires": [{ "world": "wordProblems", "level": 10 }] },
+    { "id": "proportionality", "category": "proportionality", "journeyOnly": true, "perk": "proportionality_gems",
+      "requires": [{ "world": "percentages", "level": 10 }] },
+    { "id": "probability", "category": "probability", "journeyOnly": true, "perk": "probability_gems",
+      "requires": [{ "world": "logic", "level": 10 }] },
+    { "id": "trigonometry", "category": "trigonometry", "journeyOnly": true, "perk": "trigonometry_attempt",
+      "requires": [{ "world": "geometry", "level": 10 }] },
+
+    // Level 120: pairs of worlds.
+    { "id": "addSub", "mix": ["addition", "subtraction"], "at": 120 },
+    { "id": "mulDiv", "mix": ["multiplication", "division"], "at": 120 },
+    { "id": "signedDecimals", "mix": ["integers", "decimals"], "at": 120 },
+    { "id": "fractionsPrimes", "mix": ["fractions", "arithmetic"], "at": 120 },
+    { "id": "powersBrackets", "mix": ["powers", "brackets"], "at": 120 },
+    { "id": "orderEstimation", "mix": ["orderOfOperations", "estimation"], "at": 120 },
+    { "id": "equationsAll", "mix": ["equations", "linearEquations"], "at": 120 },
+    { "id": "sequencesFunctions", "mix": ["sequences", "functions"], "at": 120 },
+    { "id": "percentProportion", "mix": ["percentages", "proportionality"], "at": 120 },
+    { "id": "storiesUnits", "mix": ["wordProblems", "units"], "at": 120 },
+    { "id": "geometryTrig", "mix": ["geometry", "trigonometry"], "at": 120 },
+    { "id": "logicChance", "mix": ["logic", "probability"], "at": 120 },
+    // Level 140: pairs of paths.
+    { "id": "operations", "mix": ["addSub", "mulDiv"], "at": 140 },
+    { "id": "numbers", "mix": ["signedDecimals", "fractionsPrimes"], "at": 140 },
+    { "id": "expressions", "mix": ["powersBrackets", "orderEstimation"], "at": 140 },
+    { "id": "algebra", "mix": ["equationsAll", "sequencesFunctions"], "at": 140 },
+    { "id": "everyday", "mix": ["percentProportion", "storiesUnits"], "at": 140 },
+    { "id": "shapesChance", "mix": ["geometryTrig", "logicChance"], "at": 140 },
+    // Level 160: the four operations with the numbers; expressions with
+    // algebra; everyday maths with shapes and chance.
+    { "id": "numberSense", "mix": ["operations", "numbers"], "at": 160 },
+    { "id": "algebraExpressions", "mix": ["expressions", "algebra"], "at": 160 },
+    { "id": "problems", "mix": ["everyday", "shapesChance"], "at": 160 },
+    // Level 180: everything, up to the last boss.
+    { "id": "grandFinal", "mix": ["numberSense", "algebraExpressions", "problems"], "at": 180 }
+  ],
+  "perks": [
+    { "id": "addition_gems",          "kind": "gems", "amount": 150 },
+    { "id": "subtraction_banner",     "kind": "cosmetic", "cosmetic": "banner_subtraction", "look": "banner" },
+    { "id": "multiplication_attempt", "kind": "tournamentAttempts", "amount": 1 },
+    { "id": "division_gems",          "kind": "gems", "amount": 200 },
+    { "id": "decimals_gems",          "kind": "gems", "amount": 250 },
+    { "id": "fractions_gems",         "kind": "gems", "amount": 250 },
+    { "id": "powers_banner",          "kind": "cosmetic", "cosmetic": "banner_powers", "look": "banner" },
+    { "id": "brackets_gems",          "kind": "gems", "amount": 250 },
+    { "id": "bodmas_attempt",         "kind": "tournamentAttempts", "amount": 1 },
+    { "id": "percentages_gems",       "kind": "gems", "amount": 300 },
+    { "id": "equations_attempt",      "kind": "tournamentAttempts", "amount": 1 },
+    { "id": "stories_banner",         "kind": "cosmetic", "cosmetic": "banner_stories", "look": "banner" },
+    { "id": "integers_gems",          "kind": "gems", "amount": 200 },
+    { "id": "arithmetic_attempt",     "kind": "tournamentAttempts", "amount": 1 },
+    { "id": "linear_gems",            "kind": "gems", "amount": 300 },
+    { "id": "geometry_gems",          "kind": "gems", "amount": 300 },
+    { "id": "sequences_gems",         "kind": "gems", "amount": 200 },
+    { "id": "logic_gems",             "kind": "gems", "amount": 250 },
+    { "id": "functions_gems",         "kind": "gems", "amount": 300 },
+    { "id": "estimation_attempt",     "kind": "tournamentAttempts", "amount": 1 },
+    { "id": "units_gems",             "kind": "gems", "amount": 200 },
+    { "id": "proportionality_gems",   "kind": "gems", "amount": 250 },
+    { "id": "probability_gems",       "kind": "gems", "amount": 250 },
+    { "id": "trigonometry_attempt",   "kind": "tournamentAttempts", "amount": 1 }
+  ]
+}

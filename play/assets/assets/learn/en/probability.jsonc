@@ -1,0 +1,93 @@
+// Learn lesson (English). Worked examples are checked by the tests:
+// every "math" line must be true, and the last one must give the answer.
+{
+  "category": "probability",
+  "title": "Probability",
+  "summary": "How likely something is, as a fraction.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Favourable over all",
+      "text": "A probability is the number of outcomes you want divided by the number of all possible outcomes, when each is as likely.",
+      "example": {
+        "problem": "A die: the chance of a 6?",
+        "steps": [
+          {
+            "math": "1 ÷ 6 = 1/6",
+            "note": "One face out of six"
+          }
+        ],
+        "answer": "1/6"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Simplify",
+      "text": "More than 4 on a die is 5 or 6: two faces out of six. Simplify the fraction.",
+      "example": {
+        "problem": "A die: more than 4?",
+        "steps": [
+          {
+            "math": "2/6 = 1/3",
+            "note": "2 faces out of 6, simplified"
+          }
+        ],
+        "answer": "1/3"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Out of all of them",
+      "text": "3 red and 5 blue marbles: red is 3 out of 8, not 3 out of 5. Divide by the total.",
+      "example": {
+        "problem": "3 red, 5 blue: a red one?",
+        "steps": [
+          {
+            "math": "3 + 5 = 8",
+            "note": "All the marbles"
+          },
+          {
+            "math": "3 ÷ 8 = 3/8",
+            "note": "Red ones out of all"
+          }
+        ],
+        "answer": "3/8"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "The other way round",
+      "text": "The chance something does not happen is 1 minus the chance it does: 30% chance of rain, 70% of none.",
+      "example": {
+        "problem": "30% chance of rain: none?",
+        "steps": [
+          {
+            "math": "100 − 30 = 70",
+            "note": "In %"
+          }
+        ],
+        "answer": "70"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Two dice",
+      "text": "Two dice give 36 pairs. A sum of 7 comes from 6 of them, a sum of 2 from only one: sums are not equally likely.",
+      "example": {
+        "problem": "Two dice: a sum of 7?",
+        "steps": [
+          {
+            "math": "6 × 6 = 36",
+            "note": "All the pairs"
+          },
+          {
+            "math": "6/36 = 1/6",
+            "note": "1+6, 2+5, 3+4, 4+3, 5+2, 6+1"
+          }
+        ],
+        "answer": "1/6"
+      }
+    }
+  ],
+  "tip": "Count what you want, count everything, divide, and simplify."
+}

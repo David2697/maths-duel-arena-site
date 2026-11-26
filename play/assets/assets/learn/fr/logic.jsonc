@@ -1,0 +1,74 @@
+// Leçon d'Apprendre (français). Les exemples sont vérifiés par les tests :
+// chaque ligne "math" doit être juste, et la dernière doit donner la réponse.
+{
+  "category": "logic",
+  "title": "Logique",
+  "summary": "Raisonne pas à pas avec les nombres.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Remonte à l'envers",
+      "text": "Je pense à un nombre, je le double et j'ajoute 3 : j'obtiens 17. Défais chaque étape dans l'ordre inverse : enlève 3, puis divise par 2.",
+      "example": {
+        "problem": "× 2, puis + 3, donne 17",
+        "steps": [
+          {
+            "math": "17 − 3 = 14",
+            "note": "Défais d'abord le + 3"
+          },
+          {
+            "math": "14 ÷ 2 = 7",
+            "note": "Puis le × 2"
+          }
+        ],
+        "answer": "7"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Somme et différence",
+      "text": "Deux nombres ont pour somme 20 et pour différence 6. Le plus grand vaut (20 + 6) ÷ 2, le plus petit (20 − 6) ÷ 2.",
+      "example": {
+        "problem": "Somme 20, différence 6",
+        "steps": [
+          {
+            "math": "(20 + 6) ÷ 2 = 13",
+            "note": "Le plus grand ; le plus petit vaut 7"
+          }
+        ],
+        "answer": "13"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Compte les piquets",
+      "text": "De 5 à 12, il y a 12 − 5 + 1 = 8 nombres entiers : les deux bouts comptent.",
+      "example": {
+        "problem": "Nombres entiers de 5 à 12",
+        "steps": [
+          {
+            "math": "12 − 5 + 1 = 8",
+            "note": "N'oublie pas le + 1"
+          }
+        ],
+        "answer": "8"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Seulement les pairs",
+      "text": "De 3 à 12, les nombres pairs sont 4 ; 6 ; 8 ; 10 ; 12 : du premier pair au dernier, compte de 2 en 2.",
+      "example": {
+        "problem": "Nombres pairs de 3 à 12",
+        "steps": [
+          {
+            "math": "(12 − 4) ÷ 2 + 1 = 5",
+            "note": "De 4 à 12, de 2 en 2"
+          }
+        ],
+        "answer": "5"
+      }
+    }
+  ],
+  "tip": "Note ce que tu sais, défais les étapes à l'envers, et vérifie ta réponse dans l'énoncé."
+}

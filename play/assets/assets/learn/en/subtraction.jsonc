@@ -1,0 +1,74 @@
+// Learn lesson (English). Worked examples are checked by the tests:
+// every "math" line must be true, and the last one must give the answer.
+{
+  "category": "subtraction",
+  "title": "Subtraction",
+  "summary": "Count up from the smaller number, or round and adjust.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Count up the gap",
+      "text": "A subtraction is the distance between two numbers. Start from the smaller one and count up to the bigger one in easy jumps.",
+      "example": {
+        "problem": "45 − 28",
+        "steps": [
+          {
+            "math": "28 + 2 = 30",
+            "note": "Jump to the next ten"
+          },
+          {
+            "math": "30 + 15 = 45",
+            "note": "Then up to 45"
+          },
+          {
+            "math": "2 + 15 = 17",
+            "note": "The jumps add up to the gap"
+          }
+        ],
+        "answer": "17"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Take a round number, give some back",
+      "text": "Taking away 29 is taking away 30 and giving 1 back. It is quicker than borrowing.",
+      "example": {
+        "problem": "74 − 29",
+        "steps": [
+          {
+            "math": "74 − 30 = 44",
+            "note": "Take away 30"
+          },
+          {
+            "math": "44 + 1 = 45",
+            "note": "You took 1 too many: give it back"
+          }
+        ],
+        "answer": "45"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Borrowing, not swapping",
+      "text": "In 52 − 17, the units are 2 − 7. Doing 7 − 2 instead is a classic slip: it gives 45 instead of 35. Borrow a ten: 12 − 7 = 5, and the tens become 4 − 1.",
+      "example": {
+        "problem": "52 − 17",
+        "steps": [
+          {
+            "math": "12 − 7 = 5",
+            "note": "Borrow a ten: 12 − 7"
+          },
+          {
+            "math": "40 − 10 = 30",
+            "note": "The tens lost the borrowed ten: 4 − 1"
+          },
+          {
+            "math": "30 + 5 = 35"
+          }
+        ],
+        "answer": "35"
+      }
+    }
+  ],
+  "tip": "Count up from the smaller number, in easy jumps."
+}

@@ -1,0 +1,62 @@
+// Learn lesson (English). Worked examples are checked by the tests:
+// every "math" line must be true, and the last one must give the answer.
+{
+  "category": "decimals",
+  "title": "Decimals",
+  "summary": "Line up the points, and count decimal places when multiplying.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Line up the points",
+      "text": "When adding or subtracting decimals, tenths go with tenths and hundredths with hundredths. Writing 2.5 as 2.50 helps keep them lined up.",
+      "example": {
+        "problem": "2.5 + 1.75",
+        "steps": [
+          {
+            "math": "2.50 + 1.75 = 4.25",
+            "note": "Write 2.5 as 2.50 so both have hundredths"
+          }
+        ],
+        "answer": "4.25"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Multiply as whole numbers, then place the point",
+      "text": "Ignore the points, multiply, then count the decimal places in the question: the answer has that many. Zeros left at the end after the point can then be dropped: 0.5 × 0.4 = 0.20 = 0.2.",
+      "example": {
+        "problem": "0.3 × 0.4",
+        "steps": [
+          {
+            "math": "3 × 4 = 12",
+            "note": "Multiply without the points"
+          },
+          {
+            "math": "0.3 × 0.4 = 0.12",
+            "note": "Two decimal places in the question, so two in the answer"
+          }
+        ],
+        "answer": "0.12"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Where does the point go?",
+      "text": "Moving the point one place too far makes the answer ten times too big or too small. Estimate first: 0.3 × 0.4 is a bit less than 0.5 × 0.5 = 0.25, so 1.2 cannot be right.",
+      "example": {
+        "problem": "1.2 × 3",
+        "steps": [
+          {
+            "math": "12 × 3 = 36"
+          },
+          {
+            "math": "1.2 × 3 = 3.6",
+            "note": "One decimal place in the question"
+          }
+        ],
+        "answer": "3.6"
+      }
+    }
+  ],
+  "tip": "Line up the points. When multiplying, count the decimal places."
+}

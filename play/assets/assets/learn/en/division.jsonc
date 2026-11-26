@@ -1,0 +1,91 @@
+// Learn lesson (English). Worked examples are checked by the tests:
+// every "math" line must be true, and the last one must give the answer.
+{
+  "category": "division",
+  "title": "Division",
+  "summary": "Think of the times table backwards, and split big numbers.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "The times table backwards",
+      "text": "A division asks how many times a number fits. 56 ÷ 8 asks: 8 times what is 56?",
+      "example": {
+        "problem": "56 ÷ 8",
+        "steps": [
+          {
+            "math": "8 × 7 = 56",
+            "note": "8 times 7 is 56"
+          },
+          {
+            "math": "56 ÷ 8 = 7",
+            "note": "So 8 fits 7 times"
+          }
+        ],
+        "answer": "7"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Split into easy multiples",
+      "text": "Split the big number into parts the divisor goes into easily, divide each part, then add.",
+      "example": {
+        "problem": "84 ÷ 7",
+        "steps": [
+          {
+            "math": "84 = 70 + 14",
+            "note": "70 and 14 are both multiples of 7"
+          },
+          {
+            "math": "70 ÷ 7 = 10"
+          },
+          {
+            "math": "14 ÷ 7 = 2"
+          },
+          {
+            "math": "10 + 2 = 12"
+          }
+        ],
+        "answer": "12"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Halve again and again",
+      "text": "Dividing by 4 is halving twice; dividing by 8 is halving three times.",
+      "example": {
+        "problem": "96 ÷ 4",
+        "steps": [
+          {
+            "math": "96 ÷ 2 = 48",
+            "note": "Halve once"
+          },
+          {
+            "math": "48 ÷ 2 = 24",
+            "note": "Halve again"
+          }
+        ],
+        "answer": "24"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Check by multiplying back",
+      "text": "Your answer times the divisor must give the number you started with. If 72 ÷ 6 = 12, then 12 × 6 must be 72, and it is.",
+      "example": {
+        "problem": "72 ÷ 6",
+        "steps": [
+          {
+            "math": "6 × 12 = 72",
+            "note": "6 times 12 is 72"
+          },
+          {
+            "math": "72 ÷ 6 = 12",
+            "note": "So 72 ÷ 6 = 12, and multiplying back proves it"
+          }
+        ],
+        "answer": "12"
+      }
+    }
+  ],
+  "tip": "Ask: the divisor times what gives this number?"
+}

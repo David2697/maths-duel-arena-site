@@ -1,0 +1,91 @@
+// Leçon d'Apprendre (français). Les exemples sont vérifiés par les tests :
+// chaque ligne "math" doit être juste, et la dernière doit donner la réponse.
+{
+  "category": "division",
+  "title": "Division",
+  "summary": "Pense à la table à l'envers, et décompose les grands nombres.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "La table à l'envers",
+      "text": "Une division demande combien de fois un nombre rentre dans un autre. 56 ÷ 8 demande : 8 fois combien font 56 ?",
+      "example": {
+        "problem": "56 ÷ 8",
+        "steps": [
+          {
+            "math": "8 × 7 = 56",
+            "note": "8 fois 7 font 56"
+          },
+          {
+            "math": "56 ÷ 8 = 7",
+            "note": "Donc 8 rentre 7 fois"
+          }
+        ],
+        "answer": "7"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Décomposer en multiples faciles",
+      "text": "Coupe le grand nombre en parties que le diviseur divise facilement, divise chaque partie, puis additionne.",
+      "example": {
+        "problem": "84 ÷ 7",
+        "steps": [
+          {
+            "math": "84 = 70 + 14",
+            "note": "70 et 14 sont tous deux des multiples de 7"
+          },
+          {
+            "math": "70 ÷ 7 = 10"
+          },
+          {
+            "math": "14 ÷ 7 = 2"
+          },
+          {
+            "math": "10 + 2 = 12"
+          }
+        ],
+        "answer": "12"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Diviser par deux, encore et encore",
+      "text": "Diviser par 4, c'est diviser par deux deux fois ; diviser par 8, c'est le faire trois fois.",
+      "example": {
+        "problem": "96 ÷ 4",
+        "steps": [
+          {
+            "math": "96 ÷ 2 = 48",
+            "note": "Divise une fois par deux"
+          },
+          {
+            "math": "48 ÷ 2 = 24",
+            "note": "Encore une fois"
+          }
+        ],
+        "answer": "24"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Vérifier en multipliant",
+      "text": "Ta réponse fois le diviseur doit redonner le nombre de départ. Si 72 ÷ 6 = 12, alors 12 × 6 doit faire 72, et c'est bien le cas.",
+      "example": {
+        "problem": "72 ÷ 6",
+        "steps": [
+          {
+            "math": "6 × 12 = 72",
+            "note": "6 fois 12 font 72"
+          },
+          {
+            "math": "72 ÷ 6 = 12",
+            "note": "Donc 72 ÷ 6 = 12, et la multiplication le prouve"
+          }
+        ],
+        "answer": "12"
+      }
+    }
+  ],
+  "tip": "Demande-toi : le diviseur fois combien donne ce nombre ?"
+}

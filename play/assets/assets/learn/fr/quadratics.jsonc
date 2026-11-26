@@ -1,0 +1,85 @@
+// Leçon d'Apprendre (français). Les exemples sont vérifiés par les tests :
+// chaque ligne "math" doit être juste, et la dernière doit donner la réponse.
+{
+  "category": "quadratics",
+  "title": "Équations du second degré",
+  "summary": "Un x² dans l'équation : souvent deux solutions.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "x² égal à un nombre",
+      "text": "x² = 49 a deux solutions : 7 et −7, car les deux au carré donnent 49. La solution positive est la racine carrée.",
+      "example": {
+        "problem": "x² = 49",
+        "steps": [
+          {
+            "math": "x = √49 = 7",
+            "note": "La solution positive ; −7 marche aussi"
+          }
+        ],
+        "answer": "x = 7"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Un produit égal à 0",
+      "text": "Si (x − 3)(x + 5) = 0, l'un des facteurs est nul : x − 3 = 0 ou x + 5 = 0. Donc x = 3 ou x = −5.",
+      "example": {
+        "problem": "(x − 3)(x + 5) = 0",
+        "steps": [
+          {
+            "math": "x − 3 = 0",
+            "note": "Ou x + 5 = 0, qui donne −5"
+          },
+          {
+            "math": "x = 3"
+          }
+        ],
+        "answer": "x = 3"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Trouve deux nombres",
+      "text": "Pour x² − 5x + 6 = 0, cherche deux nombres dont la somme fait 5 (l'opposé de −5) et le produit 6 : 2 et 3. Alors x² − 5x + 6 = (x − 2)(x − 3). Pour x² + 5x + 6, leur somme fait −5 : −2 et −3.",
+      "example": {
+        "problem": "x² − 5x + 6 = 0",
+        "steps": [
+          {
+            "math": "(x − 2)(x − 3) = 0",
+            "note": "2 + 3 = 5 et 2 × 3 = 6"
+          },
+          {
+            "math": "x − 3 = 0",
+            "note": "Ou x − 2 = 0 : les solutions sont 2 et 3"
+          },
+          {
+            "math": "x = 3",
+            "note": "La plus grande"
+          }
+        ],
+        "answer": "x = 3"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Attention aux signes",
+      "text": "Dans (x − 3), la solution est +3, pas −3 : x − 3 = 0 donne x = 3. Et dans (x + 5), c'est −5.",
+      "example": {
+        "problem": "(x + 4)(x − 1) = 0",
+        "steps": [
+          {
+            "math": "x + 4 = 0",
+            "note": "Ou x − 1 = 0, qui donne 1"
+          },
+          {
+            "math": "x = −4",
+            "note": "La plus petite solution"
+          }
+        ],
+        "answer": "x = −4"
+      }
+    }
+  ],
+  "tip": "Un produit est nul quand l'un de ses facteurs est nul. Vérifie en remplaçant x par ta solution."
+}

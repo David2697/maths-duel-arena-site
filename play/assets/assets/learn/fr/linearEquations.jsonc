@@ -1,0 +1,107 @@
+// Leçon d'Apprendre (français). Les exemples sont vérifiés par les tests :
+// chaque ligne "math" doit être juste, et la dernière doit donner la réponse.
+{
+  "category": "linearEquations",
+  "title": "Équations avancées",
+  "summary": "Regroupe les x d'un côté et les nombres de l'autre.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Des x des deux côtés",
+      "text": "Regroupe les termes en x d'un côté et les nombres de l'autre. Un terme qui passe de l'autre côté change de signe.",
+      "example": {
+        "problem": "5x + 3 = 2x + 18",
+        "steps": [
+          {
+            "math": "5x − 2x = 18 − 3",
+            "note": "Les x à gauche, les nombres à droite"
+          },
+          {
+            "math": "3x = 15"
+          },
+          {
+            "math": "x = 15 ÷ 3 = 5"
+          }
+        ],
+        "answer": "x = 5"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Développer les parenthèses",
+      "text": "Le nombre devant multiplie tout ce qu'il y a dedans : 3(x − 2) = 3x − 6. Ensuite, résous comme d'habitude.",
+      "example": {
+        "problem": "3(x − 2) = 15",
+        "steps": [
+          {
+            "math": "3x − 6 = 15",
+            "note": "Développe"
+          },
+          {
+            "math": "3x = 21"
+          },
+          {
+            "math": "x = 21 ÷ 3 = 7"
+          }
+        ],
+        "answer": "x = 7"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Ou divise d'abord",
+      "text": "Quand l'autre côté se divise par le nombre devant, divise d'abord les deux côtés : 4(x + 3) = 28 donne x + 3 = 7.",
+      "example": {
+        "problem": "4(x + 3) = 28",
+        "steps": [
+          {
+            "math": "x + 3 = 28 ÷ 4 = 7",
+            "note": "Divise les deux côtés par 4"
+          },
+          {
+            "math": "x = 7 − 3 = 4"
+          }
+        ],
+        "answer": "x = 4"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "x divisé par un nombre",
+      "text": "Dans x ÷ 4 + 3 = 8, défais d'abord le + 3, puis le ÷ 4 en multipliant.",
+      "example": {
+        "problem": "x ÷ 4 + 3 = 8",
+        "steps": [
+          {
+            "math": "x ÷ 4 = 8 − 3 = 5",
+            "note": "Défais + 3"
+          },
+          {
+            "math": "x = 5 × 4 = 20",
+            "note": "Défais ÷ 4 avec × 4"
+          }
+        ],
+        "answer": "x = 20"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Un signe moins devant x",
+      "text": "Dans −2x + 9 = 1, x est multiplié par −2 : divise par −2, signe compris.",
+      "example": {
+        "problem": "−2x + 9 = 1",
+        "steps": [
+          {
+            "math": "−2x = 1 − 9 = −8"
+          },
+          {
+            "math": "x = −8 ÷ (−2) = 4",
+            "note": "Divise par −2 : deux signes moins, positif"
+          }
+        ],
+        "answer": "x = 4"
+      }
+    }
+  ],
+  "tip": "Fais la même chose des deux côtés ; un terme qui change de côté change de signe."
+}

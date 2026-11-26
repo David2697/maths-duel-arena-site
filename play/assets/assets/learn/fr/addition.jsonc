@@ -1,0 +1,93 @@
+// Leçon d'Apprendre (français). Les exemples sont vérifiés par les tests :
+// chaque ligne "math" doit être juste, et la dernière doit donner la réponse.
+{
+  "category": "addition",
+  "title": "Addition",
+  "summary": "Additionne d'abord les dizaines, puis les unités, et n'oublie pas les retenues.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Les dizaines d'abord, puis les unités",
+      "text": "Décompose chaque nombre en dizaines et en unités. Additionne les dizaines, puis les unités, puis rassemble les deux résultats.\n\nCommencer par la gauche est souvent plus rapide de tête que l'addition posée, car la grande partie du résultat vient en premier.",
+      "example": {
+        "problem": "34 + 25",
+        "steps": [
+          {
+            "math": "30 + 20 = 50",
+            "note": "Additionne les dizaines"
+          },
+          {
+            "math": "4 + 5 = 9",
+            "note": "Additionne les unités"
+          },
+          {
+            "math": "50 + 9 = 59",
+            "note": "Rassemble-les"
+          }
+        ],
+        "answer": "59"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Arrondir, puis corriger",
+      "text": "Quand un nombre est proche d'un nombre rond, ajoute le nombre rond puis corrige. Ajouter 9, c'est ajouter 10 et enlever 1.",
+      "example": {
+        "problem": "56 + 29",
+        "steps": [
+          {
+            "math": "56 + 30 = 86",
+            "note": "29, c'est 30 moins 1 : ajoute 30"
+          },
+          {
+            "math": "86 − 1 = 85",
+            "note": "Puis enlève le 1 en trop"
+          }
+        ],
+        "answer": "85"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "N'oublie pas la retenue",
+      "text": "Quand les unités font 10 ou plus, la dizaine en trop passe aux dizaines. L'oublier donne un résultat trop petit d'exactement 10 : 47 + 38 fait 85, pas 75.",
+      "example": {
+        "problem": "68 + 57",
+        "steps": [
+          {
+            "math": "8 + 7 = 15",
+            "note": "Unités : 15, c'est une dizaine et 5"
+          },
+          {
+            "math": "60 + 50 + 10 = 120",
+            "note": "Les dizaines, plus la dizaine retenue"
+          },
+          {
+            "math": "120 + 5 = 125"
+          }
+        ],
+        "answer": "125"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Ajouter un nombre négatif",
+      "text": "Ajouter un nombre négatif revient à l'enlever. Surveille le signe : quand le nombre négatif est le plus grand, le total est en dessous de zéro.",
+      "example": {
+        "problem": "8 + (−13)",
+        "steps": [
+          {
+            "math": "8 + (−13) = 8 − 13",
+            "note": "Ajouter −13, c'est enlever 13"
+          },
+          {
+            "math": "8 − 13 = −5",
+            "note": "13, c'est 5 de plus que 8 : le résultat est 5 en dessous de zéro"
+          }
+        ],
+        "answer": "−5"
+      }
+    }
+  ],
+  "tip": "Les dizaines d'abord, puis les unités. Y a-t-il une retenue ?"
+}

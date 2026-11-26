@@ -1,0 +1,84 @@
+// Daily quests (spec §5.2). Each day one quest is drawn per slot of
+// balance.quests.slots, from the quests of that tier (avoiding yesterday's
+// when possible); rewards per tier are in balance.quests.rewards.
+//
+// metric: what is counted over the day's games
+//   correctAnswers   right answers (optional "mode": only in that mode)
+//   gamesPlayed      games finished (optional "mode")
+//   battlesWon       battles won against a bot
+//   comboReached     a combo of at least `target` in one game
+//   journeyLevelsPassed / journeyThreeStars   Journey levels with ≥1 / 3 stars
+//   perfectGames     games with every answer right
+//   fastCorrect      right answers in under `maxMs` milliseconds
+//   categoryCorrect  right answers in `category` (always-open operations only)
+//   learnExercises   Learn exercise sets finished
+//   notionsPlayed    different notions with a right answer
+//   comebacks        right answers just after a mistake (bouncing back)
+//   speedLevel       the level reached in one Speed run
+//   survivalStages   the stages cleared in one Survival run
+//   survivalRuns     Survival runs finished
+//   survivalStagesTotal  Survival stages cleared today, runs added up
+//   ghostRaces / ghostWins   ghost races run / won
+//   sharpGames       games of 10+ questions with at least `minPercent` % right
+//   bossesBeaten     Journey bosses beaten
+//   starsImproved    Journey levels already passed, now with more stars
+{
+  "quests": [
+    { "id": "correct30",          "tier": "easy",   "metric": "correctAnswers",      "target": 30 },
+    { "id": "games2",             "tier": "easy",   "metric": "gamesPlayed",         "target": 2 },
+    { "id": "practice1",          "tier": "easy",   "metric": "gamesPlayed",         "target": 1, "mode": "practice" },
+    { "id": "journey1",           "tier": "easy",   "metric": "journeyLevelsPassed", "target": 1 },
+    { "id": "combo5",             "tier": "easy",   "metric": "comboReached",        "target": 5 },
+    { "id": "fast10",             "tier": "easy",   "metric": "fastCorrect",         "target": 10, "maxMs": 4000 },
+    { "id": "learn1",             "tier": "easy",   "metric": "learnExercises",      "target": 1 },
+    { "id": "addition15",         "tier": "easy",   "metric": "categoryCorrect",     "target": 15, "category": "addition" },
+
+    { "id": "notions2",           "tier": "easy",   "metric": "notionsPlayed",       "target": 2 },
+    { "id": "comeback3",          "tier": "easy",   "metric": "comebacks",           "target": 3 },
+    { "id": "speed5",             "tier": "easy",   "metric": "speedLevel",          "target": 5 },
+    { "id": "ghost1",             "tier": "easy",   "metric": "ghostRaces",          "target": 1 },
+    { "id": "endless15",          "tier": "easy",   "metric": "correctAnswers",      "target": 15, "mode": "endless" },
+    { "id": "sharp80",            "tier": "easy",   "metric": "sharpGames",          "target": 1, "minPercent": 80 },
+    { "id": "survivalRun1",       "tier": "easy",   "metric": "survivalRuns",        "target": 1 },
+    { "id": "learn2",             "tier": "easy",   "metric": "learnExercises",      "target": 2 },
+
+    { "id": "correct60",          "tier": "medium", "metric": "correctAnswers",      "target": 60 },
+    { "id": "battle1",            "tier": "medium", "metric": "battlesWon",          "target": 1 },
+    { "id": "journey3",           "tier": "medium", "metric": "journeyLevelsPassed", "target": 3 },
+    { "id": "combo10",            "tier": "medium", "metric": "comboReached",        "target": 10 },
+    { "id": "fast25",             "tier": "medium", "metric": "fastCorrect",         "target": 25, "maxMs": 3000 },
+    { "id": "multiplication20",   "tier": "medium", "metric": "categoryCorrect",     "target": 20, "category": "multiplication" },
+    { "id": "subtraction20",      "tier": "medium", "metric": "categoryCorrect",     "target": 20, "category": "subtraction" },
+    { "id": "battleCorrect40",    "tier": "medium", "metric": "correctAnswers",      "target": 40, "mode": "battle" },
+
+    { "id": "notions3",           "tier": "medium", "metric": "notionsPlayed",       "target": 3 },
+    { "id": "comeback6",          "tier": "medium", "metric": "comebacks",           "target": 6 },
+    { "id": "speed10",            "tier": "medium", "metric": "speedLevel",          "target": 10 },
+    { "id": "ghostWin1",          "tier": "medium", "metric": "ghostWins",           "target": 1 },
+    { "id": "improve1",           "tier": "medium", "metric": "starsImproved",       "target": 1 },
+    { "id": "sharp90",            "tier": "medium", "metric": "sharpGames",          "target": 1, "minPercent": 90 },
+    { "id": "survivalTotal8",     "tier": "medium", "metric": "survivalStagesTotal", "target": 8 },
+    { "id": "boss1",              "tier": "medium", "metric": "bossesBeaten",        "target": 1 },
+
+    { "id": "correct120",         "tier": "hard",   "metric": "correctAnswers",      "target": 120 },
+    { "id": "battle2",            "tier": "hard",   "metric": "battlesWon",          "target": 2 },
+    { "id": "stars3",             "tier": "hard",   "metric": "journeyThreeStars",   "target": 2 },
+    { "id": "combo15",            "tier": "hard",   "metric": "comboReached",        "target": 15 },
+    { "id": "perfect1",           "tier": "hard",   "metric": "perfectGames",        "target": 1 },
+    { "id": "fast40",             "tier": "hard",   "metric": "fastCorrect",         "target": 40, "maxMs": 2500 },
+    { "id": "division25",         "tier": "hard",   "metric": "categoryCorrect",     "target": 25, "category": "division" },
+    { "id": "journey5",           "tier": "hard",   "metric": "journeyLevelsPassed", "target": 5 },
+    { "id": "notions4",           "tier": "hard",   "metric": "notionsPlayed",       "target": 4 },
+    { "id": "comeback10",         "tier": "hard",   "metric": "comebacks",           "target": 10 },
+    { "id": "speed15",            "tier": "hard",   "metric": "speedLevel",          "target": 15 },
+    { "id": "ghostWin2",          "tier": "hard",   "metric": "ghostWins",           "target": 2 },
+    { "id": "improve3",           "tier": "hard",   "metric": "starsImproved",       "target": 3 },
+    { "id": "sharp90x2",          "tier": "hard",   "metric": "sharpGames",          "target": 2, "minPercent": 90 },
+    { "id": "survivalTotal15",    "tier": "hard",   "metric": "survivalStagesTotal", "target": 15 },
+    // Retired (never drawn): kept so a day that had one still counts and pays it.
+    { "id": "survival3",          "tier": "easy",   "metric": "survivalStages",      "target": 3,  "retired": true },
+    { "id": "survival5",          "tier": "medium", "metric": "survivalStages",      "target": 5,  "retired": true },
+    { "id": "survival8",          "tier": "hard",   "metric": "survivalStages",      "target": 8,  "retired": true },
+    { "id": "boss2",              "tier": "hard",   "metric": "bossesBeaten",        "target": 2 }
+  ]
+}

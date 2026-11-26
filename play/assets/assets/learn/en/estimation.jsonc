@@ -1,0 +1,84 @@
+// Learn lesson (English). Worked examples are checked by the tests:
+// every "math" line must be true, and the last one must give the answer.
+{
+  "category": "estimation",
+  "title": "Estimation & rounding",
+  "summary": "Rounding numbers, and finding a result's size without working it out exactly.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Rounding to the nearest ten",
+      "text": "Look at the digit just after the place you round to: 5 or more goes up, less than 5 goes down. 47 is between 40 and 50, and its 7 is 5 or more: 50.",
+      "example": {
+        "problem": "Round 47 to the nearest ten.",
+        "steps": [
+          { "math": "47 − 40 = 7", "note": "The units digit is 7: 5 or more" },
+          { "math": "40 + 10 = 50", "note": "So up to the next ten" }
+        ],
+        "answer": "50"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Hundreds and thousands",
+      "text": "To the nearest hundred, look at the tens digit; to the nearest thousand, the hundreds digit. 3847: its tens digit is 4, less than 5, so down to 3800.",
+      "example": {
+        "problem": "Round 3847 to the nearest hundred.",
+        "steps": [
+          { "math": "3847 − 47 = 3800", "note": "The tens digit is 4: round down" }
+        ],
+        "answer": "3800"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Estimate a product",
+      "text": "Round each number to its first digit, then multiply: 49 × 21 is about 50 × 20.",
+      "example": {
+        "problem": "Which is closest to 49 × 21?",
+        "steps": [
+          { "math": "50 × 20 = 1000", "note": "49 is about 50, 21 about 20" }
+        ],
+        "answer": "1000"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Estimate a sum",
+      "text": "Round each number, then add: 398 + 207 is about 400 + 200.",
+      "example": {
+        "problem": "Which is closest to 398 + 207?",
+        "steps": [
+          { "math": "400 + 200 = 600", "note": "398 is about 400, 207 about 200" }
+        ],
+        "answer": "600"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Count the zeros",
+      "text": "30 × 40 is 1200, not 120: multiply 3 × 4, then put back both zeros.",
+      "example": {
+        "problem": "30 × 40?",
+        "steps": [
+          { "math": "3 × 4 = 12", "note": "The digits first" },
+          { "math": "12 × 100 = 1200", "note": "Then the two zeros" }
+        ],
+        "answer": "1200"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "A 5 rounds up",
+      "text": "Exactly halfway goes up: 65 to the nearest ten is 70, not 60.",
+      "example": {
+        "problem": "Round 65 to the nearest ten.",
+        "steps": [
+          { "math": "60 + 10 = 70", "note": "The units digit is 5: up" }
+        ],
+        "answer": "70"
+      }
+    }
+  ],
+  "tip": "First digit, round, then calculate: a good estimate is quick and close."
+}

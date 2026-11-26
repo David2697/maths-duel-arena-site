@@ -1,0 +1,107 @@
+// Learn lesson (English). Worked examples are checked by the tests:
+// every "math" line must be true, and the last one must give the answer.
+{
+  "category": "linearEquations",
+  "title": "Harder equations",
+  "summary": "Gather the x terms on one side, the numbers on the other.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "x on both sides",
+      "text": "Gather the x terms on one side and the numbers on the other. A term that moves to the other side changes its sign.",
+      "example": {
+        "problem": "5x + 3 = 2x + 18",
+        "steps": [
+          {
+            "math": "5x − 2x = 18 − 3",
+            "note": "x terms on the left, numbers on the right"
+          },
+          {
+            "math": "3x = 15"
+          },
+          {
+            "math": "x = 15 ÷ 3 = 5"
+          }
+        ],
+        "answer": "x = 5"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Expand the brackets",
+      "text": "The number in front multiplies everything inside: 3(x − 2) = 3x − 6. Then solve as usual.",
+      "example": {
+        "problem": "3(x − 2) = 15",
+        "steps": [
+          {
+            "math": "3x − 6 = 15",
+            "note": "Expand"
+          },
+          {
+            "math": "3x = 21"
+          },
+          {
+            "math": "x = 21 ÷ 3 = 7"
+          }
+        ],
+        "answer": "x = 7"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Or divide first",
+      "text": "When the other side divides by the number in front, divide both sides first: 4(x + 3) = 28 gives x + 3 = 7.",
+      "example": {
+        "problem": "4(x + 3) = 28",
+        "steps": [
+          {
+            "math": "x + 3 = 28 ÷ 4 = 7",
+            "note": "Divide both sides by 4"
+          },
+          {
+            "math": "x = 7 − 3 = 4"
+          }
+        ],
+        "answer": "x = 4"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "x divided by a number",
+      "text": "In x ÷ 4 + 3 = 8, undo the + 3 first, then the ÷ 4 by multiplying.",
+      "example": {
+        "problem": "x ÷ 4 + 3 = 8",
+        "steps": [
+          {
+            "math": "x ÷ 4 = 8 − 3 = 5",
+            "note": "Undo + 3"
+          },
+          {
+            "math": "x = 5 × 4 = 20",
+            "note": "Undo ÷ 4 with × 4"
+          }
+        ],
+        "answer": "x = 20"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "A minus sign in front of x",
+      "text": "In −2x + 9 = 1, x is multiplied by −2: divide by −2, sign included.",
+      "example": {
+        "problem": "−2x + 9 = 1",
+        "steps": [
+          {
+            "math": "−2x = 1 − 9 = −8"
+          },
+          {
+            "math": "x = −8 ÷ (−2) = 4",
+            "note": "Divide by −2: two minus signs, positive"
+          }
+        ],
+        "answer": "x = 4"
+      }
+    }
+  ],
+  "tip": "Do the same to both sides; a term that changes side changes sign."
+}

@@ -1,0 +1,106 @@
+// Leçon d'Apprendre (français). Les exemples sont vérifiés par les tests :
+// chaque ligne "math" doit être juste, et la dernière doit donner la réponse.
+{
+  "category": "arithmetic",
+  "title": "Arithmétique",
+  "summary": "Décompose les nombres en facteurs premiers pour trouver diviseurs et multiples communs.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "La décomposition en facteurs premiers",
+      "text": "Tout nombre entier supérieur à 1 est un produit de nombres premiers, qui ne se divisent que par 1 et par eux-mêmes (2, 3, 5, 7, 11…). Le PGCD (plus grand commun diviseur) garde les facteurs premiers que les deux nombres ont en commun.",
+      "example": {
+        "problem": "Le PGCD de 12 et 18",
+        "steps": [
+          {
+            "math": "12 = 2 × 2 × 3"
+          },
+          {
+            "math": "18 = 2 × 3 × 3"
+          },
+          {
+            "math": "2 × 3 = 6",
+            "note": "Garde les facteurs communs"
+          }
+        ],
+        "answer": "6"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Le plus petit commun multiple",
+      "text": "Pour le PPCM (plus petit commun multiple), multiplie les deux nombres, puis divise par leur PGCD : 4 × 6 = 24 et 24 ÷ 2 = 12. Le produit seul est un multiple commun, mais pas toujours le plus petit.",
+      "example": {
+        "problem": "Le PPCM de 4 et 6",
+        "steps": [
+          {
+            "math": "4 × 6 = 24",
+            "note": "Le produit"
+          },
+          {
+            "math": "24 ÷ 2 = 12",
+            "note": "Divisé par leur PGCD, 2"
+          }
+        ],
+        "answer": "12"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Les critères de divisibilité",
+      "text": "Par 2 : le dernier chiffre est pair. Par 3 (ou 9) : la somme des chiffres est divisible par 3 (ou 9). Par 4 : le nombre formé par les deux derniers chiffres est divisible par 4. Par 5 : il se termine par 0 ou 5. Par 6 : il est pair et divisible par 3.",
+      "example": {
+        "problem": "456 est-il divisible par 3 ? Si oui, combien fait 456 ÷ 3 ?",
+        "steps": [
+          {
+            "math": "4 + 5 + 6 = 15",
+            "note": "Additionne les chiffres : 15 est divisible par 3, donc 456 aussi"
+          },
+          {
+            "math": "456 ÷ 3 = 152"
+          }
+        ],
+        "answer": "152"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Est-il premier ?",
+      "text": "Pour tester un nombre, essaie de le diviser par les nombres premiers 2, 3, 5, 7, 11, 13… jusqu'à sa racine carrée. Si aucun ne le divise, il est premier. 91 a l'air premier, mais 91 = 7 × 13.",
+      "example": {
+        "problem": "91 a l'air premier : combien fait 91 ÷ 7 ?",
+        "steps": [
+          {
+            "math": "7 × 13 = 91",
+            "note": "7 divise 91"
+          },
+          {
+            "math": "91 ÷ 7 = 13",
+            "note": "Donc 91 = 7 × 13 n'est pas premier"
+          }
+        ],
+        "answer": "13"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Le reste, pas le quotient",
+      "text": "La division euclidienne de 47 par 5 s'écrit 47 = 5 × 9 + 2 : le quotient est 9, le reste 2. Le reste est toujours plus petit que le diviseur.",
+      "example": {
+        "problem": "Le reste de 47 ÷ 5",
+        "steps": [
+          {
+            "math": "5 × 9 = 45",
+            "note": "5 × 9, le plus grand multiple de 5 sous 47"
+          },
+          {
+            "math": "47 − 45 = 2",
+            "note": "Ce qui reste"
+          }
+        ],
+        "answer": "2"
+      }
+    }
+  ],
+  "tip": "PGCD : les facteurs premiers communs. PPCM : leur produit divisé par leur PGCD."
+}

@@ -1,0 +1,62 @@
+// Leçon d'Apprendre (français). Les exemples sont vérifiés par les tests :
+// chaque ligne "math" doit être juste, et la dernière doit donner la réponse.
+{
+  "category": "decimals",
+  "title": "Décimaux",
+  "summary": "Aligne les virgules, et compte les décimales quand tu multiplies.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Aligner les virgules",
+      "text": "Pour additionner ou soustraire des décimaux, les dixièmes vont avec les dixièmes et les centièmes avec les centièmes. Écrire 2,5 sous la forme 2,50 aide à bien les aligner.",
+      "example": {
+        "problem": "2.5 + 1.75",
+        "steps": [
+          {
+            "math": "2.50 + 1.75 = 4.25",
+            "note": "Écris 2,5 sous la forme 2,50 pour avoir des centièmes des deux côtés"
+          }
+        ],
+        "answer": "4.25"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Multiplier sans les virgules, puis placer la virgule",
+      "text": "Oublie les virgules, multiplie, puis compte les décimales dans la question : le résultat en a autant. Les zéros qui restent à la fin après la virgule peuvent ensuite disparaître : 0,5 × 0,4 = 0,20 = 0,2.",
+      "example": {
+        "problem": "0.3 × 0.4",
+        "steps": [
+          {
+            "math": "3 × 4 = 12",
+            "note": "Multiplie sans les virgules"
+          },
+          {
+            "math": "0.3 × 0.4 = 0.12",
+            "note": "Deux décimales dans la question, donc deux dans le résultat"
+          }
+        ],
+        "answer": "0.12"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Où va la virgule ?",
+      "text": "Décaler la virgule d'un rang rend le résultat dix fois trop grand ou trop petit. Estime d'abord : 0,3 × 0,4 est un peu moins que 0,5 × 0,5 = 0,25, donc 1,2 ne peut pas être juste.",
+      "example": {
+        "problem": "1.2 × 3",
+        "steps": [
+          {
+            "math": "12 × 3 = 36"
+          },
+          {
+            "math": "1.2 × 3 = 3.6",
+            "note": "Une décimale dans la question"
+          }
+        ],
+        "answer": "3.6"
+      }
+    }
+  ],
+  "tip": "Aligne les virgules. Pour multiplier, compte les décimales."
+}

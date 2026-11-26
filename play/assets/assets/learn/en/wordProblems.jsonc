@@ -1,0 +1,74 @@
+// Learn lesson (English). Worked examples are checked by the tests:
+// every "math" line must be true, and the last one must give the answer.
+{
+  "category": "wordProblems",
+  "title": "Word problems",
+  "summary": "Find the sum hidden in the words, step by step.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Find the sum in the words",
+      "text": "Read the story and ask what is being done to the numbers: groups of the same size mean ×, sharing out means ÷, adding or taking away mean + and −.",
+      "example": {
+        "problem": "4 boxes hold 6 pencils each. How many pencils?",
+        "steps": [
+          {
+            "math": "4 × 6 = 24",
+            "note": "Equal groups: multiply"
+          }
+        ],
+        "answer": "24"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "One step at a time",
+      "text": "Some stories hide two steps. Write down the first result before doing the second.",
+      "example": {
+        "problem": "3 packs of 10 cards; 7 are given away. How many are left?",
+        "steps": [
+          {
+            "math": "3 × 10 = 30",
+            "note": "First: how many cards in all"
+          },
+          {
+            "math": "30 − 7 = 23",
+            "note": "Then: take away the ones given"
+          }
+        ],
+        "answer": "23"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Speed and sharing",
+      "text": "Distance = speed × time: 3 km each hour for 2 hours is 3 × 2 km. Sharing equally is a division: 16 sweets for 4 children is 16 ÷ 4 each.",
+      "example": {
+        "problem": "A cyclist rides 15 km each hour for 5 hours. How far?",
+        "steps": [
+          {
+            "math": "15 × 5 = 75",
+            "note": "Speed × time"
+          }
+        ],
+        "answer": "75"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Perimeter, not area",
+      "text": "The perimeter is the distance all the way round: add the four sides. Multiplying length by width gives the area, which is a different question.",
+      "example": {
+        "problem": "A rectangle is 5 cm by 3 cm. What is its perimeter?",
+        "steps": [
+          {
+            "math": "2 × (5 + 3) = 16",
+            "note": "Two lengths and two widths"
+          }
+        ],
+        "answer": "16"
+      }
+    }
+  ],
+  "tip": "What is being done to the numbers? Write each step down."
+}

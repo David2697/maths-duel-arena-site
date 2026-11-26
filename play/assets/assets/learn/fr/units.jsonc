@@ -1,0 +1,70 @@
+// Leçon d'Apprendre (français). Les exemples sont vérifiés par les tests :
+// chaque ligne "math" doit être juste, et la dernière doit donner la réponse.
+{
+  "category": "units",
+  "title": "Unités",
+  "summary": "Convertir longueurs, masses, contenances et durées.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Du grand au petit : multiplie",
+      "text": "1 m = 100 cm, 1 km = 1000 m, 1 kg = 1000 g, 1 L = 1000 mL. Vers une unité plus petite, le nombre grandit.",
+      "example": {
+        "problem": "3 m en cm ?",
+        "steps": [
+          {
+            "math": "3 × 100 = 300",
+            "note": "1 m = 100 cm"
+          }
+        ],
+        "answer": "300"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Du petit au grand : divise",
+      "text": "Vers une unité plus grande, le nombre devient plus petit : divise.",
+      "example": {
+        "problem": "4500 g en kg ?",
+        "steps": [
+          {
+            "math": "4500 ÷ 1000 = 4.5",
+            "note": "1 kg = 1000 g"
+          }
+        ],
+        "answer": "4.5"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "La bonne puissance de dix",
+      "text": "Des km aux m, c'est × 1000, pas × 100 : compte les crans km, hm, dam, m.",
+      "example": {
+        "problem": "2,5 km en m ?",
+        "steps": [
+          {
+            "math": "2.5 × 1000 = 2500",
+            "note": "Trois crans : trois fois × 10"
+          }
+        ],
+        "answer": "2500"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Les heures ne sont pas des centaines",
+      "text": "Une heure, c'est 60 minutes : 2 h 15 min font 135 min, pas 215.",
+      "example": {
+        "problem": "2 h 15 min en min ?",
+        "steps": [
+          {
+            "math": "2 × 60 + 15 = 135",
+            "note": "60 minutes par heure"
+          }
+        ],
+        "answer": "135"
+      }
+    }
+  ],
+  "tip": "Demande-toi : la nouvelle unité est-elle plus grande ou plus petite ? Puis divise ou multiplie."
+}

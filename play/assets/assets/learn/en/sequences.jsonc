@@ -1,0 +1,83 @@
+// Learn lesson (English). The examples are checked by tests: every "math"
+// line must be right, and the last one must give the answer.
+{
+  "category": "sequences",
+  "title": "Sequences",
+  "summary": "Find the rule, then the next term.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Look at the gaps",
+      "text": "Subtract each term from the next. If the gap is always the same, add it once more.",
+      "example": {
+        "problem": "3, 7, 11, 15, …",
+        "steps": [
+          {
+            "math": "7 − 3 = 4",
+            "note": "The gap is always 4"
+          },
+          {
+            "math": "15 + 4 = 19"
+          }
+        ],
+        "answer": "19"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Or the ratio",
+      "text": "If the gaps grow fast, try dividing: 5, 10, 20, 40 doubles each time.",
+      "example": {
+        "problem": "5, 10, 20, 40, …",
+        "steps": [
+          {
+            "math": "10 ÷ 5 = 2",
+            "note": "Each term is the one before × 2"
+          },
+          {
+            "math": "40 × 2 = 80"
+          }
+        ],
+        "answer": "80"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Squares and sums",
+      "text": "1, 4, 9, 16 are the squares 1², 2², 3², 4². In 2, 3, 5, 8, 13 each term is the sum of the two before.",
+      "example": {
+        "problem": "1, 4, 9, 16, …",
+        "steps": [
+          {
+            "math": "16 = 4²",
+            "note": "The next one is 5²"
+          },
+          {
+            "math": "5² = 25"
+          }
+        ],
+        "answer": "25"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Check every step",
+      "text": "A rule must work from the first term to the last, not just for the last two: test it on all of them.",
+      "example": {
+        "problem": "4, 8, 16, 32, …",
+        "steps": [
+          {
+            "math": "32 − 16 = 16",
+            "note": "Adding 16 would fit only the last step"
+          },
+          {
+            "math": "32 × 2 = 64",
+            "note": "× 2 fits every step"
+          }
+        ],
+        "answer": "64"
+      }
+    }
+  ],
+  "tip": "Gaps first, then ratios, then squares or sums: the rule must fit every term."
+}

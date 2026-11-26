@@ -1,0 +1,256 @@
+// Learn lesson (English). Worked examples are checked by the tests:
+// every "math" line must be true, and the last one must give the answer.
+{
+  "category": "geometry",
+  "title": "Geometry",
+  "summary": "Areas, perimeters, angles, Pythagoras, quadrilaterals and volumes, with drawings.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Area and perimeter",
+      "text": "The perimeter goes all the way round: add up the sides. The area covers the inside: length × width for a rectangle, in cm².",
+      "example": {
+        "problem": "A 7 cm by 4 cm rectangle: its area?",
+        "steps": [
+          {
+            "math": "2 × (7 + 4) = 22",
+            "note": "Its perimeter, to compare"
+          },
+          {
+            "math": "7 × 4 = 28",
+            "note": "Its area: length × width"
+          }
+        ],
+        "answer": "28"
+      },
+      "figure": {
+        "kind": "rectangleArea",
+        "numbers": [
+          7,
+          4
+        ]
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Angles",
+      "text": "A triangle's three angles add up to 180°, like a straight line. A quadrilateral's four angles add up to 360°.",
+      "example": {
+        "problem": "A triangle with angles of 50° and 60°: the third?",
+        "steps": [
+          {
+            "math": "180 − 50 − 60 = 70",
+            "note": "180° in all"
+          }
+        ],
+        "answer": "70"
+      },
+      "figure": {
+        "kind": "triangleAngle",
+        "numbers": [
+          50,
+          60
+        ]
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "A triangle is half a rectangle",
+      "text": "A triangle with base b and height h is half of a b × h rectangle: its area is b × h ÷ 2.",
+      "example": {
+        "problem": "Base 10 cm, height 6 cm: its area?",
+        "steps": [
+          {
+            "math": "10 × 6 = 60",
+            "note": "The rectangle"
+          },
+          {
+            "math": "60 ÷ 2 = 30",
+            "note": "Half of it"
+          }
+        ],
+        "answer": "30"
+      },
+      "figure": {
+        "kind": "triangleArea",
+        "numbers": [
+          10,
+          6
+        ]
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Pythagoras",
+      "text": "In a right triangle, the square of the longest side equals the sum of the squares of the other two: a² + b² = c². Remember 3-4-5 and 5-12-13: their multiples come up often.",
+      "example": {
+        "problem": "Sides of 6 cm and 8 cm around the right angle: the longest side?",
+        "steps": [
+          {
+            "math": "6² + 8² = 100",
+            "note": "Add the squares"
+          },
+          {
+            "math": "√100 = 10",
+            "note": "Then the square root"
+          }
+        ],
+        "answer": "10"
+      },
+      "figure": {
+        "kind": "hypotenuse",
+        "numbers": [
+          6,
+          8
+        ]
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Quadrilaterals: four sides",
+      "text": "A quadrilateral has four sides and four angles. Square, rectangle, rhombus, parallelogram, trapezium and kite are all quadrilaterals: what tells them apart is their equal sides, their parallel sides and their right angles.",
+      "figure": {
+        "kind": "rectangle",
+        "numbers": [
+          8,
+          5
+        ]
+      },
+      "example": {
+        "problem": "A rectangle 8 cm by 5 cm: its perimeter?",
+        "steps": [
+          {
+            "math": "2 × (8 + 5) = 26",
+            "note": "Two lengths and two widths"
+          }
+        ],
+        "answer": "26"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Square and rhombus: four equal sides",
+      "text": "A rhombus has four equal sides; its diagonals cross at right angles. A square is a rhombus with four right angles.",
+      "figure": {
+        "kind": "rhombus",
+        "numbers": [
+          6
+        ]
+      },
+      "example": {
+        "problem": "A rhombus with 6 cm sides: its perimeter?",
+        "steps": [
+          {
+            "math": "4 × 6 = 24",
+            "note": "Four equal sides"
+          }
+        ],
+        "answer": "24"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Parallelogram",
+      "text": "Its opposite sides are parallel and equal. Its area is base × height, the height being straight up from the base (not the slanted side).",
+      "figure": {
+        "kind": "parallelogram",
+        "numbers": [
+          9,
+          4
+        ]
+      },
+      "example": {
+        "problem": "Base 9 cm, height 4 cm: its area?",
+        "steps": [
+          {
+            "math": "9 × 4 = 36",
+            "note": "Base × height"
+          }
+        ],
+        "answer": "36"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Trapezium",
+      "text": "Only two sides are parallel. Its area: add the two parallel sides, multiply by the height, then halve.",
+      "figure": {
+        "kind": "trapezium",
+        "numbers": [
+          10,
+          6,
+          4
+        ]
+      },
+      "example": {
+        "problem": "Parallel sides 10 cm and 6 cm, height 4 cm: its area?",
+        "steps": [
+          {
+            "math": "(10 + 6) × 4 ÷ 2 = 32",
+            "note": "The average of the parallel sides × height"
+          }
+        ],
+        "answer": "32"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Kite",
+      "text": "Two pairs of equal sides, side by side (not opposite, unlike a parallelogram). Its diagonals cross at right angles.",
+      "figure": {
+        "kind": "kite"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "A quadrilateral's angles: 360°",
+      "text": "Cut a quadrilateral along a diagonal: two triangles, 180° each. So its four angles make 360°.",
+      "figure": {
+        "kind": "quadrilateralAngle",
+        "numbers": [
+          90,
+          80,
+          100
+        ]
+      },
+      "example": {
+        "problem": "Angles of 90°, 80° and 100°: the fourth?",
+        "steps": [
+          {
+            "math": "360 − 90 − 80 − 100 = 90",
+            "note": "360° in all"
+          }
+        ],
+        "answer": "90"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "A volume has three dimensions",
+      "text": "A box's volume is length × width × height, in cm³. Stopping after two gives only the area of its bottom.",
+      "example": {
+        "problem": "A 5 × 3 × 2 cm box: its volume?",
+        "steps": [
+          {
+            "math": "5 × 3 = 15",
+            "note": "The bottom"
+          },
+          {
+            "math": "15 × 2 = 30",
+            "note": "Times the height"
+          }
+        ],
+        "answer": "30"
+      },
+      "figure": {
+        "kind": "cuboidVolume",
+        "numbers": [
+          5,
+          3,
+          2
+        ]
+      }
+    }
+  ],
+  "tip": "Perimeter: around. Area: inside. A triangle's angles make 180°, a quadrilateral's 360°."
+}

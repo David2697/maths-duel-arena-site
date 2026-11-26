@@ -1,0 +1,84 @@
+// Leçon (français). Les exemples sont vérifiés par les tests : chaque
+// ligne "math" doit être juste, et la dernière doit donner la réponse.
+{
+  "category": "estimation",
+  "title": "Estimation et arrondis",
+  "summary": "Arrondir un nombre, et trouver l'ordre de grandeur d'un résultat sans le calculer exactement.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Arrondir à la dizaine",
+      "text": "Regarde le chiffre juste après le rang voulu : 5 ou plus, on monte ; moins de 5, on descend. 47 est entre 40 et 50, et son 7 est 5 ou plus : 50.",
+      "example": {
+        "problem": "Arrondis 47 à la dizaine.",
+        "steps": [
+          { "math": "47 − 40 = 7", "note": "Le chiffre des unités est 7 : 5 ou plus" },
+          { "math": "40 + 10 = 50", "note": "Donc on monte à la dizaine suivante" }
+        ],
+        "answer": "50"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Centaines et milliers",
+      "text": "À la centaine, regarde le chiffre des dizaines ; au millier, celui des centaines. 3847 : son chiffre des dizaines est 4, moins de 5, donc on descend à 3800.",
+      "example": {
+        "problem": "Arrondis 3847 à la centaine.",
+        "steps": [
+          { "math": "3847 − 47 = 3800", "note": "Le chiffre des dizaines est 4 : on descend" }
+        ],
+        "answer": "3800"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Estimer un produit",
+      "text": "Arrondis chaque nombre à son premier chiffre, puis multiplie : 49 × 21, c'est environ 50 × 20.",
+      "example": {
+        "problem": "Quel nombre est le plus proche de 49 × 21 ?",
+        "steps": [
+          { "math": "50 × 20 = 1000", "note": "49 ≈ 50 et 21 ≈ 20" }
+        ],
+        "answer": "1000"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Estimer une somme",
+      "text": "Arrondis chaque nombre, puis additionne : 398 + 207, c'est environ 400 + 200.",
+      "example": {
+        "problem": "Quel nombre est le plus proche de 398 + 207 ?",
+        "steps": [
+          { "math": "400 + 200 = 600", "note": "398 ≈ 400 et 207 ≈ 200" }
+        ],
+        "answer": "600"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Compte les zéros",
+      "text": "30 × 40 fait 1200, pas 120 : multiplie 3 × 4, puis remets les deux zéros.",
+      "example": {
+        "problem": "30 × 40 ?",
+        "steps": [
+          { "math": "3 × 4 = 12", "note": "D'abord les chiffres" },
+          { "math": "12 × 100 = 1200", "note": "Puis les deux zéros" }
+        ],
+        "answer": "1200"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Un 5 fait monter",
+      "text": "Pile au milieu, on monte : 65 arrondi à la dizaine donne 70, pas 60.",
+      "example": {
+        "problem": "Arrondis 65 à la dizaine.",
+        "steps": [
+          { "math": "60 + 10 = 70", "note": "Le chiffre des unités est 5 : on monte" }
+        ],
+        "answer": "70"
+      }
+    }
+  ],
+  "tip": "Premier chiffre, arrondi, puis calcul : une bonne estimation est rapide et proche."
+}

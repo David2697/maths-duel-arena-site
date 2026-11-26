@@ -1,0 +1,87 @@
+// Leçon d'Apprendre (français). Les exemples sont vérifiés par les tests :
+// chaque ligne "math" doit être juste, et la dernière doit donner la réponse.
+{
+  "category": "fractions",
+  "title": "Fractions",
+  "summary": "Même dénominateur pour additionner ; on multiplie terme à terme ; on retourne pour diviser.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Pour additionner, il faut le même dénominateur",
+      "text": "On ne peut additionner que des fractions qui ont le même nombre en bas (le dénominateur). Transforme-les d'abord pour avoir un dénominateur commun, puis additionne les nombres du haut.",
+      "example": {
+        "problem": "1/2 + 1/3",
+        "steps": [
+          {
+            "math": "1/2 = 3/6",
+            "note": "2 et 3 divisent tous les deux 6"
+          },
+          {
+            "math": "1/3 = 2/6"
+          },
+          {
+            "math": "3/6 + 2/6 = 5/6",
+            "note": "Additionne les numérateurs, garde le dénominateur"
+          }
+        ],
+        "answer": "5/6"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Multiplier, c'est terme à terme",
+      "text": "Pour multiplier des fractions, multiplie les numérateurs entre eux et les dénominateurs entre eux, puis simplifie.",
+      "example": {
+        "problem": "2/3 × 3/4",
+        "steps": [
+          {
+            "math": "2/3 × 3/4 = 6/12",
+            "note": "En haut : 2 × 3, en bas : 3 × 4"
+          },
+          {
+            "math": "6/12 = 1/2",
+            "note": "Simplifie"
+          }
+        ],
+        "answer": "1/2"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Diviser : retourne la deuxième, puis multiplie",
+      "text": "Diviser par une fraction, c'est multiplier par cette fraction retournée.",
+      "example": {
+        "problem": "3/4 ÷ 1/2",
+        "steps": [
+          {
+            "math": "3/4 ÷ 1/2 = 3/4 × 2/1",
+            "note": "Retourne 1/2 en 2/1"
+          },
+          {
+            "math": "3/4 × 2/1 = 6/4 = 3/2",
+            "note": "Multiplie, puis simplifie"
+          }
+        ],
+        "answer": "3/2"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "N'additionne jamais terme à terme",
+      "text": "1/2 + 1/3 ne fait pas 2/5 : additionner les numérateurs et les dénominateurs donne une fraction plus petite que 1/2, ce qui est impossible. Utilise un dénominateur commun.",
+      "example": {
+        "problem": "1/4 + 1/2",
+        "steps": [
+          {
+            "math": "1/2 = 2/4"
+          },
+          {
+            "math": "1/4 + 2/4 = 3/4"
+          }
+        ],
+        "answer": "3/4"
+      }
+    }
+  ],
+  "tip": "Pour additionner : d'abord le même dénominateur. Pour diviser : retourne la deuxième fraction."
+}

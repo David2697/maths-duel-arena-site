@@ -1,0 +1,67 @@
+// Learn lesson (English). Worked examples are checked by the tests:
+// every "math" line must be true, and the last one must give the answer.
+{
+  "category": "brackets",
+  "title": "Brackets",
+  "summary": "Whatever is in brackets is worked out first.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Brackets first",
+      "text": "Brackets say: do this part first. Work out the inside, then carry on with the rest.",
+      "example": {
+        "problem": "(3 + 4) × 2",
+        "steps": [
+          {
+            "math": "3 + 4 = 7",
+            "note": "Inside the brackets first"
+          },
+          {
+            "math": "7 × 2 = 14"
+          }
+        ],
+        "answer": "14"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Brackets inside brackets",
+      "text": "With brackets inside brackets, start from the innermost pair and work outwards.",
+      "example": {
+        "problem": "2 × (10 − (3 + 4))",
+        "steps": [
+          {
+            "math": "3 + 4 = 7",
+            "note": "The innermost brackets"
+          },
+          {
+            "math": "10 − 7 = 3",
+            "note": "Then the next pair"
+          },
+          {
+            "math": "2 × 3 = 6"
+          }
+        ],
+        "answer": "6"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Don't ignore the brackets",
+      "text": "Working left to right without the brackets gives a different answer: 2 × (3 + 5) is 16, but 2 × 3 + 5 is 11.",
+      "example": {
+        "problem": "2 × (3 + 5)",
+        "steps": [
+          {
+            "math": "3 + 5 = 8"
+          },
+          {
+            "math": "2 × 8 = 16"
+          }
+        ],
+        "answer": "16"
+      }
+    }
+  ],
+  "tip": "Inside the brackets first, innermost pair first."
+}

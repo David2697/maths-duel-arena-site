@@ -1,0 +1,81 @@
+// Learn lesson (English). Worked examples are checked by the tests:
+// every "math" line must be true, and the last one must give the answer.
+{
+  "category": "percentages",
+  "title": "Percentages",
+  "summary": "Per cent means out of 100: build from 10% and 1%.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Out of a hundred",
+      "text": "15% means 15 out of every 100. To find 10% of a number, divide it by 10; 1% is dividing by 100.",
+      "example": {
+        "problem": "10% of 80",
+        "steps": [
+          {
+            "math": "80 ÷ 10 = 8",
+            "note": "10% is a tenth"
+          }
+        ],
+        "answer": "8"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Build it from 10% and 5%",
+      "text": "Most percentages are quick sums of easy ones: 15% is 10% plus 5%, and 5% is half of 10%.",
+      "example": {
+        "problem": "15% of 80",
+        "steps": [
+          {
+            "math": "10% of 80 = 8",
+            "note": "10%"
+          },
+          {
+            "math": "5% of 80 = 4",
+            "note": "5% is half of 10%"
+          },
+          {
+            "math": "8 + 4 = 12"
+          }
+        ],
+        "answer": "12"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Swap them round",
+      "text": "x% of y is the same as y% of x: 8% of 50 is 50% of 8, which is 4.",
+      "example": {
+        "problem": "8% of 50",
+        "steps": [
+          {
+            "math": "8% of 50 = 50% of 8",
+            "note": "Swap the numbers"
+          },
+          {
+            "math": "50% of 8 = 4",
+            "note": "Half of 8"
+          }
+        ],
+        "answer": "4"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "The part, not the rest",
+      "text": "15% of 80 is the 15% part, 12. Working out the other 85% (68) is a common slip: read what the question asks for.",
+      "example": {
+        "problem": "25% of 60",
+        "steps": [
+          {
+            "math": "60 ÷ 4 = 15",
+            "note": "25% is a quarter"
+          }
+        ],
+        "answer": "15"
+      }
+    }
+  ],
+  "tip": "Find 10% first, then build the percentage from it."
+}

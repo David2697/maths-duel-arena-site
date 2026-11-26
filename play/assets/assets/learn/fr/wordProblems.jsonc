@@ -1,0 +1,74 @@
+// Leçon d'Apprendre (français). Les exemples sont vérifiés par les tests :
+// chaque ligne "math" doit être juste, et la dernière doit donner la réponse.
+{
+  "category": "wordProblems",
+  "title": "Problèmes",
+  "summary": "Trouve le calcul caché dans le texte, étape par étape.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Trouver le calcul dans le texte",
+      "text": "Lis l'histoire et demande-toi ce qu'on fait aux nombres : des groupes de même taille veulent dire ×, un partage veut dire ÷, ajouter ou enlever veulent dire + et −.",
+      "example": {
+        "problem": "4 boîtes contiennent chacune 6 crayons. Combien de crayons ?",
+        "steps": [
+          {
+            "math": "4 × 6 = 24",
+            "note": "Des groupes égaux : on multiplie"
+          }
+        ],
+        "answer": "24"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Une étape à la fois",
+      "text": "Certaines histoires cachent deux étapes. Note le premier résultat avant de faire la deuxième.",
+      "example": {
+        "problem": "3 paquets de 10 cartes ; on en donne 7. Combien en reste-t-il ?",
+        "steps": [
+          {
+            "math": "3 × 10 = 30",
+            "note": "D'abord : combien de cartes en tout"
+          },
+          {
+            "math": "30 − 7 = 23",
+            "note": "Puis : enlève celles qui sont données"
+          }
+        ],
+        "answer": "23"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Vitesse et partage",
+      "text": "Distance = vitesse × temps : 3 km par heure pendant 2 heures, c'est 3 × 2 km. Partager en parts égales, c'est diviser : 16 bonbons pour 4 enfants, c'est 16 ÷ 4 chacun.",
+      "example": {
+        "problem": "Un cycliste roule 15 km par heure pendant 5 heures. Quelle distance ?",
+        "steps": [
+          {
+            "math": "15 × 5 = 75",
+            "note": "Vitesse × temps"
+          }
+        ],
+        "answer": "75"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Le périmètre, pas l'aire",
+      "text": "Le périmètre, c'est la longueur du tour : additionne les quatre côtés. Multiplier la longueur par la largeur donne l'aire, qui est une autre question.",
+      "example": {
+        "problem": "Un rectangle mesure 5 cm sur 3 cm. Quel est son périmètre ?",
+        "steps": [
+          {
+            "math": "2 × (5 + 3) = 16",
+            "note": "Deux longueurs et deux largeurs"
+          }
+        ],
+        "answer": "16"
+      }
+    }
+  ],
+  "tip": "Que fait-on aux nombres ? Écris chaque étape."
+}

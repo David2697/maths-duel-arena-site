@@ -1,0 +1,212 @@
+// Leçon d'Apprendre (français). Les exemples sont vérifiés par les tests :
+// chaque ligne "math" doit être juste, et la dernière doit donner la réponse.
+{
+  "category": "trigonometry",
+  "title": "Trigonométrie",
+  "summary": "Côtés et angles d'un triangle rectangle, avec sin, cos et tan.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "D'abord, nommer les côtés",
+      "text": "Dans un triangle rectangle, regarde depuis l'angle A (pas l'angle droit). Le côté opposé est en face de A. Le côté adjacent touche A et n'est pas l'hypoténuse. L'hypoténuse est le plus grand côté, en face de l'angle droit.",
+      "figure": {
+        "kind": "rightTriangleSides"
+      },
+      "example": {
+        "problem": "Côtés 6 et 8 autour de l'angle droit : l'hypoténuse ?",
+        "steps": [
+          {
+            "math": "6² + 8² = 100",
+            "note": "Les deux petits côtés au carré"
+          },
+          {
+            "math": "√100 = 10",
+            "note": "Le plus grand côté : 10"
+          }
+        ],
+        "answer": "10"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "L'autre angle",
+      "text": "Les trois angles d'un triangle font 180°, l'angle droit en prend 90° : les deux autres se partagent les 90° qui restent.",
+      "figure": {
+        "kind": "otherAngle",
+        "numbers": [
+          35
+        ]
+      },
+      "example": {
+        "problem": "Triangle rectangle, un angle de 35° : l'autre ?",
+        "steps": [
+          {
+            "math": "90 − 35 = 55",
+            "note": "180 − 90 − 35"
+          }
+        ],
+        "answer": "55"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "SOH CAH TOA",
+      "text": "Trois rapports, vus depuis l'angle A : Sin = Opposé ÷ Hypoténuse (SOH), Cos = Adjacent ÷ Hypoténuse (CAH), Tan = Opposé ÷ Adjacent (TOA).",
+      "figure": {
+        "kind": "trigRatio",
+        "numbers": [
+          0,
+          3,
+          4,
+          5
+        ]
+      },
+      "example": {
+        "problem": "Opposé 3, adjacent 4, hypoténuse 5 : sin A ?",
+        "steps": [
+          {
+            "math": "3 ÷ 5 = 3/5",
+            "note": "Opposé 3 sur hypoténuse 5"
+          }
+        ],
+        "answer": "3/5"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Opposé ou adjacent ?",
+      "text": "Confondre les deux côtés échange sin et cos. Montre l'angle du doigt : le côté qu'il ne touche pas est l'opposé.",
+      "figure": {
+        "kind": "trigRatio",
+        "numbers": [
+          1,
+          3,
+          4,
+          5
+        ]
+      },
+      "example": {
+        "problem": "Même triangle : cos A ?",
+        "steps": [
+          {
+            "math": "4 ÷ 5 = 4/5",
+            "note": "Adjacent 4 sur hypoténuse 5"
+          }
+        ],
+        "answer": "4/5"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Tan : sans hypoténuse",
+      "text": "Tan utilise les deux côtés de l'angle droit : opposé ÷ adjacent. Il peut dépasser 1 (quand le côté opposé est le plus long).",
+      "figure": {
+        "kind": "trigRatio",
+        "numbers": [
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "example": {
+        "problem": "Même triangle : tan A ?",
+        "steps": [
+          {
+            "math": "3 ÷ 4 = 3/4",
+            "note": "Opposé 3 sur adjacent 4"
+          }
+        ],
+        "answer": "3/4"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Un côté avec sin",
+      "text": "sin A = opposé ÷ hypoténuse, donc opposé = hypoténuse × sin A.",
+      "figure": {
+        "kind": "trigSide",
+        "numbers": [
+          0,
+          3,
+          5,
+          20
+        ]
+      },
+      "example": {
+        "problem": "sin A = 3/5, hypoténuse 20 : le côté opposé ?",
+        "steps": [
+          {
+            "math": "20 × 3 ÷ 5 = 12",
+            "note": "Hypoténuse × sin"
+          }
+        ],
+        "answer": "12"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Un côté avec cos",
+      "text": "cos A = adjacent ÷ hypoténuse, donc adjacent = hypoténuse × cos A.",
+      "figure": {
+        "kind": "trigSide",
+        "numbers": [
+          1,
+          4,
+          5,
+          10
+        ]
+      },
+      "example": {
+        "problem": "cos A = 4/5, hypoténuse 10 : le côté adjacent ?",
+        "steps": [
+          {
+            "math": "10 × 4 ÷ 5 = 8",
+            "note": "Hypoténuse × cos"
+          }
+        ],
+        "answer": "8"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Un côté avec tan",
+      "text": "tan A = opposé ÷ adjacent, donc opposé = adjacent × tan A.",
+      "figure": {
+        "kind": "trigSide",
+        "numbers": [
+          2,
+          3,
+          4,
+          8
+        ]
+      },
+      "example": {
+        "problem": "tan A = 3/4, côté adjacent 8 : le côté opposé ?",
+        "steps": [
+          {
+            "math": "8 × 3 ÷ 4 = 6",
+            "note": "Adjacent × tan"
+          }
+        ],
+        "answer": "6"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Les valeurs à connaître",
+      "text": "sin 30° = cos 60° = 0,5 ; sin 45° = cos 45° ≈ 0,71 ; sin 60° = cos 30° ≈ 0,87. tan 45° = 1 (les deux petits côtés sont égaux) ; tan 30° ≈ 0,58 ; tan 60° ≈ 1,73.",
+      "example": {
+        "problem": "tan 45° ?",
+        "steps": [
+          {
+            "math": "1 ÷ 1 = 1",
+            "note": "Opposé et adjacent sont égaux"
+          }
+        ],
+        "answer": "1"
+      }
+    }
+  ],
+  "tip": "Nomme d'abord les côtés depuis l'angle : opposé, adjacent, hypoténuse. Puis SOH CAH TOA."
+}

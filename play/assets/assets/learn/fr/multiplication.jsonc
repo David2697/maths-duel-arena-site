@@ -1,0 +1,90 @@
+// Leçon d'Apprendre (français). Les exemples sont vérifiés par les tests :
+// chaque ligne "math" doit être juste, et la dernière doit donner la réponse.
+{
+  "category": "multiplication",
+  "title": "Multiplication",
+  "summary": "Les tables, la décomposition des nombres, et des astuces pour 9 et 5.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Décomposer un des nombres",
+      "text": "Coupe un nombre en parties faciles à multiplier, puis additionne les résultats. Ça marche avec des nombres de toutes tailles.",
+      "example": {
+        "problem": "12 × 3",
+        "steps": [
+          {
+            "math": "10 × 3 = 30",
+            "note": "Les dizaines"
+          },
+          {
+            "math": "2 × 3 = 6",
+            "note": "Les unités"
+          },
+          {
+            "math": "30 + 6 = 36",
+            "note": "Additionne les deux parties"
+          }
+        ],
+        "answer": "36"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Fois 9 : fois 10, moins une fois",
+      "text": "Multiplier par 9, c'est multiplier par 10 puis enlever le nombre une fois. La même idée marche pour 99.",
+      "example": {
+        "problem": "7 × 9",
+        "steps": [
+          {
+            "math": "7 × 10 = 70",
+            "note": "Fois 10"
+          },
+          {
+            "math": "70 − 7 = 63",
+            "note": "Enlève un 7"
+          }
+        ],
+        "answer": "63"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Fois 5 : la moitié de fois 10",
+      "text": "Fois 5, c'est la moitié de fois 10. Pour un nombre pair, divise d'abord par deux : 5 × 48, c'est 10 × 24.",
+      "example": {
+        "problem": "48 × 5",
+        "steps": [
+          {
+            "math": "48 ÷ 2 = 24",
+            "note": "Divise le nombre par deux"
+          },
+          {
+            "math": "24 × 10 = 240",
+            "note": "Puis fois 10"
+          }
+        ],
+        "answer": "240"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Les voisins dans la table",
+      "text": "Une erreur très courante est de tomber sur le résultat voisin dans la table : 7 × 8 = 56, pas 48 (c'est 6 × 8) ni 63 (c'est 7 × 9). En cas de doute, pars d'un résultat que tu connais.",
+      "example": {
+        "problem": "7 × 8",
+        "steps": [
+          {
+            "math": "7 × 7 = 49",
+            "note": "Un résultat que tu connais"
+          },
+          {
+            "math": "49 + 7 = 56",
+            "note": "Un 7 de plus"
+          }
+        ],
+        "answer": "56"
+      }
+    }
+  ],
+  "tip": "Décompose un nombre en parties faciles, puis additionne-les."
+}

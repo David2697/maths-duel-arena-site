@@ -1,0 +1,93 @@
+// Leçon d'Apprendre (français). Les exemples sont vérifiés par les tests :
+// chaque ligne "math" doit être juste, et la dernière doit donner la réponse.
+{
+  "category": "probability",
+  "title": "Probabilités",
+  "summary": "Les chances qu'une chose arrive, en fraction.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Favorables sur total",
+      "text": "Une probabilité, c'est le nombre de cas qu'on veut divisé par le nombre de tous les cas possibles, quand ils ont tous autant de chances.",
+      "example": {
+        "problem": "Un dé : quelle est la probabilité d'obtenir 6 ?",
+        "steps": [
+          {
+            "math": "1 ÷ 6 = 1/6",
+            "note": "Une face sur six"
+          }
+        ],
+        "answer": "1/6"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Simplifie",
+      "text": "Plus de 4 avec un dé, c'est 5 ou 6 : deux faces sur six. Simplifie la fraction.",
+      "example": {
+        "problem": "Un dé : plus de 4 ?",
+        "steps": [
+          {
+            "math": "2/6 = 1/3",
+            "note": "2 faces sur 6, simplifié"
+          }
+        ],
+        "answer": "1/3"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "Sur le total",
+      "text": "3 billes rouges et 5 bleues : rouge, c'est 3 sur 8, pas 3 sur 5. Divise par le total.",
+      "example": {
+        "problem": "3 rouges, 5 bleues : une rouge ?",
+        "steps": [
+          {
+            "math": "3 + 5 = 8",
+            "note": "Toutes les billes"
+          },
+          {
+            "math": "3 ÷ 8 = 3/8",
+            "note": "Les rouges sur le total"
+          }
+        ],
+        "answer": "3/8"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Le contraire",
+      "text": "La probabilité qu'une chose n'arrive pas, c'est 1 moins la probabilité qu'elle arrive : 30 % de pluie, 70 % sans pluie.",
+      "example": {
+        "problem": "30 % de pluie : pas de pluie ?",
+        "steps": [
+          {
+            "math": "100 − 30 = 70",
+            "note": "En %"
+          }
+        ],
+        "answer": "70"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Deux dés",
+      "text": "Deux dés donnent 36 paires. Une somme de 7 vient de 6 d'entre elles, une somme de 2 d'une seule : les sommes n'ont pas les mêmes chances.",
+      "example": {
+        "problem": "Deux dés : une somme de 7 ?",
+        "steps": [
+          {
+            "math": "6 × 6 = 36",
+            "note": "Toutes les paires"
+          },
+          {
+            "math": "6/36 = 1/6",
+            "note": "1+6, 2+5, 3+4, 4+3, 5+2, 6+1"
+          }
+        ],
+        "answer": "1/6"
+      }
+    }
+  ],
+  "tip": "Compte ce que tu veux, compte tout, divise, et simplifie."
+}

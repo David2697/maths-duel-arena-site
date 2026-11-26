@@ -1,0 +1,67 @@
+// Leçon d'Apprendre (français). Les exemples sont vérifiés par les tests :
+// chaque ligne "math" doit être juste, et la dernière doit donner la réponse.
+{
+  "category": "brackets",
+  "title": "Parenthèses",
+  "summary": "Ce qui est entre parenthèses se calcule en premier.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Les parenthèses d'abord",
+      "text": "Les parenthèses disent : calcule d'abord cette partie. Calcule l'intérieur, puis continue avec le reste.",
+      "example": {
+        "problem": "(3 + 4) × 2",
+        "steps": [
+          {
+            "math": "3 + 4 = 7",
+            "note": "D'abord l'intérieur des parenthèses"
+          },
+          {
+            "math": "7 × 2 = 14"
+          }
+        ],
+        "answer": "14"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Des parenthèses dans des parenthèses",
+      "text": "Quand il y a des parenthèses dans d'autres parenthèses, commence par la paire la plus intérieure et remonte vers l'extérieur.",
+      "example": {
+        "problem": "2 × (10 − (3 + 4))",
+        "steps": [
+          {
+            "math": "3 + 4 = 7",
+            "note": "Les parenthèses les plus intérieures"
+          },
+          {
+            "math": "10 − 7 = 3",
+            "note": "Puis la paire suivante"
+          },
+          {
+            "math": "2 × 3 = 6"
+          }
+        ],
+        "answer": "6"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "N'ignore pas les parenthèses",
+      "text": "Calculer de gauche à droite sans les parenthèses donne un autre résultat : 2 × (3 + 5) fait 16, mais 2 × 3 + 5 fait 11.",
+      "example": {
+        "problem": "2 × (3 + 5)",
+        "steps": [
+          {
+            "math": "3 + 5 = 8"
+          },
+          {
+            "math": "2 × 8 = 16"
+          }
+        ],
+        "answer": "16"
+      }
+    }
+  ],
+  "tip": "D'abord l'intérieur des parenthèses, en commençant par les plus intérieures."
+}

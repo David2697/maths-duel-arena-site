@@ -1,0 +1,84 @@
+// Leçon d'Apprendre (français). Les exemples sont vérifiés par les tests :
+// chaque ligne "math" doit être juste, et la dernière doit donner la réponse.
+{
+  "category": "equations",
+  "title": "Équations",
+  "summary": "Défais chaque étape avec l'opération inverse, des deux côtés.",
+  "pages": [
+    {
+      "kind": "idea",
+      "title": "Garder la balance en équilibre",
+      "text": "Une équation est une balance : ce que tu fais d'un côté, fais-le de l'autre. Défais ce qui a été fait à x avec l'opération inverse : + se défait avec −, × avec ÷.",
+      "example": {
+        "problem": "x + 7 = 12",
+        "steps": [
+          {
+            "math": "x = 12 − 7",
+            "note": "Défais + 7 avec − 7"
+          },
+          {
+            "math": "x = 5"
+          }
+        ],
+        "answer": "x = 5"
+      }
+    },
+    {
+      "kind": "idea",
+      "title": "Deux étapes : défais d'abord la dernière",
+      "text": "Dans 3x + 5 = 26, x a été multiplié par 3, puis on a ajouté 5. Défais d'abord le + 5, puis le × 3.",
+      "example": {
+        "problem": "3x + 5 = 26",
+        "steps": [
+          {
+            "math": "3x = 26 − 5 = 21",
+            "note": "Défais + 5"
+          },
+          {
+            "math": "x = 21 ÷ 3 = 7",
+            "note": "Défais × 3"
+          }
+        ],
+        "answer": "x = 7"
+      }
+    },
+    {
+      "kind": "trick",
+      "title": "Vérifier en remplaçant",
+      "text": "Remets ta réponse dans l'équation : si les deux côtés sont égaux, c'est juste.",
+      "example": {
+        "problem": "2x − 4 = 10",
+        "steps": [
+          {
+            "math": "2x = 10 + 4 = 14",
+            "note": "Défais − 4"
+          },
+          {
+            "math": "x = 14 ÷ 2 = 7",
+            "note": "Défais × 2"
+          },
+          {
+            "note": "Vérification : 2 × 7 − 4 = 10, comme le côté droit"
+          }
+        ],
+        "answer": "x = 7"
+      }
+    },
+    {
+      "kind": "watchOut",
+      "title": "L'opération inverse",
+      "text": "Une erreur courante est de défaire avec la même opération : à partir de x − 4 = 9, ajouter 4 donne 13 ; enlever 4 encore une fois donnerait 5, ce qui est faux.",
+      "example": {
+        "problem": "x − 4 = 9",
+        "steps": [
+          {
+            "math": "x = 9 + 4 = 13",
+            "note": "Défais − 4 avec + 4"
+          }
+        ],
+        "answer": "x = 13"
+      }
+    }
+  ],
+  "tip": "Défais chaque étape avec l'opération inverse, en commençant par la dernière."
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/maths-duel-arena-site/play/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A neon mental-maths duel game.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Maths Duel Arena">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>Maths Duel Arena</title>
+  <link rel="manifest" href="manifest.json">
+  <!-- The loading screen: the game takes a while to download on a phone. -->
+  <style>
+    html, body { margin: 0; height: 100%; background: #070A12; }
+    #loading {
+      position: fixed; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 20px;
+      color: #9AA3B8; font: 16px system-ui, sans-serif; text-align: center; padding: 24px;
+    }
+    #loading h1 {
+      margin: 0; font-size: 26px; letter-spacing: 3px; font-weight: 800;
+      background: linear-gradient(90deg, #00E5FF, #FF3D7F);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    #loading .logo { width: 132px; height: 132px; animation: pulse 1.6s ease-in-out infinite; }
+    #loading .bar {
+      width: 180px; height: 4px; border-radius: 2px; background: #1B2236; overflow: hidden; position: relative;
+    }
+    #loading .bar::after {
+      content: ''; position: absolute; top: 0; bottom: 0; width: 40%; border-radius: 2px;
+      background: linear-gradient(90deg, #00E5FF, #FF3D7F);
+      animation: slide 1.2s ease-in-out infinite;
+    }
+    #loading .sum {
+      font: 600 30px system-ui, sans-serif; color: #EAF2FF; letter-spacing: 2px;
+      min-height: 40px; transition: opacity .35s, transform .35s; font-variant-numeric: tabular-nums;
+    }
+    #loading .sum.out { opacity: 0; transform: translateY(-8px); }
+    #loading .sum .q { color: #FF3D7F; }
+    #loading .error { color: #FF5C7A; max-width: 420px; word-break: break-word; }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 6px rgba(0,229,255,.35)); }
+      50% { transform: scale(1.05); filter: drop-shadow(0 0 16px rgba(0,229,255,.55)); }
+    }
+    @keyframes slide { from { left: -40%; } to { left: 100%; } }
+    @media (prefers-reduced-motion: reduce) {
+      #loading .logo { animation: none; }
+      #loading .bar::after { animation-duration: 3s; }
+    }
+  </style>
+</head>
+<body>
+  <!--
+    You can customize the "flutter_bootstrap.js" script.
+    This is useful to provide a custom configuration to the Flutter loader
+    or to give the user feedback during the initialization process.
+
+    For more details:
+    * https://docs.flutter.dev/platform-integration/web/initialization
+  -->
+  <div id="loading" role="status">
+    <!-- The logo (lib/widgets/arena_logo.dart draws the same shapes). -->
+    <svg class="logo" viewBox="0 0 120 120" aria-hidden="true">
+      <defs>
+        <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="3" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <!-- One sword along x: pommel at -x, point at +x, centred on 0. -->
+        <g id="sword">
+          <path d="M-24 -4.2 H29 L36 0 L29 4.2 H-24 Z"/>
+          <rect x="-28.5" y="-9.5" width="4.5" height="19" rx="2"/>
+          <rect x="-35" y="-1.8" width="7" height="3.6" rx="1.5"/>
+          <circle cx="-36.5" cy="0" r="3.4"/>
+        </g>
+      </defs>
+      <polygon points="60,6 106.8,33 106.8,87 60,114 13.2,87 13.2,33" fill="#0E1322" stroke="#00E5FF" stroke-width="5" stroke-linejoin="round" filter="url(#glow)"/>
+      <!-- Cyan behind (pommel up right), pink in front (pommel up left). -->
+      <use href="#sword" transform="translate(60 60) rotate(135)" fill="#00E5FF" filter="url(#glow)"/>
+      <use href="#sword" transform="translate(60 60) rotate(45)" fill="#FF3D7F" stroke="#0E1322" stroke-width="3" stroke-linejoin="round" paint-order="stroke" filter="url(#glow)"/>
+      <circle cx="60" cy="60" r="3.2" fill="#FFFFFF" filter="url(#glow)"/>
+    </svg>
+    <h1>MATHS DUEL ARENA</h1>
+    <div class="bar"></div>
+    <!-- Something to think about while it loads: sums, no answers. -->
+    <div class="sum" id="loading-sum" aria-hidden="true"></div>
+    <div id="loading-text"></div>
+  </div>
+  <script>
+    (function () {
+      var fr = (navigator.language || '').toLowerCase().indexOf('fr') === 0;
+      var text = document.getElementById('loading-text');
+      text.textContent = fr ? 'Chargement…' : 'Loading…';
+      // A new sum every 3 s (no answer: something to work out meanwhile).
+      var sum = document.getElementById('loading-sum');
+      function r(a, b) { return a + Math.floor(Math.random() * (b - a + 1)); }
+      function next() {
+        var k = r(0, 3), a, b, op;
+        if (k === 0) { a = r(11, 89); b = r(11, 89); op = '+'; }
+        else if (k === 1) { a = r(30, 99); b = r(11, a - 5); op = '\u2212'; }
+        else if (k === 2) { a = r(3, 12); b = r(3, 12); op = '\u00d7'; }
+        else { b = r(2, 12); a = b * r(2, 12); op = '\u00f7'; }
+        return a + ' ' + op + ' ' + b + ' = <span class="q">?</span>';
+      }
+      sum.innerHTML = next();
+      var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var sums = setInterval(function () {
+        if (still) { sum.innerHTML = next(); return; }
+        sum.className = 'sum out';
+        setTimeout(function () { sum.innerHTML = next(); sum.className = 'sum'; }, 350);
+      }, 3000);
+      // Still loading after a while: say it is the connection, not a freeze.
+      var slow = setTimeout(function () {
+        text.textContent = fr
+          ? 'Toujours en chargement… La première ouverture peut prendre une minute avec une connexion lente.'
+          : 'Still loading… The first start can take a minute on a slow connection.';
+      }, 12000);
+      // An error before the game starts is shown, not a blank page.
+      function fail(message) {
+        var box = document.getElementById('loading');
+        if (!box) return;
+        clearTimeout(slow);
+        clearInterval(sums);
+        sum.style.display = 'none';
+        text.className = 'error';
+        text.textContent = (fr ? 'Le jeu n\u2019a pas pu démarrer : ' : 'The game could not start: ') + message;
+      }
+      window.addEventListener('error', function (e) { fail(e.message || String(e.error)); });
+      window.addEventListener('unhandledrejection', function (e) { fail(String(e.reason)); });
+      // The game's first frame: the loading screen goes.
+      window.addEventListener('flutter-first-frame', function () {
+        clearTimeout(slow);
+        clearInterval(sums);
+        var box = document.getElementById('loading');
+        if (box) box.remove();
+      });
+    })();
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

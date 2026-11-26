@@ -1,0 +1,205 @@
+// =============================================================================
+// Maths Duel Arena — cosmetics (spec §6.3)
+//
+// Every cosmetic the game knows, for sale or not. The player equips one of
+// each kind: an avatar, a profile banner, a style of answer buttons, an
+// arena background and an effect on right answers.
+//   "price": 0      owned from the start (each kind but titles needs one)
+//   "price": N      sold in the shop for N gems
+//                   Prices climb steeply: a few hundred gems for the
+//                   first ones (weeks of play), thousands for the rarest
+//                   (months; see bin/simulate.dart for gems per day)
+//   no "price"      earned only: a world perk (worlds.jsonc) or an
+//                   achievement (achievements.jsonc) grants it
+// Looks (colours are "#RRGGBB"):
+//   avatar      "icon" (person, rocket, bolt, brain, pets, flame, star,
+//               diamond, calculate, crown, planet, music) on a gradient of
+//               two "colors"
+//   banner      a gradient of two "colors" with a "pattern" (plain,
+//               stripes, dots, waves)
+//   buttons     the answer buttons' "colors" (one) and "shape" (rounded,
+//               pill, sharp); the free one keeps the buttons as designed
+//   background  the arena's glow, "colors" (one); the free one keeps each
+//               screen's own glow
+//   effect      the burst on a right answer: "burst" (sparks, stars,
+//               confetti, lightning, digits, fireworks, supernova) in 1
+//               to 4 "colors"
+//   (Titles are no longer cosmetics: every achievement is a badge that
+//   can be shown on the profile banner; see achievements.jsonc.)
+//   "pass": true  given by the Arena Pass, one a month: the look of that month
+//               ("month": 1–12) first, else the next in catalog order
+//               (never sold, no price)
+//   "rarity"    common, rare, epic or legendary (default common): rare
+//               avatars get a metal ring; epic ones a turning ring and
+//               banners a shimmer; legendary ones sparkles and a glow too
+//   Banners may also use the patterns grid, stars, equations, circuit and
+//   aurora; buttons a "finish" (outline, gradient with two colours,
+//   glass, neon, and the legendary gold and platinum, which shine);
+//   backgrounds a "scene" (glow, stars, aurora, digits, bubbles, storm). Boss trophies are legendary, earned only.
+//   "trophy"    a world id: an avatar or banner its ultimate boss grants,
+//               drawn as the world's sign on a rainbow (no colours)
+// Names are in the app's translations (one per id). Booster prices and
+// limits are in balance.jsonc → economy.
+// =============================================================================
+{
+  "version": 1,
+  "cosmetics": [
+    { "id": "avatar_default",  "kind": "avatar", "price": 0,   "icon": "person",    "colors": ["#22D3EE", "#7C3AED"], "rarity": "common" },
+    { "id": "avatar_calculator", "kind": "avatar", "price": 10, "icon": "calculate", "colors": ["#A3E635", "#0D9488"], "rarity": "common" },
+    { "id": "avatar_rocket",   "kind": "avatar", "price": 85, "icon": "rocket",    "colors": ["#F97316", "#DB2777"], "rarity": "common" },
+    { "id": "avatar_bolt",     "kind": "avatar", "price": 85, "icon": "bolt",      "colors": ["#FACC15", "#F97316"], "rarity": "common" },
+    { "id": "avatar_brain",    "kind": "avatar", "price": 190, "icon": "brain",     "colors": ["#EC4899", "#8B5CF6"], "rarity": "rare" },
+    { "id": "avatar_fox",      "kind": "avatar", "price": 190, "icon": "pets",      "colors": ["#FB923C", "#B45309"], "rarity": "rare" },
+    { "id": "avatar_music",    "kind": "avatar", "price": 190, "icon": "music",     "colors": ["#2DD4BF", "#2563EB"], "rarity": "rare" },
+    { "id": "avatar_crown",    "kind": "avatar", "price": 250, "icon": "crown",     "colors": ["#FBBF24", "#B45309"], "rarity": "rare" },
+    { "id": "avatar_flame",    "kind": "avatar", "price": 380, "icon": "flame",     "colors": ["#EF4444", "#F59E0B"], "rarity": "epic" },
+    { "id": "avatar_planet",   "kind": "avatar", "price": 380, "icon": "planet",    "colors": ["#6366F1", "#0EA5E9"], "rarity": "epic" },
+    { "id": "avatar_star",     "kind": "avatar", "price": 630, "icon": "star",      "colors": ["#FDE047", "#A3E635"], "rarity": "epic" },
+    { "id": "avatar_diamond",  "kind": "avatar", "price": 1250, "icon": "diamond",   "colors": ["#67E8F9", "#A855F7"], "rarity": "legendary" },
+
+    { "id": "avatar_rabbit",   "kind": "avatar", "price": 100, "icon": "rabbit",    "colors": ["#F9A8D4", "#A855F7"], "rarity": "common" },
+    { "id": "avatar_gamepad",  "kind": "avatar", "price": 130, "icon": "gamepad",   "colors": ["#22D3EE", "#1D4ED8"], "rarity": "common" },
+    { "id": "avatar_pi",       "kind": "avatar", "price": 210, "icon": "pi",        "colors": ["#38BDF8", "#6366F1"], "rarity": "rare" },
+    { "id": "avatar_sigma",    "kind": "avatar", "price": 210, "icon": "sigma",     "colors": ["#F472B6", "#9D174D"], "rarity": "rare" },
+    { "id": "avatar_sqrt",     "kind": "avatar", "price": 290, "icon": "sqrt",      "colors": ["#A3E635", "#15803D"], "rarity": "rare" },
+    { "id": "avatar_atom",     "kind": "avatar", "price": 500, "icon": "atom",     "colors": ["#2DD4BF", "#7C3AED"], "rarity": "epic" },
+    { "id": "avatar_infinity", "kind": "avatar", "price": 750, "icon": "infinity", "colors": ["#FB7185", "#7C3AED"], "rarity": "epic" },
+    { "id": "avatar_comet",    "kind": "avatar", "price": 1450, "icon": "comet",    "colors": ["#FDE047", "#EA580C"], "rarity": "legendary" },
+
+    { "id": "banner_default",     "kind": "banner", "price": 0,   "pattern": "plain",   "colors": ["#1E1B4B", "#0F172A"], "rarity": "common" },
+    { "id": "banner_mint",        "kind": "banner", "price": 15,  "pattern": "plain",   "colors": ["#34D399", "#064E3B"], "rarity": "common" },
+    { "id": "banner_candy",       "kind": "banner", "price": 65, "pattern": "stripes", "colors": ["#F472B6", "#7DD3FC"], "rarity": "common" },
+    { "id": "banner_sunset",      "kind": "banner", "price": 100, "pattern": "stripes", "colors": ["#F97316", "#BE185D"], "rarity": "common" },
+    { "id": "banner_lava",        "kind": "banner", "price": 130, "pattern": "waves",   "colors": ["#DC2626", "#431407"], "rarity": "rare" },
+    { "id": "banner_ocean",       "kind": "banner", "price": 100, "pattern": "waves",   "colors": ["#0EA5E9", "#1E3A8A"], "rarity": "common" },
+    { "id": "banner_forest",      "kind": "banner", "price": 250, "pattern": "dots",    "colors": ["#65A30D", "#14532D"], "rarity": "rare" },
+    { "id": "banner_galaxy",      "kind": "banner", "price": 830, "pattern": "stars",   "colors": ["#7C3AED", "#020617"], "rarity": "epic" },
+    { "id": "banner_blackboard",  "kind": "banner", "price": 210,  "pattern": "equations", "colors": ["#166534", "#052E16"], "rarity": "rare" },
+    { "id": "banner_synthwave",   "kind": "banner", "price": 290,  "pattern": "grid",      "colors": ["#F472B6", "#1E1B4B"], "rarity": "rare" },
+    { "id": "banner_circuit",     "kind": "banner", "price": 500, "pattern": "circuit",   "colors": ["#0E7490", "#0F172A"], "rarity": "epic" },
+    { "id": "banner_aurora",      "kind": "banner", "price": 1250, "pattern": "aurora",    "colors": ["#22C55E", "#4C1D95"], "rarity": "legendary" },
+    { "id": "banner_subtraction", "kind": "banner",               "pattern": "stripes", "colors": ["#DB2777", "#4C1D95"], "rarity": "rare" },
+    { "id": "banner_powers",      "kind": "banner",               "pattern": "waves",   "colors": ["#F59E0B", "#7C2D12"], "rarity": "rare" },
+    { "id": "banner_stories",     "kind": "banner",               "pattern": "dots",    "colors": ["#14B8A6", "#312E81"], "rarity": "rare" },
+
+    // Boss trophies: a world's ultimate boss grants its avatar and banner
+    // (that world's sign on a rainbow).
+    { "id": "avatar_boss_addition", "kind": "avatar", "trophy": "addition" },
+    { "id": "avatar_boss_subtraction", "kind": "avatar", "trophy": "subtraction" },
+    { "id": "avatar_boss_multiplication", "kind": "avatar", "trophy": "multiplication" },
+    { "id": "avatar_boss_division", "kind": "avatar", "trophy": "division" },
+    { "id": "avatar_boss_integers", "kind": "avatar", "trophy": "integers" },
+    { "id": "avatar_boss_decimals", "kind": "avatar", "trophy": "decimals" },
+    { "id": "avatar_boss_fractions", "kind": "avatar", "trophy": "fractions" },
+    { "id": "avatar_boss_arithmetic", "kind": "avatar", "trophy": "arithmetic" },
+    { "id": "avatar_boss_sequences", "kind": "avatar", "trophy": "sequences" },
+    { "id": "avatar_boss_percentages", "kind": "avatar", "trophy": "percentages" },
+    { "id": "avatar_boss_powers", "kind": "avatar", "trophy": "powers" },
+    { "id": "avatar_boss_brackets", "kind": "avatar", "trophy": "brackets" },
+    { "id": "avatar_boss_orderOfOperations", "kind": "avatar", "trophy": "orderOfOperations" },
+    { "id": "avatar_boss_equations", "kind": "avatar", "trophy": "equations" },
+    { "id": "avatar_boss_logic", "kind": "avatar", "trophy": "logic" },
+    { "id": "avatar_boss_linearEquations", "kind": "avatar", "trophy": "linearEquations" },
+    { "id": "avatar_boss_functions", "kind": "avatar", "trophy": "functions" },
+    { "id": "avatar_boss_estimation", "kind": "avatar", "trophy": "estimation" },
+    { "id": "avatar_boss_geometry", "kind": "avatar", "trophy": "geometry" },
+    { "id": "avatar_boss_wordProblems", "kind": "avatar", "trophy": "wordProblems" },
+    { "id": "avatar_boss_units", "kind": "avatar", "trophy": "units" },
+    { "id": "avatar_boss_proportionality", "kind": "avatar", "trophy": "proportionality" },
+    { "id": "avatar_boss_probability", "kind": "avatar", "trophy": "probability" },
+    { "id": "avatar_boss_trigonometry", "kind": "avatar", "trophy": "trigonometry" },
+    { "id": "banner_boss_addition", "kind": "banner", "trophy": "addition" },
+    { "id": "banner_boss_subtraction", "kind": "banner", "trophy": "subtraction" },
+    { "id": "banner_boss_multiplication", "kind": "banner", "trophy": "multiplication" },
+    { "id": "banner_boss_division", "kind": "banner", "trophy": "division" },
+    { "id": "banner_boss_integers", "kind": "banner", "trophy": "integers" },
+    { "id": "banner_boss_decimals", "kind": "banner", "trophy": "decimals" },
+    { "id": "banner_boss_fractions", "kind": "banner", "trophy": "fractions" },
+    { "id": "banner_boss_arithmetic", "kind": "banner", "trophy": "arithmetic" },
+    { "id": "banner_boss_sequences", "kind": "banner", "trophy": "sequences" },
+    { "id": "banner_boss_percentages", "kind": "banner", "trophy": "percentages" },
+    { "id": "banner_boss_powers", "kind": "banner", "trophy": "powers" },
+    { "id": "banner_boss_brackets", "kind": "banner", "trophy": "brackets" },
+    { "id": "banner_boss_orderOfOperations", "kind": "banner", "trophy": "orderOfOperations" },
+    { "id": "banner_boss_equations", "kind": "banner", "trophy": "equations" },
+    { "id": "banner_boss_logic", "kind": "banner", "trophy": "logic" },
+    { "id": "banner_boss_linearEquations", "kind": "banner", "trophy": "linearEquations" },
+    { "id": "banner_boss_functions", "kind": "banner", "trophy": "functions" },
+    { "id": "banner_boss_estimation", "kind": "banner", "trophy": "estimation" },
+    { "id": "banner_boss_geometry", "kind": "banner", "trophy": "geometry" },
+    { "id": "banner_boss_wordProblems", "kind": "banner", "trophy": "wordProblems" },
+    { "id": "banner_boss_units", "kind": "banner", "trophy": "units" },
+    { "id": "banner_boss_proportionality", "kind": "banner", "trophy": "proportionality" },
+    { "id": "banner_boss_probability", "kind": "banner", "trophy": "probability" },
+    { "id": "banner_boss_trigonometry", "kind": "banner", "trophy": "trigonometry" },
+    // Mix bosses (a path's first level): a banner each.
+    { "id": "banner_boss_addSub", "kind": "banner", "trophy": "addSub" },
+    { "id": "banner_boss_mulDiv", "kind": "banner", "trophy": "mulDiv" },
+    { "id": "banner_boss_signedDecimals", "kind": "banner", "trophy": "signedDecimals" },
+    { "id": "banner_boss_fractionsPrimes", "kind": "banner", "trophy": "fractionsPrimes" },
+    { "id": "banner_boss_powersBrackets", "kind": "banner", "trophy": "powersBrackets" },
+    { "id": "banner_boss_orderEstimation", "kind": "banner", "trophy": "orderEstimation" },
+    { "id": "banner_boss_equationsAll", "kind": "banner", "trophy": "equationsAll" },
+    { "id": "banner_boss_sequencesFunctions", "kind": "banner", "trophy": "sequencesFunctions" },
+    { "id": "banner_boss_percentProportion", "kind": "banner", "trophy": "percentProportion" },
+    { "id": "banner_boss_storiesUnits", "kind": "banner", "trophy": "storiesUnits" },
+    { "id": "banner_boss_geometryTrig", "kind": "banner", "trophy": "geometryTrig" },
+    { "id": "banner_boss_logicChance", "kind": "banner", "trophy": "logicChance" },
+    { "id": "banner_boss_operations", "kind": "banner", "trophy": "operations" },
+    { "id": "banner_boss_numbers", "kind": "banner", "trophy": "numbers" },
+    { "id": "banner_boss_expressions", "kind": "banner", "trophy": "expressions" },
+    { "id": "banner_boss_algebra", "kind": "banner", "trophy": "algebra" },
+    { "id": "banner_boss_everyday", "kind": "banner", "trophy": "everyday" },
+    { "id": "banner_boss_shapesChance", "kind": "banner", "trophy": "shapesChance" },
+    { "id": "banner_boss_numberSense", "kind": "banner", "trophy": "numberSense" },
+    { "id": "banner_boss_algebraExpressions", "kind": "banner", "trophy": "algebraExpressions" },
+    { "id": "banner_boss_problems", "kind": "banner", "trophy": "problems" },
+    { "id": "banner_boss_grandFinal", "kind": "banner", "trophy": "grandFinal" },
+    { "id": "buttons_default", "kind": "buttons", "price": 0,   "shape": "rounded", "colors": ["#22D3EE"], "rarity": "common" },
+    { "id": "buttons_orange",  "kind": "buttons", "price": 85, "shape": "pill",    "colors": ["#FB923C"], "rarity": "common" },
+    { "id": "buttons_magenta", "kind": "buttons", "price": 150, "shape": "rounded", "colors": ["#EC4899"], "rarity": "rare" },
+    { "id": "buttons_lime",    "kind": "buttons", "price": 290, "shape": "pill",    "colors": ["#A3E635"], "rarity": "rare" },
+    { "id": "buttons_gold",    "kind": "buttons", "price": 1050, "shape": "sharp",   "finish": "gold",     "colors": ["#FBBF24", "#B45309"], "rarity": "legendary" },
+
+    { "id": "buttons_glass",   "kind": "buttons", "price": 330,  "shape": "rounded", "finish": "glass",    "colors": ["#BAE6FD"], "rarity": "rare" },
+    { "id": "buttons_neon",    "kind": "buttons", "price": 580, "shape": "pill",    "finish": "neon",     "colors": ["#F472B6"], "rarity": "epic" },
+    { "id": "buttons_sunset",  "kind": "buttons", "price": 670, "shape": "rounded", "finish": "gradient", "colors": ["#F97316", "#DB2777"], "rarity": "epic" },
+
+    { "id": "background_default", "kind": "background", "price": 0,   "colors": ["#22D3EE"], "rarity": "common" },
+    { "id": "background_rose",    "kind": "background", "price": 130, "colors": ["#F43F5E"], "rarity": "common" },
+    { "id": "background_violet",  "kind": "background", "price": 170, "colors": ["#A855F7"], "rarity": "rare" },
+    { "id": "background_ember",   "kind": "background", "price": 380, "colors": ["#F97316"], "rarity": "rare" },
+    { "id": "background_aurora",  "kind": "background", "price": 1050, "scene": "storm", "colors": ["#A5B4FC"], "rarity": "legendary" },
+
+    { "id": "background_bubbles",   "kind": "background", "price": 290,  "scene": "bubbles", "colors": ["#38BDF8"], "rarity": "rare" },
+    { "id": "background_starfield", "kind": "background", "price": 500, "scene": "stars",   "colors": ["#A5B4FC"], "rarity": "epic" },
+    { "id": "background_digits",    "kind": "background", "price": 630, "scene": "digits",  "colors": ["#22D3EE"], "rarity": "epic" },
+
+    // Effects: the burst on a right answer.
+    { "id": "effect_sparks",    "kind": "effect", "price": 0,    "burst": "sparks",    "colors": ["#4ADE80"], "rarity": "common" },
+    { "id": "effect_stars",     "kind": "effect", "price": 170,  "burst": "stars",     "colors": ["#FDE047"], "rarity": "rare" },
+    { "id": "effect_confetti",  "kind": "effect", "price": 250,  "burst": "confetti",  "colors": ["#F472B6", "#22D3EE", "#FDE047", "#A3E635"], "rarity": "rare" },
+    { "id": "effect_digits",    "kind": "effect", "price": 420, "burst": "digits",    "colors": ["#22D3EE"], "rarity": "epic" },
+    { "id": "effect_lightning", "kind": "effect", "price": 630, "burst": "lightning", "colors": ["#FDE047", "#FFFFFF"], "rarity": "epic" },
+    { "id": "effect_fireworks", "kind": "effect", "price": 1250, "burst": "fireworks", "colors": ["#F97316", "#EC4899", "#FDE047"], "rarity": "legendary" },
+
+    // The Arena Pass gives one a month, in this order (never sold).
+    { "id": "avatar_pass_golden",  "kind": "avatar", "pass": true, "icon": "crown",   "colors": ["#FDE68A", "#B45309"], "rarity": "legendary" },
+    { "id": "banner_pass_nebula",  "kind": "banner", "pass": true, "pattern": "aurora", "colors": ["#EC4899", "#1E1B4B"], "rarity": "legendary" },
+    { "id": "effect_pass_prism",   "kind": "effect", "pass": true, "burst": "supernova", "colors": ["#F87171", "#FBBF24", "#34D399", "#60A5FA"], "rarity": "legendary" },
+    { "id": "buttons_pass_aurora", "kind": "buttons", "pass": true, "shape": "pill",  "finish": "platinum", "colors": ["#E5E7EB", "#6B7280"], "rarity": "legendary" },
+    // The months' own looks: the Pass gives each in its month.
+    { "id": "banner_month_january", "kind": "banner", "pass": true, "month": 1, "pattern": "fireworks", "colors": ["#F59E0B", "#1E1B4B"], "rarity": "legendary" },
+    { "id": "banner_month_february", "kind": "banner", "pass": true, "month": 2, "pattern": "ski", "colors": ["#E0F2FE", "#1E3A8A"], "rarity": "legendary" },
+    { "id": "banner_month_march", "kind": "banner", "pass": true, "month": 3, "pattern": "blossom", "colors": ["#F9A8D4", "#4C1D95"], "rarity": "legendary" },
+    { "id": "banner_month_april", "kind": "banner", "pass": true, "month": 4, "pattern": "rainbow", "colors": ["#38BDF8", "#312E81"], "rarity": "legendary" },
+    { "id": "banner_month_may", "kind": "banner", "pass": true, "month": 5, "pattern": "flowers", "colors": ["#A3E635", "#14532D"], "rarity": "legendary" },
+    { "id": "banner_month_june", "kind": "banner", "pass": true, "month": 6, "pattern": "beach", "colors": ["#FDE047", "#0E7490"], "rarity": "legendary" },
+    { "id": "banner_month_july", "kind": "banner", "pass": true, "month": 7, "pattern": "fireflies", "colors": ["#BEF264", "#0F172A"], "rarity": "legendary" },
+    { "id": "banner_month_august", "kind": "banner", "pass": true, "month": 8, "pattern": "sailing", "colors": ["#7DD3FC", "#1E40AF"], "rarity": "legendary" },
+    { "id": "banner_month_september", "kind": "banner", "pass": true, "month": 9, "pattern": "chalkboard", "colors": ["#F1F5F9", "#14532D"], "rarity": "legendary" },
+    { "id": "banner_month_october", "kind": "banner", "pass": true, "month": 10, "pattern": "pumpkins", "colors": ["#FB923C", "#2E1065"], "rarity": "legendary" },
+    { "id": "banner_month_november", "kind": "banner", "pass": true, "month": 11, "pattern": "leaves", "colors": ["#F97316", "#451A03"], "rarity": "legendary" },
+    { "id": "banner_month_december", "kind": "banner", "pass": true, "month": 12, "pattern": "snowflakes", "colors": ["#BAE6FD", "#1E3A8A"], "rarity": "legendary" }
+  ]
+}
