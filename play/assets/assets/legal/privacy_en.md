@@ -1,6 +1,6 @@
 # Privacy policy
 
-Maths Duel Arena collects no personal data. The game keeps everything on this device and sends nothing to us. Purchases are made through Google Play, which handles the payment.
+Maths Duel Arena collects no personal data. The game keeps everything on this device and sends nothing to us, unless you choose to (a message to us, or the leaderboards). Purchases are made through Google Play, which handles the payment.
 
 ## What the game keeps, on this device only
 
@@ -13,7 +13,6 @@ Maths Duel Arena collects no personal data. The game keeps everything on this de
 ## Purchases
 
 - Gem packs and passes (Arena Pass, Journey Pass, Family plan) are bought with real money through Google Play. Google Play handles the payment and the Google account; the game never sees a name, an address or payment details.
-- Before any purchase, a question meant for a parent is asked. Children should ask a parent before buying.
 - Subscriptions renew until cancelled, and are cancelled in the Google Play app (Payments & subscriptions).
 - Everything needed to learn stays free: lessons, Practice, every notion and every level.
 
@@ -21,7 +20,7 @@ Maths Duel Arena collects no personal data. The game keeps everything on this de
 
 - No account, no sign-in, no e-mail address.
 - No advertising.
-- No connection to our servers: the game itself does not use the internet, except when you choose to send us a message (see "Contact us" below). Purchases go through the Google Play app. Nothing else is shared with us or with anyone else.
+- No connection to our servers, except when you choose to send us a message (see "Contact us" below) or to join the Speed leaderboards (see "Leaderboards" below). Purchases go through the Google Play app. Nothing else is shared with us or with anyone else.
 - The app asks Android for internet access, kept for optional ads planned in a later version (see below). In this version the game sends nothing over it.
 - No location, contacts, camera, microphone or photos.
 - No analytics and no crash reports.
@@ -37,13 +36,17 @@ None of these codes holds a name. Players share them themselves, by hand.
 - A ghost code holds the questions' settings and, for each question, whether it was right and how long it took.
 - A "refer a friend" code is a random code.
 
+## Leaderboards
+
+The Speed leaderboards are off until the player chooses to join them. Once joined, the game sends, for the best Speed runs at Normal: a name made of words chosen by the game (such as "Swift Fox 27": no typed name, nothing personal), the levels reached and the time taken, with a random identifier created for the leaderboards. They are stored in Google Firebase (Cloud Firestore), shown to every player of the game, and used for nothing else. Leaving the leaderboards (on the Leaderboard page) stops the sending and takes the current day's, week's and month's scores off; ask us (see "Contact") to remove the all-time one.
+
 ## Contact us
 
-Settings → Contact us sends us a message only when you press Send. It contains the title and message you typed, a screenshot if you chose one, the e-mail address you typed if you want an answer (optional; a parent's address for children), and the game's version and language. It travels over an encrypted connection through Google's service (Google Apps Script) and reaches us as an e-mail. We use it only to answer and to improve the game, never for advertising, and we delete it when it is no longer needed (at the latest one year later). Nothing is sent if you don't press Send.
+Settings → Contact us sends us a message only when you press Send. It contains the title and message you typed, a screenshot if you chose one, the e-mail address you typed if you want an answer (optional), and the game's version and language. It travels over an encrypted connection through Google's service (Google Apps Script) and reaches us as an e-mail. We use it only to answer and to improve the game, never for advertising, and we delete it when it is no longer needed (at the latest one year later). Nothing is sent if you don't press Send.
 
 ## Reminders
 
-Reminders are off until a parent turns them on in Settings, behind the parent question. They are scheduled on the device; nothing is sent over the internet. The parent summary can be turned off in Settings.
+Reminders are off until turned on in Settings. They are scheduled on the device; nothing is sent over the internet. The weekly progress summary can be turned off in Settings.
 
 ## Backup
 
@@ -57,13 +60,13 @@ If the phone's owner has turned on Android's own backup, Android may copy the ga
 
 ## Children
 
-The game is made for children. It is designed so that no personal data leaves the device. Purchases and the settings that matter (reminders, erasing progress) are behind a question meant for a parent.
+The game is made for children. It is designed so that no personal data leaves the device.
 
 ## Changes
 
 If a future version changes anything here (for example to add online play or advertising), this policy will be updated before that version is released, and the change will be described in it.
 
-Ads planned for a later version: only a video a player chooses to watch (for a heart in a boss), after a parent's answer, from an ad network certified for children's apps, with no personalised ads. The data that network receives will be listed here before that version is released.
+Ads planned for a later version: only a video a player chooses to watch (for a heart in a boss), from an ad network certified for children's apps, with no personalised ads. The data that network receives will be listed here before that version is released.
 
 ## Contact
 

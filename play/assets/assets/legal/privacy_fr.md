@@ -13,7 +13,6 @@ Maths Duel Arena ne collecte aucune donnée personnelle. Le jeu garde tout sur c
 ## Achats
 
 - Les packs de gemmes et les pass (Pass Arène, Pass Parcours, Offre Famille) s'achètent avec de l'argent réel par Google Play. Google Play s'occupe du paiement et du compte Google ; le jeu ne voit jamais de nom, d'adresse ni de moyen de paiement.
-- Avant tout achat, une question destinée à un parent est posée. Les enfants doivent demander à un parent avant d'acheter.
 - Les abonnements se renouvellent jusqu'à leur résiliation, qui se fait dans l'application Google Play (Paiements et abonnements).
 - Tout ce qui sert à apprendre reste gratuit : leçons, Entraînement, toutes les notions et tous les niveaux.
 
@@ -21,7 +20,7 @@ Maths Duel Arena ne collecte aucune donnée personnelle. Le jeu garde tout sur c
 
 - Pas de compte, pas de connexion, pas d'adresse e-mail.
 - Pas de publicité.
-- Pas de connexion à nos serveurs : le jeu lui-même n'utilise pas internet, sauf si tu choisis de nous envoyer un message (voir « Nous contacter » plus bas). Les achats passent par l'application Google Play. Rien d'autre n'est partagé avec nous ni avec personne.
+- Pas de connexion à nos serveurs, sauf si tu choisis de nous envoyer un message (voir « Nous contacter » plus bas) ou de rejoindre les classements de Vitesse (voir « Classements » plus bas). Les achats passent par l'application Google Play. Rien d'autre n'est partagé avec nous ni avec personne.
 - L'application demande à Android l'accès à internet, gardé pour des publicités facultatives prévues dans une prochaine version (voir plus bas). Dans cette version, le jeu n'envoie rien.
 - Pas de localisation, de contacts, de caméra, de micro ni de photos.
 - Pas de statistiques d'utilisation ni de rapports de plantage.
@@ -37,13 +36,17 @@ Aucun de ces codes ne contient de nom. Les joueurs se les échangent eux-mêmes,
 - Un code de fantôme contient les réglages des questions et, pour chaque question, si elle était juste et le temps mis.
 - Un code « parrainer un ami » est un code tiré au hasard.
 
+## Classements
+
+Les classements de Vitesse sont désactivés tant que le joueur ne choisit pas de les rejoindre. Une fois rejoints, le jeu envoie, pour les meilleures parties de Vitesse en Normal : un nom fait de mots choisis par le jeu (comme « Renard Rapide 27 » : aucun nom tapé, rien de personnel), les niveaux atteints et le temps mis, avec un identifiant aléatoire créé pour les classements. Ils sont conservés dans Google Firebase (Cloud Firestore), montrés à tous les joueurs du jeu, et ne servent à rien d'autre. Quitter les classements (sur la page Classement) arrête l'envoi et retire les scores du jour, de la semaine et du mois en cours ; demande-nous (voir « Contact ») de retirer celui de tous les temps.
+
 ## Nous contacter
 
-Réglages → Nous contacter ne nous envoie un message que lorsque tu appuies sur Envoyer. Il contient le titre et le message que tu as écrits, une capture d'écran si tu en as choisi une, l'adresse e-mail que tu as tapée si tu veux une réponse (facultatif ; celle d'un parent pour les enfants), ainsi que la version et la langue du jeu. Il passe par une connexion chiffrée via le service de Google (Google Apps Script) et nous arrive sous forme d'e-mail. Nous l'utilisons uniquement pour répondre et améliorer le jeu, jamais pour de la publicité, et nous le supprimons quand il n'est plus utile (au plus tard un an après). Rien n'est envoyé si tu n'appuies pas sur Envoyer.
+Réglages → Nous contacter ne nous envoie un message que lorsque tu appuies sur Envoyer. Il contient le titre et le message que tu as écrits, une capture d'écran si tu en as choisi une, l'adresse e-mail que tu as tapée si tu veux une réponse (facultatif), ainsi que la version et la langue du jeu. Il passe par une connexion chiffrée via le service de Google (Google Apps Script) et nous arrive sous forme d'e-mail. Nous l'utilisons uniquement pour répondre et améliorer le jeu, jamais pour de la publicité, et nous le supprimons quand il n'est plus utile (au plus tard un an après). Rien n'est envoyé si tu n'appuies pas sur Envoyer.
 
 ## Rappels
 
-Les rappels sont désactivés tant qu'un parent ne les active pas dans les Réglages, derrière la question pour les parents. Ils sont programmés sur l'appareil ; rien ne passe par internet. Le résumé pour les parents peut être désactivé dans les Réglages.
+Les rappels sont désactivés tant qu'ils ne sont pas activés dans les Réglages. Ils sont programmés sur l'appareil ; rien ne passe par internet. Le bilan de la semaine peut être désactivé dans les Réglages.
 
 ## Sauvegarde
 
@@ -57,13 +60,13 @@ Si le propriétaire du téléphone a activé la sauvegarde d'Android, Android pe
 
 ## Enfants
 
-Le jeu est fait pour les enfants. Il est conçu pour qu'aucune donnée personnelle ne quitte l'appareil. Les achats et les réglages importants (rappels, effacement de la progression) sont protégés par une question destinée à un parent.
+Le jeu est fait pour les enfants. Il est conçu pour qu'aucune donnée personnelle ne quitte l'appareil.
 
 ## Modifications
 
 Si une prochaine version change quoi que ce soit ici (par exemple pour ajouter le jeu en ligne ou de la publicité), cette politique sera mise à jour avant la sortie de cette version, et le changement y sera décrit.
 
-Publicités prévues dans une prochaine version : seulement une vidéo qu'un joueur choisit de regarder (pour un cœur pendant un boss), après la réponse d'un parent, venant d'une régie certifiée pour les applications destinées aux enfants, sans publicité personnalisée. Les données reçues par cette régie seront listées ici avant la sortie de cette version.
+Publicités prévues dans une prochaine version : seulement une vidéo qu'un joueur choisit de regarder (pour un cœur pendant un boss), venant d'une régie certifiée pour les applications destinées aux enfants, sans publicité personnalisée. Les données reçues par cette régie seront listées ici avant la sortie de cette version.
 
 ## Contact
 
