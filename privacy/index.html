@@ -34,7 +34,7 @@ h1 { font-size: 1.6em; } h2 { font-size: 1.15em; margin-top: 1.6em; }
 </ul>
 <h2>What the game does not do</h2>
 <ul>
-<li>No account, no sign-in, no e-mail address.</li>
+<li>No account needed: signing in with Google is optional (see &quot;Account&quot; below). The game never asks for an e-mail address.</li>
 <li>No advertising.</li>
 <li>No connection to our servers, except when you choose to send us a message (see &quot;Contact us&quot; below) or to join the Speed leaderboards (see &quot;Leaderboards&quot; below). Purchases go through the Google Play app. Nothing else is shared with us or with anyone else.</li>
 <li>The app asks Android for internet access, kept for optional ads planned in a later version (see below). In this version the game sends nothing over it.</li>
@@ -51,6 +51,8 @@ h1 { font-size: 1.6em; } h2 { font-size: 1.15em; margin-top: 1.6em; }
 <li>A ghost code holds the questions&#x27; settings and, for each question, whether it was right and how long it took.</li>
 <li>A &quot;refer a friend&quot; code is a random code.</li>
 </ul>
+<h2>Account</h2>
+<p>Settings → Account lets a player keep their progress with a Google account, to play on another phone or in the web game. It is off until a parent agrees (behind a question meant for a parent, which lists what is kept). Signing in goes through Google (Firebase Authentication): the game never sees the password; Google tells it only a user identifier. The game then saves, in Google Firebase (Cloud Firestore), that player&#x27;s progress: games and answers, stars, ranks, gems, purchases made, settings and the names typed in the game, with the date of the save. Only someone signed in to that Google account can read it; it is used for nothing else, never for advertising. Sign out at any time in Settings → Account; to erase what the account holds, write to us (see &quot;Contact&quot;).</p>
 <h2>Leaderboards</h2>
 <p>The Speed leaderboards are off until a parent agrees to join them (behind a question meant for a parent, which lists what is sent). Once joined, the game sends, for the best Speed runs at Normal: a name made of words chosen by the game (such as &quot;Swift Fox 27&quot;: no typed name, nothing personal), the levels reached and the time taken, with a random identifier created for the leaderboards. They are stored in Google Firebase (Cloud Firestore), shown to every player of the game, and used for nothing else. Leaving the leaderboards (on the Leaderboard page) stops the sending and takes the current day&#x27;s, week&#x27;s and month&#x27;s scores off; ask us (see &quot;Contact&quot;) to remove the all-time one.</p>
 <h2>Contact us</h2>
@@ -92,7 +94,7 @@ h1 { font-size: 1.6em; } h2 { font-size: 1.15em; margin-top: 1.6em; }
 </ul>
 <h2>Ce que le jeu ne fait pas</h2>
 <ul>
-<li>Pas de compte, pas de connexion, pas d&#x27;adresse e-mail.</li>
+<li>Aucun compte nécessaire : la connexion avec Google est facultative (voir « Compte » plus bas). Le jeu ne demande jamais d&#x27;adresse e-mail.</li>
 <li>Pas de publicité.</li>
 <li>Pas de connexion à nos serveurs, sauf si tu choisis de nous envoyer un message (voir « Nous contacter » plus bas) ou de rejoindre les classements de Vitesse (voir « Classements » plus bas). Les achats passent par l&#x27;application Google Play. Rien d&#x27;autre n&#x27;est partagé avec nous ni avec personne.</li>
 <li>L&#x27;application demande à Android l&#x27;accès à internet, gardé pour des publicités facultatives prévues dans une prochaine version (voir plus bas). Dans cette version, le jeu n&#x27;envoie rien.</li>
@@ -109,6 +111,8 @@ h1 { font-size: 1.6em; } h2 { font-size: 1.15em; margin-top: 1.6em; }
 <li>Un code de fantôme contient les réglages des questions et, pour chaque question, si elle était juste et le temps mis.</li>
 <li>Un code « parrainer un ami » est un code tiré au hasard.</li>
 </ul>
+<h2>Compte</h2>
+<p>Réglages → Compte permet de garder sa progression avec un compte Google, pour jouer sur un autre téléphone ou dans le jeu web. C&#x27;est désactivé tant qu&#x27;un parent n&#x27;a pas accepté (derrière une question destinée à un parent, qui détaille ce qui est gardé). La connexion passe par Google (Firebase Authentication) : le jeu ne voit jamais le mot de passe ; Google lui donne seulement un identifiant. Le jeu sauvegarde alors, dans Google Firebase (Cloud Firestore), la progression de ce joueur : parties et réponses, étoiles, rangs, gemmes, achats faits, réglages et noms tapés dans le jeu, avec la date de la sauvegarde. Seule une personne connectée à ce compte Google peut la lire ; elle ne sert à rien d&#x27;autre, jamais à de la publicité. Déconnexion à tout moment dans Réglages → Compte ; pour effacer ce que le compte garde, écris-nous (voir « Contact »).</p>
 <h2>Classements</h2>
 <p>Les classements de Vitesse sont désactivés tant qu&#x27;un parent n&#x27;a pas accepté de les rejoindre (derrière une question destinée à un parent, qui détaille ce qui est envoyé). Une fois rejoints, le jeu envoie, pour les meilleures parties de Vitesse en Normal : un nom fait de mots choisis par le jeu (comme « Renard Rapide 27 » : aucun nom tapé, rien de personnel), les niveaux atteints et le temps mis, avec un identifiant aléatoire créé pour les classements. Ils sont conservés dans Google Firebase (Cloud Firestore), montrés à tous les joueurs du jeu, et ne servent à rien d&#x27;autre. Quitter les classements (sur la page Classement) arrête l&#x27;envoi et retire les scores du jour, de la semaine et du mois en cours ; demande-nous (voir « Contact ») de retirer celui de tous les temps.</p>
 <h2>Nous contacter</h2>

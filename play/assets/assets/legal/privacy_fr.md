@@ -18,7 +18,7 @@ Maths Duel Arena ne collecte aucune donnée personnelle. Le jeu garde tout sur c
 
 ## Ce que le jeu ne fait pas
 
-- Pas de compte, pas de connexion, pas d'adresse e-mail.
+- Aucun compte nécessaire : la connexion avec Google est facultative (voir « Compte » plus bas). Le jeu ne demande jamais d'adresse e-mail.
 - Pas de publicité.
 - Pas de connexion à nos serveurs, sauf si tu choisis de nous envoyer un message (voir « Nous contacter » plus bas) ou de rejoindre les classements de Vitesse (voir « Classements » plus bas). Les achats passent par l'application Google Play. Rien d'autre n'est partagé avec nous ni avec personne.
 - L'application demande à Android l'accès à internet, gardé pour des publicités facultatives prévues dans une prochaine version (voir plus bas). Dans cette version, le jeu n'envoie rien.
@@ -35,6 +35,10 @@ Aucun de ces codes ne contient de nom. Les joueurs se les échangent eux-mêmes,
 - Un code de résultat de classe contient, pour chaque question, si la réponse était juste, quelle réponse a été choisie (ou que le temps est écoulé), et le temps total. Un professeur ne le voit que si l'élève lui donne le code.
 - Un code de fantôme contient les réglages des questions et, pour chaque question, si elle était juste et le temps mis.
 - Un code « parrainer un ami » est un code tiré au hasard.
+
+## Compte
+
+Réglages → Compte permet de garder sa progression avec un compte Google, pour jouer sur un autre téléphone ou dans le jeu web. C'est désactivé tant qu'un parent n'a pas accepté (derrière une question destinée à un parent, qui détaille ce qui est gardé). La connexion passe par Google (Firebase Authentication) : le jeu ne voit jamais le mot de passe ; Google lui donne seulement un identifiant. Le jeu sauvegarde alors, dans Google Firebase (Cloud Firestore), la progression de ce joueur : parties et réponses, étoiles, rangs, gemmes, achats faits, réglages et noms tapés dans le jeu, avec la date de la sauvegarde. Seule une personne connectée à ce compte Google peut la lire ; elle ne sert à rien d'autre, jamais à de la publicité. Déconnexion à tout moment dans Réglages → Compte ; pour effacer ce que le compte garde, écris-nous (voir « Contact »).
 
 ## Classements
 

@@ -18,7 +18,7 @@ Maths Duel Arena collects no personal data. The game keeps everything on this de
 
 ## What the game does not do
 
-- No account, no sign-in, no e-mail address.
+- No account needed: signing in with Google is optional (see "Account" below). The game never asks for an e-mail address.
 - No advertising.
 - No connection to our servers, except when you choose to send us a message (see "Contact us" below) or to join the Speed leaderboards (see "Leaderboards" below). Purchases go through the Google Play app. Nothing else is shared with us or with anyone else.
 - The app asks Android for internet access, kept for optional ads planned in a later version (see below). In this version the game sends nothing over it.
@@ -35,6 +35,10 @@ None of these codes holds a name. Players share them themselves, by hand.
 - A class result code holds, for each question, whether the answer was right, which answer was chosen (or that time ran out), and the total time. A teacher sees them only when the pupil gives the code.
 - A ghost code holds the questions' settings and, for each question, whether it was right and how long it took.
 - A "refer a friend" code is a random code.
+
+## Account
+
+Settings → Account lets a player keep their progress with a Google account, to play on another phone or in the web game. It is off until a parent agrees (behind a question meant for a parent, which lists what is kept). Signing in goes through Google (Firebase Authentication): the game never sees the password; Google tells it only a user identifier. The game then saves, in Google Firebase (Cloud Firestore), that player's progress: games and answers, stars, ranks, gems, purchases made, settings and the names typed in the game, with the date of the save. Only someone signed in to that Google account can read it; it is used for nothing else, never for advertising. Sign out at any time in Settings → Account; to erase what the account holds, write to us (see "Contact").
 
 ## Leaderboards
 
