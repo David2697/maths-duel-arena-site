@@ -38,7 +38,7 @@ None of these codes holds a name. Players share them themselves, by hand.
 
 ## Leaderboards
 
-The Speed leaderboards are off until the player chooses to join them. Once joined, the game sends, for the best Speed runs at Normal: a name made of words chosen by the game (such as "Swift Fox 27": no typed name, nothing personal), the levels reached and the time taken, with a random identifier created for the leaderboards. They are stored in Google Firebase (Cloud Firestore), shown to every player of the game, and used for nothing else. Leaving the leaderboards (on the Leaderboard page) stops the sending and takes the current day's, week's and month's scores off; ask us (see "Contact") to remove the all-time one.
+The Speed leaderboards are off until a parent agrees to join them (behind a question meant for a parent, which lists what is sent). Once joined, the game sends, for the best Speed runs at Normal: a name made of words chosen by the game (such as "Swift Fox 27": no typed name, nothing personal), the levels reached and the time taken, with a random identifier created for the leaderboards. They are stored in Google Firebase (Cloud Firestore), shown to every player of the game, and used for nothing else. Leaving the leaderboards (on the Leaderboard page) stops the sending and takes the current day's, week's and month's scores off; ask us (see "Contact") to remove the all-time one.
 
 ## Contact us
 

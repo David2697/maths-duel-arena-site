@@ -38,7 +38,7 @@ Aucun de ces codes ne contient de nom. Les joueurs se les échangent eux-mêmes,
 
 ## Classements
 
-Les classements de Vitesse sont désactivés tant que le joueur ne choisit pas de les rejoindre. Une fois rejoints, le jeu envoie, pour les meilleures parties de Vitesse en Normal : un nom fait de mots choisis par le jeu (comme « Renard Rapide 27 » : aucun nom tapé, rien de personnel), les niveaux atteints et le temps mis, avec un identifiant aléatoire créé pour les classements. Ils sont conservés dans Google Firebase (Cloud Firestore), montrés à tous les joueurs du jeu, et ne servent à rien d'autre. Quitter les classements (sur la page Classement) arrête l'envoi et retire les scores du jour, de la semaine et du mois en cours ; demande-nous (voir « Contact ») de retirer celui de tous les temps.
+Les classements de Vitesse sont désactivés tant qu'un parent n'a pas accepté de les rejoindre (derrière une question destinée à un parent, qui détaille ce qui est envoyé). Une fois rejoints, le jeu envoie, pour les meilleures parties de Vitesse en Normal : un nom fait de mots choisis par le jeu (comme « Renard Rapide 27 » : aucun nom tapé, rien de personnel), les niveaux atteints et le temps mis, avec un identifiant aléatoire créé pour les classements. Ils sont conservés dans Google Firebase (Cloud Firestore), montrés à tous les joueurs du jeu, et ne servent à rien d'autre. Quitter les classements (sur la page Classement) arrête l'envoi et retire les scores du jour, de la semaine et du mois en cours ; demande-nous (voir « Contact ») de retirer celui de tous les temps.
 
 ## Nous contacter
 
